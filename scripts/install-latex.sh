@@ -6,4 +6,4 @@
 ###
 # Install Latex
 ###
-sudo apt-get -y install texlive build-essential
+sudo apt-get -y install texlive texlive-publishers build-essential
