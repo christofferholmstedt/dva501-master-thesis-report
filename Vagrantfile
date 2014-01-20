@@ -22,7 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # How provisioning should be done.
     config.vm.provision :shell, :path => "./scripts/bootstrap.sh"
-    config.vm.provision :shell, :path => "./scripts/install-pdflatex.sh"
+    config.vm.provision :shell, :path => "./scripts/install-latex.sh"
 
     # Open up the VM to the local network.
     # Disabled this by default as it will require the user to manually
