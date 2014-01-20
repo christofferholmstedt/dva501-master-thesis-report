@@ -1,2 +1,8 @@
 # Vagrant
 .vagrant
+
+# LaTeX
+*.aux
+*.log
+*.pdf
+*.spl
