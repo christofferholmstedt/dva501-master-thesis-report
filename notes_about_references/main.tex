@@ -1,6 +1,10 @@
 % Standard template book
 \documentclass[11pt, a4paper, oneside]{book}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Better looking urls
 \usepackage[hyphens]{url}
 
@@ -41,31 +45,43 @@
 % table of content.
 \usepackage{bookmark}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document start and frontmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-% Frontmatter
 \frontmatter
 
 % Title
 \title{Notes about references}
-%
+
 % Author
 \author{Christoffer Holmstedt}
-%         \ead{christoffer.holmstedt@gmail.com}
-%         \address{M\"{a}lardalen University, V\"{a}ster{\aa}s, Sweden \\\today}
+% \ead{christoffer.holmstedt@gmail.com}
+% \address{M\"{a}lardalen University, V\"{a}ster{\aa}s, Sweden \\\today}
 
 \maketitle
-%
-%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \cleardoublepage
 \pdfbookmark{Abstract}{Abstract}
 \input{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acknowledgement
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
 \pdfbookmark{Acknowledgement}{Acknowledgement}
 \input{acknowledgement}
 
-% Table of Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of Content, List of Figures/Tables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \cleardoublepage
 \pdfbookmark{\contentsname}{Contents}
 \tableofcontents
@@ -74,22 +90,28 @@
 \addcontentsline{toc}{chapter}{\listfigurename}
 \listoftables
 \addcontentsline{toc}{chapter}{\listtablename}
-%
 
-% The report
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mainmatter - The Report
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \mainmatter
 \pagestyle{footerPageNumberMiddle}
 \input{introduction}
 \input{method}
+\input{result}
 \input{conclusion}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \bibliographystyle{plain}
 \bibliography{../references}  % references.bib is the file with all references. 
 \addcontentsline{toc}{chapter}{\bibname}
 
 \appendix
-\input{introduction}
-\input{introduction}
+\input{appendixA}
+\input{appendixB}
 
 \end{document}
