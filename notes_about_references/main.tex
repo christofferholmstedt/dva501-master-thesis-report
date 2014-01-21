@@ -21,6 +21,26 @@
 \usepackage[pagestyles]{titlesec}
 \newpagestyle{footerPageNumberMiddle}{\setfoot[\thepage][][]{}{\thepage}{}}
 
+% Adding \figure support
+\usepackage{graphicx}
+
+% Caption support in figures
+% with sub-figures
+\usepackage[hypcap=true]{caption}
+\usepackage[hypcap=true,list=true,listformat=simple]{subcaption}
+
+% Add links within the PDF
+% All links are turned into booksmarks as well
+\usepackage[bookmarks, hidelinks]{hyperref}
+
+% Make sure hyperlinks to figures link to top of image
+% and not to the caption.
+\usepackage[all]{hypcap}
+
+% Make it possible to add bookmarks without entries in the
+% table of content.
+\usepackage{bookmark}
+
 \begin{document}
 % Frontmatter
 \frontmatter
@@ -37,8 +57,17 @@
 %
 %
 % Abstract
+\cleardoublepage
+\pdfbookmark{Abstract}{Abstract}
 \input{abstract}
+
+\cleardoublepage
+\pdfbookmark{Acknowledgement}{Acknowledgement}
 \input{acknowledgement}
+
+% Table of Content
+\cleardoublepage
+\pdfbookmark{\contentsname}{Contents}
 \tableofcontents
 
 \listoffigures
