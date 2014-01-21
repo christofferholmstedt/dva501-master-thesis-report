@@ -1,0 +1,418 @@
+% The first four references in this document are example references
+% that the template use.
+% If you need a to add a reference copy the correct type from below and fill
+% in all fields properly. You can use other types as well but remember
+% to add all required fields for that type if you do.
+%
+% http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#Standard_templates
+
+% Remember to search for the reference you need first in this document.
+% Someone else may have added it already, then use the same reference.
+
+% The reference id should be first listed author in a paper and the year.
+% As an example if "John Doe" wrote a paper back in 1999 the reference
+% should be referred to as "doe1999".
+
+% Website references should start with the "web:" prefix.
+
+% Misc
+% Put the same in "key" as you use in "title".
+@misc{web:website,
+    title = {Website},
+    key = {Website},
+    urldate = {2013-10-15},
+    note = {This is a note to the web:website reference.},
+    url = {\url{http://www.example.com}},
+    howpublished = {\url{http://www.example.com}},
+}
+
+% Article
+% Required fields: author, title, journal, year.
+% Optional fields: volume, number, pages, month, note.
+@article{article:article,
+    author    = {surname, firstname and surname, firstname},
+    title     = {Tile of the article:article reference},
+    journal   = {Journal},
+    volume   = {Volume},
+    pages    = {Pages},
+    year      = {year},
+    month    = {month},
+    note     = {Note of the article:article reference},
+}
+
+% Unpublished
+% Required fields: author, title, note.
+% Optional fields: month, year.
+@unpublished{unpublished:unpublished,
+    author = {surname, firstname and surname, firstname},
+    title = {Title of the unpublished:unpublished reference.},
+    note = {This is a note of the unpublished:unpublished reference.},
+    url = {\url{http://www.example.com}},
+    year = {2013},
+}
+
+% Book
+% Required fields: author/editor, title, publisher, year.
+% Optional fields: volume/number, series, address, edition, month, note.
+@book{book:book,
+    author    = {surname, firstname},
+    title     = {Title of book:book reference},
+    publisher = {Publisher},
+    volume   = {Volume},
+    series   = {Series},
+    address  = {Address},
+    edition  = {Edition},
+    year      = {2013},
+    month    = {Month},
+    note     = {Note},
+}
+
+%%%%%%%
+% Space plug and play Avionics
+%%%%%%%
+
+@misc{spa:logical_interface,
+    title = {Space Plug-and-Play Architecture: Logical Interface (AIAA S-133-3-2013e)},
+    key = {Space Plug-and-Play Architecture: Logical Interface (AIAA S-133-3-2013e)},
+    urldate = {2013-12-02},
+    note = {AIAA Standard.},
+    url = {\url{http://arc.aiaa.org/doi/book/10.2514/4.102318}},
+    howpublished = {\url{http://arc.aiaa.org/doi/book/10.2514/4.102318}},
+}
+
+@misc{spa:networking,
+    title = {Space Plug-and-Play Architecture: Networking (AIAA S-133-2-2013e)},
+    key = {Space Plug-and-Play Architecture: Networking (AIAA S-133-2-2013e)},
+    urldate = {2013-12-02},
+    note = {AIAA Standard.},
+    url = {\url{http://arc.aiaa.org/doi/book/10.2514/4.102301}},
+    howpublished = {\url{http://arc.aiaa.org/doi/book/10.2514/4.102301}},
+}
+
+@misc{spa:spacewire,
+    title = {Space Plug-and-Play Architecture: Spacewire Subnet Adaptation (AIAA S-133-9-2013e)},
+    key = {Space Plug-and-Play Architecture: Spacewire Subnet Adaptation (AIAA S-133-9-2013e)},
+    urldate = {2013-12-02},
+    note = {AIAA Standard.},
+    url = {\url{http://arc.aiaa.org/doi/book/10.2514/4.102370}},
+    howpublished = {\url{http://arc.aiaa.org/doi/book/10.2514/4.102370}},
+}
+
+@misc{web:vnp,
+    title = {Virtual Network Protocol},
+    key = "Virtual Network Protocol",
+    urldate = "2013-12-02",
+    note = "Accessed 2013-12-02.",
+    url = {\url{http://virtual-network.github.io/vn-sdm/}},
+    howpublished = {\url{http://virtual-network.github.io/vn-sdm/}},
+}
+
+
+%%%%%%%
+% IETF RFC (Request for comments)
+%%%%%%%
+@misc{web:rfc791,
+    title = {RFC 791, Internet Protocol},
+    key = {RFC 0791, Internet Protocol},
+    urldate = {2013-12-04},
+    note = {Accessed 2013-12-04},
+    url = {\url{http://datatracker.ietf.org/doc/rfc791/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc791/}},
+}
+
+@misc{web:rfc1631,
+    title = {RFC 1631, The IP Network Address Translator (NAT)},
+    key = {RFC 1631, The IP Network Address Translator (NAT)},
+    urldate = {2013-12-04},
+    note = {Accessed 2013-12-04},
+    url = {\url{http://datatracker.ietf.org/doc/rfc1631/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc1631/}},
+}
+
+@misc{web:rfc1883,
+    title = {RFC 1883, Internet Protocol, Version 6 (IPv6) Specification},
+    key = {RFC 1883, Internet Protocol, Version 6 (IPv6) Specification},
+    urldate = {2013-12-05},
+    note = {Accessed 2013-12-05},
+    url = {\url{http://datatracker.ietf.org/doc/rfc1883/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc1883/}},
+}
+
+@misc{web:rfc1918,
+    title = {RFC 1918 (BCP 5), Address Allocation for Private Internets},
+    key = {RFC 1918 (BCP 5), Address Allocation for Private Internets},
+    urldate = {2013-12-04},
+    note = {Accessed 2013-12-04},
+    url = {\url{http://datatracker.ietf.org/doc/rfc1918/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc1918/}},
+}
+
+@misc{web:rfc2131,
+    title = {RFC 2131, Dynamic Host Configuration Protocol},
+    key = {RFC 2131, Dynamic Host Configuration Protocol},
+    urldate = {2013-12-04},
+    note = {Accessed 2013-12-04},
+    url = {\url{http://datatracker.ietf.org/doc/rfc2131/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc2131/}},
+}
+
+@misc{web:rfc2132,
+    title = {RFC 2132, DHCP Options and BOOTP Vendor Extensions},
+    key = {RFC 2132, DHCP Options and BOOTP Vendor Extensions},
+    urldate = {2013-12-04},
+    note = {Accessed 2013-12-04},
+    url = {\url{http://datatracker.ietf.org/doc/rfc2132/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc2132/}},
+}
+
+@misc{web:rfc2460,
+    title = {RFC 2460, Internet Protocol, Version 6 (IPv6) Specification},
+    key= {RFC 2460, Internet Protocol, Version 6 (IPv6) Specification},
+    urldate = {2013-12-05},
+    note = {Accessed 2013-12-05},
+    url = {\url{http://datatracker.ietf.org/doc/rfc2460/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc2460/}},
+}
+
+@misc{web:rfc3022,
+    title = {RFC 3022, Traditional IP Network Address Translator (Traditional NAT)},
+    key = {RFC 3022, Traditional IP Network Address Translator (Traditional NAT)},
+    urldate = {2013-12-04},
+    note = {Accessed 2013-12-04},
+    url = {\url{http://datatracker.ietf.org/doc/rfc3022/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc3022/}},
+}
+
+@misc{web:rfc3315,
+    title = {RFC 3315, Dynamic Host Configuration Protocol for IPv6 (DHCPv6)},
+    key = {RFC 3315, Dynamic Host Configuration Protocol for IPv6 (DHCPv6)},
+    urldate = {2013-12-05},
+    note = {Accessed 2013-12-05},
+    url = {\url{http://datatracker.ietf.org/doc/rfc3315/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc3315/}},
+}
+
+@misc{web:rfc3633,
+    title = {RFC 3633, IPv6 Prefix Options for Dynamic Host Configuration
+        Protocol (DHCP) version 6},
+    key = {RFC 3633, IPv6 Prefix Options for Dynamic Host Configuration
+        Protocol (DHCP) version 6},
+    urldate = {2013-12-06},
+    note = {Accessed 2013-12-06},
+    url = {\url{http://datatracker.ietf.org/doc/rfc3633/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc3633/}},
+}
+
+@misc{web:rfc4122,
+    title = {RFC 4122, A Universally Unique IDentifier (UUID) URN Namespace},
+    key = {RFC 4122, A Universally Unique IDentifier (UUID) URN Namespace},
+    urldate = {2013-12-03},
+    note = {Accessed 2013-12-03},
+    url = {\url{http://datatracker.ietf.org/doc/rfc4122/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc4122/}},
+}
+
+@misc{web:rfc4291,
+    title = {RFC 4291, IP Version 6 Addressing Architecture},
+    key = {RFC 4291, IP Version 6 Addressing Architecture},
+    urldate = {2013-12-05},
+    note = {Accessed 2013-12-05},
+    url = {\url{http://datatracker.ietf.org/doc/rfc4291/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc4291/}},
+}
+
+@misc{web:rfc4361,
+    title = {RFC 4361, Node-specific Client Identifiers for Dynamic Host
+    Configuration Protocol Version Four (DHCPv4)},
+    key = {RFC 4361, Node-specific Client Identifiers for Dynamic Host
+    Configuration Protocol Version Four (DHCPv4)},
+    urldate = {2013-12-04},
+    note = {Accessed 2013-12-04},
+    url = {\url{http://datatracker.ietf.org/doc/rfc4361/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc4361/}},
+}
+
+@misc{web:rfc4862,
+    title = {RFC 4862, IPv6 Stateless Address Autoconfiguration},
+    key = {RFC 4862, IPv6 Stateless Address Autoconfiguration},
+    urldate = {2013-12-05},
+    note = {Accessed 2013-12-05},
+    url = {\url{http://datatracker.ietf.org/doc/rfc4862/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc4862/}},
+}
+
+@misc{web:rfc4941,
+    title = {RFC 4941, Privacy Extensions for Stateless Address
+        Autoconfiguration in IPv6},
+    key = {RFC 4941, Privacy Extensions for Stateless Address
+        Autoconfiguration in IPv6},
+    urldate = {2013-12-05},
+    note = {Accessed 2013-12-05},
+    url = {\url{http://datatracker.ietf.org/doc/rfc4941/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc4941/}},
+}
+
+@misc{web:rfc5952,
+    title = {RFC 5952, A Recommendation for IPv6 Address Text Representation},
+    key = {RFC 5952, A Recommendation for IPv6 Address Text Representation},
+    urldate = {2013-12-05},
+    note = {Accessed 2013-12-05},
+    url = {\url{http://datatracker.ietf.org/doc/rfc5952/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc5952/}},
+}
+
+@misc{web:rfc6540,
+    title = {RFC 6540, IPv6 Support Required for All IP-Capable Nodes},
+    key = {RFC 6540, IPv6 Support Required for All IP-Capable Nodes},
+    urldate = {2013-12-06},
+    note = {Accessed 2013-12-06},
+    url = {\url{http://datatracker.ietf.org/doc/rfc6540/}},
+    howpublished = {\url{http://datatracker.ietf.org/doc/rfc6540/}},
+}
+
+@misc{web:ietf_charter_6lowpan,
+    title = {6LoWPAN Working Group Charter},
+    key = {6LoWPAN Working Group Charter},
+    urldate = {2013-12-06},
+    note = {Accessed 2013-12-06},
+    url = {\url{http://datatracker.ietf.org/wg/6lowpan/charter/}},
+    howpublished = {\url{http://datatracker.ietf.org/wg/6lowpan/charter/}},
+}
+
+@misc{web:ietf_charter_roll,
+    title = {ROLL Working Group Charter},
+    key = {ROLL Working Group Charter},
+    urldate = {2013-12-06},
+    note = {Accessed 2013-12-06},
+    url = {\url{http://datatracker.ietf.org/wg/roll/charter/}},
+    howpublished = {\url{http://datatracker.ietf.org/wg/roll/charter/}},
+}
+
+%%%%%%%
+% Development and Operations
+%%%%%%%
+@misc{web:debian_ada_policy,
+    title = {Debian policy for Ada},
+    key = {Debian policy for Ada},
+    urldate = {2014-01-08},
+    note = {Accessed 2014-01-08},
+    url = {\url{http://people.debian.org/~lbrenta/debian-ada-policy.html}},
+    howpublished = {\url{http://people.debian.org/~lbrenta/debian-ada-policy.html}},
+}
+
+@misc{web:avr-ada,
+    title = {AVR-Ada compiler at Sourceforge},
+    key = {AVR-Ada compiler at Sourceforge},
+    urldate = {2014-01-08},
+    note = {Accessed 2014-01-08},
+    url = {\url{http://sourceforge.net/projects/avr-ada/}},
+    howpublished = {\url{http://sourceforge.net/projects/avr-ada/}},
+}
+
+@misc{web:git-flow,
+    title = {Git-flow workflow},
+    key = {Git-flow workflow},
+    urldate = {2014-01-08},
+    note = {Accessed 2014-01-08},
+    url = {\url{http://nvie.com/posts/a-successful-git-branching-model/}},
+    howpublished = {\url{http://nvie.com/posts/a-successful-git-branching-model/}},
+}
+
+@misc{web:comp.lang.ada,
+    title = {Newsgroup comp.lang.ada},
+    key = {Newsgroup comp.lang.ada},
+    urldate = {2014-01-08},
+    note = {Accessed 2014-01-08},
+    url = {\url{https://groups.google.com/forum/#!forum/comp.lang.ada}},
+    howpublished = {\url{https://groups.google.com/forum/#!forum/comp.lang.ada}},
+}
+
+@misc{web:avr-ada-devel,
+    title = {AVR-Ada Devel Mailinglist},
+    key = {AVR-Ada Devel Mailinglist},
+    urldate = {2014-01-08},
+    note = {Accessed 2014-01-08},
+    url = {\url{https://lists.sourceforge.net/lists/listinfo/avr-ada-devel}},
+    howpublished = {\url{https://lists.sourceforge.net/lists/listinfo/avr-ada-devel}},
+}
+
+@misc{web:debian-ada-devel,
+    title = {Debian Ada Devel Mailinglist},
+    key = {Debian Ada Devel Mailinglist},
+    urldate = {2014-01-08},
+    note = {Accessed 2014-01-08},
+    url = {\url{https://lists.debian.org/debian-ada/}},
+    howpublished = {\url{https://lists.debian.org/debian-ada/}},
+}
+
+@misc{web:gerrit,
+    title = {Gerrit Code Review},
+    key = {Gerrit Code Review},
+    urldate = {2014-01-10},
+    note = {Accessed 2014-01-10},
+    url = {\url{http://code.google.com/p/gerrit/}},
+    howpublished = {\url{http://code.google.com/p/gerrit/}},
+}
+
+@misc{web:wikibooks-ada-style-guide,
+    title = {Ada Quality and Style Guide},
+    key = {Ada Quality and Style Guide},
+    urldate = {2014-01-10},
+    note = {Accessed 2014-01-10},
+    url = {\url{https://en.wikibooks.org/wiki/Ada_Style_Guide}},
+    howpublished = {\url{https://en.wikibooks.org/wiki/Ada_Style_Guide}},
+}
+
+@misc{web:jenkins,
+    title = {Jenkins CI},
+    key = {Jenkins CI},
+    urldate = {2014-01-10},
+    note = {Accessed 2014-01-10},
+    url = {\url{http://jenkins-ci.org/}},
+    howpublished = {\url{http://jenkins-ci.org/}},
+}
+
+@misc{web:vagrant,
+    title = {Vagrant},
+    key = {Vagrant},
+    urldate = {2014-01-10},
+    note = {Accessed 2014-01-10},
+    url = {\url{http://www.vagrantup.com/}},
+    howpublished = {\url{http://www.vagrantup.com/}},
+}
+
+@misc{web:ada-high-integrity,
+    title = {Guide for the use of the Ada programming language in high integrity systems},
+    key = {Guide for the use of the Ada programming language in high integrity systems},
+    urldate = {2014-01-10},
+    note = {Accessed 2014-01-10},
+    url = {\url{http://standards.iso.org/ittf/PubliclyAvailableStandards/c029575_ISO_IEC_TR_15942_2000%28E%29.zip}},
+    howpublished = {\url{http://standards.iso.org/ittf/PubliclyAvailableStandards/c029575_ISO_IEC_TR_15942_2000%28E%29.zip}},
+}
+
+@misc{web:ada-ravenscar-high-integrity,
+    title = {Guide for the use of the Ada Ravenscar Profile in high integrity systems},
+    key = {Guide for the use of the Ada Ravenscar Profile in high integrity systems},
+    urldate = {2014-01-10},
+    note = {Accessed 2014-01-10},
+    url = {\url{http://standards.iso.org/ittf/PubliclyAvailableStandards/c038828_ISO_IEC_TR_24718_2005%28E%29.zip}},
+    howpublished = {\url{http://standards.iso.org/ittf/PubliclyAvailableStandards/c038828_ISO_IEC_TR_24718_2005%28E%29.zip}},
+}
+
+@misc{web:ada-oop-high-integrity,
+    title = {High-Integrity Object-Oriented Programming in Ada},
+    key = {High-Integrity Object-Oriented Programming in Ada},
+    urldate = {2014-01-10},
+    note = {Accessed 2014-01-10},
+    url = {\url{http://www.adacore.com/knowledge/technical-papers/high-integrity-oop-in-ada/}},
+    howpublished = {\url{http://www.adacore.com/knowledge/technical-papers/high-integrity-oop-in-ada/}},
+}
+
+@misc{web:ada-rationale-2012,
+    title = {Ada 2012 Rationale},
+    key = {Ada 2012 Rationale},
+    urldate = {2014-01-10},
+    note = {Accessed 2014-01-10},
+    url = {\url{http://www.adacore.com/knowledge/technical-papers/ada-2012-rationale/}},
+    howpublished = {\url{http://www.adacore.com/knowledge/technical-papers/ada-2012-rationale/}},
+}

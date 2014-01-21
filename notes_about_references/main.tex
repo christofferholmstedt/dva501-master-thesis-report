@@ -1,6 +1,9 @@
 % Standard template book
 \documentclass[11pt, a4paper, oneside]{book}
 
+% Better looking urls
+\usepackage[hyphens]{url}
+
 % During testing to se all the margins
 % \usepackage[showframe]{geometry}
 % Package parskip is supposed to fix whitespaces in list
@@ -19,10 +22,9 @@
 \newpagestyle{footerPageNumberMiddle}{\setfoot[\thepage][][]{}{\thepage}{}}
 
 \begin{document}
-
 % Frontmatter
 \frontmatter
-%
+
 % Title
 \title{Notes about references}
 %
@@ -30,6 +32,9 @@
 \author{Christoffer Holmstedt}
 %         \ead{christoffer.holmstedt@gmail.com}
 %         \address{M\"{a}lardalen University, V\"{a}ster{\aa}s, Sweden \\\today}
+
+\maketitle
+%
 %
 % Abstract
 \input{abstract}
@@ -48,5 +53,14 @@
 \input{introduction}
 \input{method}
 \input{conclusion}
+
+% Appendix
+\bibliographystyle{plain}
+\bibliography{../references}  % references.bib is the file with all references. 
+\addcontentsline{toc}{chapter}{\bibname}
+
+\appendix
+\input{introduction}
+\input{introduction}
 
 \end{document}
