@@ -12,3 +12,7 @@ clean:
 	rm -rf *.log
 	rm -rf *.spl
 	rm -rf *.pdf
+	rm -rf *.lof
+	rm -rf *.lot
+	rm -rf *.out
+	rm -rf *.toc
