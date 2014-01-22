@@ -1,0 +1,147 @@
+% Standard template book
+\documentclass[11pt, a4paper, oneside]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Better looking urls
+\usepackage[hyphens]{url}
+
+% During testing to se all the margins
+% \usepackage[showframe]{geometry}
+% Package parskip is supposed to fix whitespaces in list
+% and other environments when you alter the \parskip setting.
+% https://en.wikibooks.org/wiki/LaTeX/Paragraph_Formatting
+\usepackage{parskip}
+
+% Remove indentation of first line in each paragraph
+\setlength{\parindent}{0cm} % Default is 15pt.
+
+% Add whitespace between paragraphs
+\setlength{\parskip}{3mm plus4mm minus3mm}
+
+% Alter headers and footers
+\usepackage[pagestyles]{titlesec}
+\newpagestyle{footerPageNumberMiddle}{\setfoot[\thepage][][]{}{\thepage}{}}
+
+% Adding \figure support
+\usepackage{graphicx}
+
+% Source code support
+\usepackage{listings}
+
+% Math support
+\usepackage{amsmath} % Math
+\usepackage{amsthm} % Theorems and proofs
+
+% Theorems details
+% http://www.sharelatex.com/learn/Theorems_and_proofs
+\theoremstyle{definition}
+\newtheorem{defi}{Definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+
+% Change whitespace above theorems
+\makeatletter
+\def\thm@space@setup{%
+    \thm@preskip=10pt \thm@postskip=0pt
+}
+\makeatother
+
+% Add support for list of abbreviations
+\usepackage{nomencl}
+\makenomenclature
+\setlength\nomlabelwidth{2cm} % Change this value to align the list of abbrev.
+
+% Caption support in figures
+% with sub-figures
+\usepackage[hypcap=true]{caption}
+\usepackage[hypcap=true,list=true,listformat=simple]{subcaption}
+
+% Add links within the PDF
+% All links are turned into booksmarks as well
+\usepackage[bookmarks, hidelinks]{hyperref}
+
+% Make sure hyperlinks to figures link to top of image
+% and not to the caption.
+\usepackage[all]{hypcap}
+
+% Make it possible to add bookmarks without entries in the
+% table of content.
+\usepackage{bookmark}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document start and frontmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\frontmatter
+
+% Title
+\title{Master thesis - Notes about references}
+
+% Author
+\author{Christoffer Holmstedt}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\pdfbookmark{Abstract}{Abstract}
+\input{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acknowledgement
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\pdfbookmark{Acknowledgement}{Acknowledgement}
+\input{acknowledgement}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of Content, List of Figures/Tables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\pdfbookmark{\contentsname}{Contents}
+\tableofcontents
+
+\listoffigures
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoftables
+\addcontentsline{toc}{chapter}{\listtablename}
+
+% List of Abbrevations
+% To align the columns change the value further up in this file next
+% to loading the nomencl package.
+\renewcommand{\nomname}{List of Abbreviations}
+\cleardoublepage%
+\printnomenclature
+\addcontentsline{toc}{chapter}{\nomname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mainmatter - The Report
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter
+\pagestyle{footerPageNumberMiddle}
+\input{ada_references}
+\input{spa}
+\input{high_integrity}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{plain}
+\bibliography{../references}  % references.bib is the file with all references. 
+\addcontentsline{toc}{chapter}{\bibname}
+
+\appendix
+% \input{latex_examples}
+
+\end{document}
