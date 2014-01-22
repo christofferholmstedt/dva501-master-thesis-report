@@ -12,3 +12,6 @@
 *.lot
 *.toc
 *.out
+*.ilg
+*.nlo
+*.nls
