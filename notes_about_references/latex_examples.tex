@@ -1,11 +1,157 @@
 \chapter{LaTeX examples}
 
+% Example from
+% http://www.sharelatex.com/learn/Theorems_and_proofs
+\section{Theorem and proofs}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+\begin{defi}
+    Let $H$ be a subgroup of a group~$G$.  A \emph{left coset}
+    of $H$ in $G$ is a subset of $G$ that is of the form $xH$,
+    where $x \in G$ and $xH = \{ xh : h \in H \}$.
+\end{defi}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+\begin{theorem}
+    This is a theorem content. Theorem numbering is dependent from section numbering.
+\end{theorem}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+\begin{lemma}
+    This is a lemma content. Lemma numbering is connected with theorem numbering.
+\end{lemma}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+\begin{theorem}
+    This is a new theorem content
+\end{theorem}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+\begin{theorem}[Very important theorem]
+    Theorem content, once again
+\end{theorem}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec ligula vel
+ante placerat dapibus. Vestibulum non sollicitudin tellus. Sed varius
+vestibulum libero, in euismod purus dapibus sed. Pellentesque malesuada, urna
+nec lobortis egestas, felis elit varius ante, in tincidunt nunc metus id diam.
+Morbi sagittis velit at ipsum sodales, in tempor nulla volutpat. Integer a
+neque eros.
+
+% Example from
+% http://www.sharelatex.com/learn/Theorems_and_proofs
+\begin{proof}
+    Let $H = \{ h_1, h_2,\ldots, h_m\}$, where
+    $h_1, h_2,\ldots, h_m$ are distinct, and let $x$ be an
+    element of $G$.  Then the left coset $xH$ consists of
+    the elements $x h_j$ for $j = 1,2,\ldots,m$.
+    Suppose that $j$ and $k$ are integers between
+    $1$ and $m$ for which $x h_j = x h_k$.  Then
+    $h_j = x^{-1} (x h_j) = x^{-1} (x h_k) = h_k$,
+    and thus $j = k$, since $h_1, h_2,\ldots, h_m$
+    are distinct.  It follows that the elements
+    $x h_1, x h_2,\ldots, x h_m$ are distinct.
+    We conclude that the subgroup~$H$ and the left
+    coset $xH$ both have $m$ elements,
+    as required.
+\end{proof}
+
+\section{Lists}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec ligula vel
+ante placerat dapibus. Vestibulum non sollicitudin tellus. Sed varius
+vestibulum libero, in euismod purus dapibus sed. Pellentesque malesuada, urna
+nec lobortis egestas, felis elit varius ante, in tincidunt nunc metus id diam.
+Morbi sagittis velit at ipsum sodales, in tempor nulla volutpat. Integer a
+neque eros.
+
+\begin{enumerate}
+    \item Item one.
+    \item Item two.
+    \item Item three.
+\end{enumerate}
+
+\begin{itemize}
+    \item Item one.
+    \item Item two.
+    \item Item three.
+\end{itemize}
+
+% Example from http://www-users.york.ac.uk/~pjh503/LaTeX/lists.html
+\begin{description}
+    \item[Microphone] A millionth of a telephone
+    \item[Megaphone] 10$^{12}$ microphones
+\end{description}
+
+In ipsum erat, pellentesque at dapibus eget, pretium sed risus.
+Vivamus quis metus vitae felis tempus vulputate eget id lacus. Aenean sit amet
+gravida quam, et ornare erat. Praesent ullamcorper mattis dolor, non interdum
+orci aliquam a. In tincidunt semper lectus. Duis quis mi ac felis vehicula
+mollis. Fusce molestie arcu urna, a tempor turpis mattis nec. Aenean in massa a
+risus euismod aliquet vel non libero.
+
+% For more information about equations see
+% https://en.wikibooks.org/wiki/LaTeX/Mathematics
+\section{Math}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec ligula vel
+ante placerat dapibus. Vestibulum non sollicitudin tellus. Sed varius
+vestibulum libero, in euismod purus dapibus sed. Pellentesque malesuada, urna
+nec lobortis egestas, felis elit varius ante, in tincidunt nunc metus id diam.
+Morbi sagittis velit at ipsum sodales, in tempor nulla volutpat. Integer a
+neque eros.
+\begin{equation}
+f(n) = n^5 + 4n^2 + 2 |_{n=17}
+\label{eq:equation1}
+\end{equation}
+
+In ipsum erat, pellentesque at dapibus eget, pretium sed risus.
+Vivamus quis metus vitae felis tempus vulputate eget id lacus. Aenean sit amet
+gravida quam, et ornare erat. Praesent ullamcorper mattis dolor, non interdum
+orci aliquam a. In tincidunt semper lectus. Duis quis mi ac felis vehicula
+mollis. Fusce molestie arcu urna, a tempor turpis mattis nec. Aenean in massa a
+risus euismod aliquet vel non libero. Equation \ref{eq:equation1} shows...
+
+% For more information about source code see
+% https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+% ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/listings/listings.pdf
+\section{Ada Source Code}
+\lstset{language=[2005]Ada}
+\begin{lstlisting}[frame=single]
+with Text_IO; use Text_IO;
+
+procedure Hello is
+
+   task Hello_Task;
+
+   task body Hello_Task is
+   begin
+     Put_Line ("Hello World Test");
+     New_Line;
+     Put_Line ("Welcome to the World of Lady Ada");
+
+     New_Line;
+     Put_Line ("Initiating 2.5 second delay");
+     delay 2.5;
+     Put_Line ("Delay Complete");
+
+     Put_Line ("Hello World Test");
+   end Hello_Task;
+
+begin
+   NULL;
+end Hello;
+\end{lstlisting}
+
+
 \section{Example of abbrevations}
 This is a short example of abbreviations are added to the list of abbrevations.
 The term Fig.\nomenclature{Fig.}{Figure} is now in the List of abbrevations.
 The term Img.\nomenclature{Img.}{Image} is now in the List of abbrevations.
 The term Tab.\nomenclature{Tab.}{Table} is now in the List of abbrevations.
-The term Long Name.\nomenclature{Long Name Long Name}{This is an example of a long
+The term "Abbrevation"\nomenclature{\textbf{Abbrev.}}{\textbf{Abbrevation}. This is an example of a long
 abbrevation that has an even longer description that will hopefully span at
 least two rows.} is now in the List of abbrevations.
 

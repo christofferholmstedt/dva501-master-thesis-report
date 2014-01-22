@@ -28,6 +28,27 @@
 % Adding \figure support
 \usepackage{graphicx}
 
+% Source code support
+\usepackage{listings}
+
+% Math support
+\usepackage{amsmath} % Math
+\usepackage{amsthm} % Theorems and proofs
+
+% Theorems details
+% http://www.sharelatex.com/learn/Theorems_and_proofs
+\theoremstyle{definition}
+\newtheorem{defi}{Definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+
+% Change whitespace above theorems
+\makeatletter
+\def\thm@space@setup{%
+    \thm@preskip=10pt \thm@postskip=0pt
+}
+\makeatother
+
 % Add support for list of abbreviations
 \usepackage{nomencl}
 \makenomenclature
