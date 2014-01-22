@@ -8,3 +8,10 @@
 *.spl
 *.bbl
 *.blg
+*.lof
+*.lot
+*.toc
+*.out
+*.ilg
+*.nlo
+*.nls
