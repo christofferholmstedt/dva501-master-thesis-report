@@ -28,6 +28,11 @@
 % Adding \figure support
 \usepackage{graphicx}
 
+% Add support for list of abbreviations
+\usepackage{nomencl}
+\makenomenclature
+\setlength\nomlabelwidth{2cm} % Change this value to align the list of abbrev.
+
 % Caption support in figures
 % with sub-figures
 \usepackage[hypcap=true]{caption}
@@ -88,6 +93,14 @@
 \addcontentsline{toc}{chapter}{\listfigurename}
 \listoftables
 \addcontentsline{toc}{chapter}{\listtablename}
+
+% List of Abbrevations
+% To align the columns change the value further up in this file next
+% to loading the nomencl package.
+\renewcommand{\nomname}{List of Abbreviations}
+\cleardoublepage%
+\printnomenclature
+\addcontentsline{toc}{chapter}{\nomname}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Mainmatter - The Report
