@@ -1,8 +1,8 @@
 \chapter{Ada Programming Language}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% New reference
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ada Programming in High Integrity systems guide
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Guide for the use of the Ada programming language in high integrity
 systems}
 
@@ -53,7 +53,7 @@ field.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% New reference
+% Ada Ravenscar Profile Guide
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Guide for the use of the Ada Ravenscar Profile in high integrity
 systems}
@@ -112,6 +112,40 @@ abbrevations and terms in the end.
     \item Page 64, Activation\_Manager example looks interesting.
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% High-Integrity OOP in Ada by AdaCore
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{High-Integrity Object-Oriented Programming in Ada}
+
+Good resource about Ada OOP from 2013, up to date with Ada 2012.
+
+\begin{description}
+    \item[Label:] web:ada-oop-high-integrity \cite{web:ada-oop-high-integrity}
+    \item[Year:] 2013
+    \item[Abbrevations and terms:] None.
+%        CSP,\nomenclature{\textbf{CSP}}{\textbf{Communicating Sequential
+%        Process} A notation for specifying and analyzing concurrent systems.}
+\end{description}
+
+
+\begin{itemize}
+    \item Page 1, good reasoning about why someone should do OOP at all.
+    \item Page 21, mentions on how to test dispatching calls and other oop
+        features by following "Local Type Consistency Verification" methods.
+    \item Page 23, coding guiding lines: always use "overriding" and never use
+        "not overriding". Compile with -gnatwe.
+    \item Page 26, mentions "The object-oriented technology in avation
+        handbook". Maybe something to read up on, perhaps something similiar
+        for space?
+    \item Page 26, mentions "The object-oriented technology in avation
+        handbook".
+    \item Page 27-28, good short discussion about dynamic memory allocation.
+    \item Page 30-32, section 5.2, good discussion on coupling issues.
+    \item Page 32, controlled types requires extensive run-time support.
+    \item Page 44, section 7.4, Object-Oriented support in GNAT Pro
+        High-Integrity Profiles. Really good summary to look into if we want to
+        create support for specific archictecture.
+\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % New reference
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
