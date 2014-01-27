@@ -13,15 +13,17 @@ field.
 \begin{description}
     \item[Label:] web:ada-high-integrity \cite{web:ada-high-integrity}
     \item[Year:] 2000
+    \item[Abbrevations and terms:]
+        ASIS,\nomenclature{\textbf{ASIS}}{\textbf{Ada Semantic Interface
+            Specification} provides a standard mechanism for obtaining
+            information about an Ada program or its components. ASIS is an ISO
+            standard.}
+        ACVC,\nomenclature{\textbf{ACVC}}{\textbf{Ada Compiler Validation
+            Capability} is a set of test which excercises the compiler, linker
+            and the run-time system together.}
+        COTS,\nomenclature{\textbf{COTS}}{\textbf{Commercial Off The Shelf}}
 \end{description}
 
-ASIS,\nomenclature{\textbf{ASIS}}{\textbf{Ada Semantic
-        Interface Specification} provides a standard mechanism for obtaining information
-    about an Ada program or its components. ASIS is an ISO standard.}
-ACVC,\nomenclature{\textbf{ACVC}}{\textbf{Ada Compiler Validation Capability}
-is a set of test which excercises the compiler, linker and the run-time system
-together.}
-COTS,\nomenclature{\textbf{COTS}}{\textbf{Commercial Off The Shelf}}
 
 \begin{itemize}
     \item Page 3, good list/definition of what "Traceability" is.
@@ -53,6 +55,66 @@ COTS,\nomenclature{\textbf{COTS}}{\textbf{Commercial Off The Shelf}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % New reference
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Guide for the use of the Ada Ravenscar Profile in high integrity
+systems}
+
+This is a good resource. Make sure to double-check if any information is
+available and specific to multi-core environments. Has a good list of
+abbrevations and terms in the end.
+
+\begin{description}
+    \item[Label:] web:ada-ravenscar-high-integrity \cite{web:ada-ravenscar-high-integrity}
+    \item[Year:] 2005
+    \item[Abbrevations and terms:]
+        CSP,\nomenclature{\textbf{CSP}}{\textbf{Communicating Sequential
+        Process} A notation for specifying and analyzing concurrent systems.}
+        CSS,\nomenclature{\textbf{CSS}}{\textbf{Calculus of Communicating
+            Sytems} An algebra for specifying and reasonging about concurrrent
+        systems.}
+\end{description}
+
+
+\begin{itemize}
+    \item Page iv, Mentions information flow-analysis, schedulability analysis,
+        execution-order analysis and model-checking as valuable verification
+        methods.
+    \item Page 1, 5th paragraph answer the question "Why Ravenscar?".
+    \item Page 1, clearly states that Ravenscar has nothing to do with the
+        sequential parts of the code.
+    \item Page 5-6, section 2.2, Mapping "Ada to the Scheduling Model" is
+        interesting. Answers why no task hierarchy is allowed.
+    \item Page 7, Ravenscar is mostly about schedulability analysis.
+    \item Page 22, add Partition\_Elaboration\_Policy(Sequential) to let
+        elaboration finish first in a concurrent program.
+    \item Page 26, section 5.5, definition on when protected entries, protected
+        procedures and protected functions should be used.
+    \item Page 27, section 5.7, some information about suspension objects and
+        event triggered systems.
+    \item Page 34, section 5.12, dynamic creationand termination of task can be
+        simulated.
+    \item Page 37, section 6.2, the purpose of static analysis of concurrent
+        code.
+    \item Page 38, assumption in last paragraph. Analysis techniques must
+        support access to volatile data. This is necessary/valid for program
+        wide information flow analysis.
+    \item Page 40, Pragma\_Elaboration\_Policy(Sequential). Mentions the
+        reasoning behind this pragrma.
+    \item Page 41, all tasks must have a static priority. Priority Ceiling
+        Violation Check.
+    \item Page 41-42, task termination can be statically proved abscent.
+    \item Page 42-43, Good section about scheduling analysis.
+    \item Page 45, Scheduling Analysis calculations. Mentions some
+        documentation parts that must be made available by each kernel
+        implementations. This is specified in the Real-Time Annex. This is so
+        proper overhead for schedulability calculations can be calculated.
+    \item Page 50, coding style, mentions HRT-HOOD and how to structure
+        packages and a line about naming convention.
+    \item Page 64, Activation\_Manager example looks interesting.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New reference
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Title}
 %
 % Some thoughts about the reference here.
@@ -60,14 +122,14 @@ COTS,\nomenclature{\textbf{COTS}}{\textbf{Commercial Off The Shelf}}
 %\begin{description}
 %    \item[Label:] web:ada-high-integrity \cite{web:ada-high-integrity}
 %    \item[Date:] MM-YYYY
+%    \item[Abbrevations and terms:]
+%       ASIS,\nomenclature{\textbf{ASIS}}{\textbf{Ada Semantic Interface
+%       Specification} provides a standard mechanism for obtaining information
+%       about an Ada program or its components. ASIS is an ISO standard.}
 %\end{description}
 %
-%ASIS,\nomenclature{\textbf{ASIS}}{\textbf{Ada Semantic
-%        Interface Specification} provides a standard mechanism for obtaining information
-%    about an Ada program or its components. ASIS is an ISO standard.}
-%
 % \begin{itemize}
-%     \item Page 34, section 5.11 has valuable information about access types and
+%     \item Page 34, section 5.11 has valuable information about access types
 %     \item Page 35, good reasoning about the use of exceptions.
 %     \item Page 37, section 5.13 has some good notes on Tasking in
 % \end{itemize}
