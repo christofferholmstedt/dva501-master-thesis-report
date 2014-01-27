@@ -1,0 +1,169 @@
+\chapter{Ada Programming Language}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ada Programming in High Integrity systems guide
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Guide for the use of the Ada programming language in high integrity
+systems}
+
+This is a good resource but may be a bit too old in some parts. When using this
+as reference make sure do double-check for more up to date information in this
+field.
+
+\begin{description}
+    \item[Label:] web:ada-high-integrity \cite{web:ada-high-integrity}
+    \item[Year:] 2000
+    \item[Abbrevations and terms:]
+        ASIS,\nomenclature{\textbf{ASIS}}{\textbf{Ada Semantic Interface
+            Specification} provides a standard mechanism for obtaining
+            information about an Ada program or its components. ASIS is an ISO
+            standard.}
+        ACVC,\nomenclature{\textbf{ACVC}}{\textbf{Ada Compiler Validation
+            Capability} is a set of test which excercises the compiler, linker
+            and the run-time system together.}
+        COTS,\nomenclature{\textbf{COTS}}{\textbf{Commercial Off The Shelf}}
+\end{description}
+
+
+\begin{itemize}
+    \item Page 3, good list/definition of what "Traceability" is.
+    \item Page 3, good definition that "analysis" is static analysis and
+        "testing" is dynamic analysis is.
+    \item Page 5, good list of verification techniques.
+    \item Page 6, section 2.3.9, "Other memory usage" analysis for I/O ports
+        could be useful.
+    \item Page 11, Analysis of tasks preventing deadlock with. Look into finit
+        state automata, petri-nets and model checking.
+    \item Page 24, Tagged types should not be returned from subprograms in
+        high-integrity systems. What does this mean?
+    \item Page 25, section 5.6.2, "notes", item (9), concerning accces types.
+        What does this mean?
+    \item Page 34, ubounded storage is unacceptable therefore "dynamic
+        attributes" are excluded.
+    \item Page 34, run-time dispatching is excluded in high-integrity systems.
+    \item Page 34, section 5.11 has valuable information about access types and
+        dynamic attributes.
+    \item Page 34, section 5.11 has valuable information about access types and
+    \item Page 35, good reasoning about the use of exceptions.
+    \item Page 37, section 5.13 has some good notes on Tasking in
+        high-integrity systems though the information might be old. Some notes
+        about time-triggered tasks and some about event-triggered tasks.
+    \item Page 41, comment about that it's unwise to create a specfic compiler
+        for a specific subset of Ada features.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ada Ravenscar Profile Guide
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Guide for the use of the Ada Ravenscar Profile in high integrity
+systems}
+
+This is a good resource. Make sure to double-check if any information is
+available and specific to multi-core environments. Has a good list of
+abbrevations and terms in the end.
+
+\begin{description}
+    \item[Label:] web:ada-ravenscar-high-integrity \cite{web:ada-ravenscar-high-integrity}
+    \item[Year:] 2005
+    \item[Abbrevations and terms:]
+        CSP,\nomenclature{\textbf{CSP}}{\textbf{Communicating Sequential
+        Process} A notation for specifying and analyzing concurrent systems.}
+        CSS,\nomenclature{\textbf{CSS}}{\textbf{Calculus of Communicating
+            Sytems} An algebra for specifying and reasonging about concurrrent
+        systems.}
+\end{description}
+
+
+\begin{itemize}
+    \item Page iv, Mentions information flow-analysis, schedulability analysis,
+        execution-order analysis and model-checking as valuable verification
+        methods.
+    \item Page 1, 5th paragraph answer the question "Why Ravenscar?".
+    \item Page 1, clearly states that Ravenscar has nothing to do with the
+        sequential parts of the code.
+    \item Page 5-6, section 2.2, Mapping "Ada to the Scheduling Model" is
+        interesting. Answers why no task hierarchy is allowed.
+    \item Page 7, Ravenscar is mostly about schedulability analysis.
+    \item Page 22, add Partition\_Elaboration\_Policy(Sequential) to let
+        elaboration finish first in a concurrent program.
+    \item Page 26, section 5.5, definition on when protected entries, protected
+        procedures and protected functions should be used.
+    \item Page 27, section 5.7, some information about suspension objects and
+        event triggered systems.
+    \item Page 34, section 5.12, dynamic creationand termination of task can be
+        simulated.
+    \item Page 37, section 6.2, the purpose of static analysis of concurrent
+        code.
+    \item Page 38, assumption in last paragraph. Analysis techniques must
+        support access to volatile data. This is necessary/valid for program
+        wide information flow analysis.
+    \item Page 40, Pragma\_Elaboration\_Policy(Sequential). Mentions the
+        reasoning behind this pragrma.
+    \item Page 41, all tasks must have a static priority. Priority Ceiling
+        Violation Check.
+    \item Page 41-42, task termination can be statically proved abscent.
+    \item Page 42-43, Good section about scheduling analysis.
+    \item Page 45, Scheduling Analysis calculations. Mentions some
+        documentation parts that must be made available by each kernel
+        implementations. This is specified in the Real-Time Annex. This is so
+        proper overhead for schedulability calculations can be calculated.
+    \item Page 50, coding style, mentions HRT-HOOD and how to structure
+        packages and a line about naming convention.
+    \item Page 64, Activation\_Manager example looks interesting.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% High-Integrity OOP in Ada by AdaCore
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{High-Integrity Object-Oriented Programming in Ada}
+
+Good resource about Ada OOP from 2013, up to date with Ada 2012.
+
+\begin{description}
+    \item[Label:] web:ada-oop-high-integrity \cite{web:ada-oop-high-integrity}
+    \item[Year:] 2013
+    \item[Abbrevations and terms:] None.
+%        CSP,\nomenclature{\textbf{CSP}}{\textbf{Communicating Sequential
+%        Process} A notation for specifying and analyzing concurrent systems.}
+\end{description}
+
+
+\begin{itemize}
+    \item Page 1, good reasoning about why someone should do OOP at all.
+    \item Page 21, mentions on how to test dispatching calls and other oop
+        features by following "Local Type Consistency Verification" methods.
+    \item Page 23, coding guiding lines: always use "overriding" and never use
+        "not overriding". Compile with -gnatwe.
+    \item Page 26, mentions "The object-oriented technology in avation
+        handbook". Maybe something to read up on, perhaps something similiar
+        for space?
+    \item Page 26, mentions "The object-oriented technology in avation
+        handbook".
+    \item Page 27-28, good short discussion about dynamic memory allocation.
+    \item Page 30-32, section 5.2, good discussion on coupling issues.
+    \item Page 32, controlled types requires extensive run-time support.
+    \item Page 44, section 7.4, Object-Oriented support in GNAT Pro
+        High-Integrity Profiles. Really good summary to look into if we want to
+        create support for specific archictecture.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New reference
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Title}
+%
+% Some thoughts about the reference here.
+%
+%\begin{description}
+%    \item[Label:] web:ada-high-integrity \cite{web:ada-high-integrity}
+%    \item[Date:] MM-YYYY
+%    \item[Abbrevations and terms:]
+%       ASIS,\nomenclature{\textbf{ASIS}}{\textbf{Ada Semantic Interface
+%       Specification} provides a standard mechanism for obtaining information
+%       about an Ada program or its components. ASIS is an ISO standard.}
+%\end{description}
+%
+% \begin{itemize}
+%     \item Page 34, section 5.11 has valuable information about access types
+%     \item Page 35, good reasoning about the use of exceptions.
+%     \item Page 37, section 5.13 has some good notes on Tasking in
+% \end{itemize}
