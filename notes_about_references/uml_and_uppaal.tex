@@ -131,6 +131,188 @@ some problems with the requirements specification were dedicted and fixed.
     \item Page 2/127, section 2, good reasoning and listing of references.
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UPPAAL in a nutshell
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{UPPAAL in a nutshell}
+This report goes through the basics of UPPAAL on how to use it. It was written
+while version 2.02 was the latest and now 4.X is available. Details are
+therefore different when it comes to GUI and how to do different things within
+UPPAAL but the main concepts remain the same.
+
+\begin{description}
+    \item[Label:] larsen1997 \cite{larsen1997}
+    \item[Date:] 1997
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item In the abstract some terms are used that define the basics of UPPAAL.
+        With UPPAAL one constructs a model, validate it with simulation and
+        verify it with model-checking.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Verification of real-time systems design
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Verification of real-time systems design}
+Heavy on the theory but some RT-UML (Real-time UML) could perhaps be usefull in
+the future.
+
+\begin{description}
+    \item[Label:] cambronero2010 \cite{cambronero2010}
+    \item[Date:] 2010
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item Page 9, section 4.2; UML 2.0 Profile Schedulability, Performance and
+        Time is mentioned.
+    \item Page 8, section 3.1; Modelling, Validation and Verification. The
+        Validation is done by model-checking in UPPAAL.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Model checking of safety-critical software in the nuclear engineering domain
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Model checking of safety-critical software in the nuclear engineering
+domain}
+Some good thoughts on how to actually create the UPPAAL model.
+
+\begin{description}
+    \item[Label:] lahtinen2012 \cite{lahtinen2012}
+    \item[Date:] 2012
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item Page 2/105, section 2, good descirption on how to do model checking.
+    \item Page 9/111, section 5.3, good reasoning on why model-checking should
+        be done.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formal Modeling and Verification of Operational Flight Program in a
+% Small-Scale Unmanned Helicopter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Formal Modeling and Verification of Operational Flight Program in a
+Small-Scale Unmanned Helicopter}
+This report has some interesting UPPAAL models over shared memory and mutex.
+
+\begin{description}
+    \item[Label:] lee2011 \cite{lee2011}
+    \item[Date:] 2011
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item None.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modeling a Spacewire architecture using timed automata to compute
+% worst-case end-to-end delays.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Modeling a Spacewire architecture using timed automata to compute
+worst-case end-to-end delays}
+Some ideas I got when reading this paper was that some upper bound can perhaps
+be verified when it comes to some time property. Also the model should check
+for starvation of any of the queues as well as worst case time of any queue.
+
+\begin{description}
+    \item[Label:] lee2011 \cite{lee2011}
+    \item[Date:] 2011
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item Page 1, section 1, interesting idea to compute worst-case
+        endpoint-to-endpoint in spacewire.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% State-of-the-art Tools and Techniques for Quantitative Modeling and Analysis
+% of Embedded Systems
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{State-of-the-art Tools and Techniques for Quantitative Modeling and
+Analysis of Embedded Systems}
+This report has a simple UPPAAL model about a train crossing. It also has
+some reasoning about model based development.
+
+\begin{description}
+    \item[Label:] bozga2012 \cite{bozga2012}
+    \item[Year:] 2012
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item None.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Case study on distributed and fault tolerant system modeling based on timed
+% automata
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Case study on distributed and fault tolerant system modeling based on
+timed automata}
+This is one of the better reports found so far. Provides a good background for
+the report and throughout the report goes through the reasoning behind the
+design choices made when creating the UPPAAL models.
+
+\begin{description}
+    \item[Label:] waszniowski2009 \cite{waszniowski2009}
+    \item[Year:] 2009
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item Page 2/1679, section 1 \& 2, really interesting discussion of related
+        work. Some good references concerning CAN, embedded systems, time and
+        event triggered systems.
+    \item Page 6/1683, section 4.2, Modelling of multitasking.
+    \item Page 12/1689, section 5, definition of properties to be verified
+        "bounded liveness".
+    \item Page 13/1690, section 5, no deadlock.
+    \item Page 13/1690, section 5, what is non-zenoness?
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modeling and Analysis of Radiation therapy system with respiratory
+% compensation using UPPAAL.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Modeling and Analysis of Radiation therapy system with respiratory
+compensation using UPPAAL}
+This report includes a simple UPPAAL model that could be tested to understand
+UPPAAL a bit more.
+
+\begin{description}
+    \item[Label:] man2011 \cite{man2011}
+    \item[Year:] 2011
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item Page 3/52, section 3, short explanation of UPPAAL computation tree
+    logic (CTL) with references (A[], A\textless\textgreater,
+    \textless\textgreater, E\textless\textgreater, deadlock, P.state).
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A theory of timed automata
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{A theory of timed automata}
+Heavy on the math and logic. This is the original report on timed automata
+theory with over 5500 citings according to google scholar.
+
+\begin{description}
+    \item[Label:] alur1994 \cite{alur1994}
+    \item[Year:] 1994
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item None.
+\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % New reference
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
