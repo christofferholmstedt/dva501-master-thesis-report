@@ -1,7 +1,50 @@
 \chapter{Introduction}
 
 \section{Background}
-TODO: Summary of the State of the Art.
+TODO: This section should be a summary of the State of the Art, more or less.
+
+TODO: Fix references in this introduction.
+
+Space plug-and-play Avionics (SPA) is intended to decrease the time needed in
+the integration phase when constructing satellites for specific missions. This
+is done by introducing plug-and-play interfaces between different components,
+both software and hardware components, just like when you plug in a USB mouse
+or keyboard in your laptop or desktop computer. SPA is a set of standards
+published by American Institute of Aeronatuics and Astronautics (AIAA). The
+different standard documents define everything from power supply interfaces to
+how components automatically describe themselves to other components.
+
+\nomenclature{\textbf{SPA}}{\textbf{Space Plug-and-Play Avionics}}
+\nomenclature{\textbf{AIAA}}{\textbf{American Institute of Aeronatuics and
+Astronautics}}
+
+SPA has been developed since 2004 and has been shown to work as intended. As of
+early 2014 efforts are now taking place to broaden the scope of SPA under the
+names of "Unified Common Architecture" (UNICA) and "Virtual Network Protocal"
+(VNP). The goal with Unified Common Architecture is to introduce SPA concepts
+and ideas to the field of robotics, unmanned vehicles, industrial automation
+and internet of things. This work is done in a collaboration between
+M\"{a}lardalen University (MDH) and Bruhnspace Advanced Projects AB (BAP) in
+Sweden.
+
+\nomenclature{\textbf{UNICA}}{\textbf{Unified Common Architecture}}
+\nomenclature{\textbf{VNP}}{\textbf{Virtual Network Protocol}}
+\nomenclature{\textbf{MDH}}{\textbf{M\"{a}lardalens University}}
+\nomenclature{\textbf{BAP}}{\textbf{Bruhnspace Advanced Projects AB}}
+
+The Virtual Network Protocal is a subset of the SPA standards that
+strictly limit the focus to the software parts of SPA. The goal is to try to
+stay interoperable with SPA as much as possible though some differences may be
+necassary to introduce in the future.
+
+As a key part of the SPA standard is the inter-process communication (IPC)
+through UDP/IP within respective processing node/unit. The dependability of
+UDP/IP can be discussed but the starting point for this thesis work is that
+UDP/IP is not good enough, better options exist.
+
+\nomenclature{\textbf{IPC}}{\textbf{Inter-Process Communication}}
+\nomenclature{\textbf{UDP}}{\textbf{User Datagram Protocol}}
+\nomenclature{\textbf{IP}}{\textbf{Internet Protocol}}
 
 \section{Problem Statement}
 TODO: Definition of the problem statement(s).
