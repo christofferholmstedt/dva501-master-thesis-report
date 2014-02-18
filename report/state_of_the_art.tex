@@ -1,11 +1,58 @@
 \chapter{State of the Art} \label{ch:state_of_the_art}
 
-\section{Space plug-and-play Avionics}
-TODO: Introduction to SPA and the available standards as well as drafts.
+\section{Space plug-and-play Architecture}
+The Air Force Resarch Laboratory (AFRL) Space Vehicle Directorate started a
+project referred to as "Space plug-and-play Avionics" in 2004 with the intent
+to understand why space systems used in various mission became so complex and
+how they can be made easier to assembly \cite{fronterhouse2007, martin2012}.
+The solution was to look at plug-and-play systems already available on ground.
+An example to this is how USB devices work with laptop and desktop computers in
+everyday life. It doesn't matter which keyboard you buy the basic functionality
+will work in any computer you plug it into, no matter if it runs Windows, OS X
+or a Linux distribution.
 
-TODO: Finish of with the defintion of Virtual Network, Virtual Network
-Protocol and how it relates to SPA.
+"Space plug-and-play Avionics" was released during the 2000-decade as a set of
+standards and in an updated version in 2011 renamed to "Space plug-and-play
+Architecture" \cite{martin2012}, all standards are available from AIAA
+\cite{spa:all}.
 
+\nomenclature{\textbf{AFRL}}{\textbf{Air Force Resarch Laboratory}}
+
+Development and testing of implementations conforming to the standards have
+been ongoing since the launch of the program. One project that has been
+presented is the PnPSat by Fronterhouse et. al. \cite{fronterhouse2007} and
+Martin et. al. \cite{martin2008}. They have demonstrated the first created
+plug-and-play satellite and given their view on the problems encountered during
+development of both hardware and software. The first plug-and-play satellite
+flown on orbit is presented by Martin et. al. \cite{martin2012} where most
+parts of the plug-and-play experiement passed all tests one year after launch.
+
+As a critical part of plug-and-play satellite research and development is the
+"System Data Model" (SDM) middleware software presented by Sundberg et. al.
+\cite{sundberg2006}, previously under the name "Satellite Data Model"
+\cite{spa:sdm-source}. The SDM can be viewed in two different ways, as a
+middleware or as a "sideware" \cite{fronterhouse2007}, depending on how you
+view it. The SDM is one implementation of the SPA standards that manage the
+parts of handing out logical addresses to all SPA components, doing network and
+data capabilities discovery. The SDM source code has been released under public
+domain license \cite{spa:sdm-source}.
+
+\nomenclature{\textbf{SDM}}{\textbf{System Data Model}}
+
+% TODO: Continue here.
+To enable components to be self-describing all SPA components must have a xTEDS
+file, stored within the component, when delivered for integration. The xTEDS
+file include all the information other components need to understand its
+capabilities.
+
+Each component has a xTEDS file describing its capabilities in a 
+
+Another cornerstone is the "Common Data Dictionary" (CDD). Hansen et. al.
+\cite{hansen2012} describes the dictionary as an ontology which consists of
+several taxonomies in a hierarchial structure.
+
+
+\nomenclature{\textbf{CDD}}{\textbf{}}
 \section{Dependability and Ada}
 TODO: Start from the point of view of "Dependability" and which parts are in
 focus in this thesis. Finish of with a few notes about Ada and its use in
