@@ -39,21 +39,36 @@ domain license \cite{spa:sdm-source}.
 
 \nomenclature{\textbf{SDM}}{\textbf{System Data Model}}
 
-% TODO: Continue here.
 To enable components to be self-describing all SPA components must have a xTEDS
-file, stored within the component, when delivered for integration. The xTEDS
-file include all the information other components need to understand its
-capabilities.
+file stored within the component. The xTEDS file include all the information
+other components need to understand its capabilities e.g. which interfaces the
+component have. The problem at this point arise that multiple vendors start to
+create their own interface definitions and all benefits with self-describing
+components are lost. This is where the "Common Data Dictionary" (CDD) comes
+into play.
 
-Each component has a xTEDS file describing its capabilities in a 
+Hansen et. al.  \cite{hansen2012} describes the dictionary as an ontology which
+consists of several taxonomies in a hierarchial structure. This means that if a
+vendors creates a SPA component with a temperature sensor and a pressure sensor
+interface the vendor use the CDD to describe the interfaces with the correct
+vocabulary. To manage the risk of adding way too many terms in the CDD Lanza
+et. al. \cite{lanza2010} suggests the forming of a CDD panel to "[...] serve as
+a regulatory structure for the CDD". To make it easier for developers to write
+xTEDS files with the correct vocabulary and improve the CDD Lanza et. al.
+\cite{lanza2010} have created a web based tool to manage the CDD.
 
-Another cornerstone is the "Common Data Dictionary" (CDD). Hansen et. al.
-\cite{hansen2012} describes the dictionary as an ontology which consists of
-several taxonomies in a hierarchial structure.
+One benefit of using XML file structure for the xTEDS is that a XML schema
+definition (XSD) can be created and with the help of a XML validating parser
+xTEDS can be verified automatically to conform to the xTEDS file format and the
+CDD \cite{lanza2010}.
+
+\nomenclature{\textbf{XSD}}{\textbf{XML Schema Definition}}
 
 
 \nomenclature{\textbf{CDD}}{\textbf{}}
 \section{Dependability and Ada}
+TODO: Move this section to another part of the report.
+
 TODO: Start from the point of view of "Dependability" and which parts are in
 focus in this thesis. Finish of with a few notes about Ada and its use in
 high-integrity systems.
