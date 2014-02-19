@@ -47,28 +47,30 @@ create their own interface definitions and all benefits with self-describing
 components are lost. This is where the "Common Data Dictionary" (CDD) comes
 into play.
 
-Hansen et. al.  \cite{hansen2012} describes the dictionary as an ontology which
-consists of several taxonomies in a hierarchial structure. This means that if a
-vendors creates a SPA component with a temperature sensor and a pressure sensor
-interface the vendor use the CDD to describe the interfaces with the correct
-vocabulary. To manage the risk of adding way too many terms in the CDD Lanza
-et. al. \cite{lanza2010} suggests the forming of a CDD panel to "[...] serve as
-a regulatory structure for the CDD". To make it easier for developers to write
-xTEDS files with the correct vocabulary and improve the CDD Lanza et. al.
-\cite{lanza2010} have created a web based tool to manage the CDD.
-
-One benefit of using XML file structure for the xTEDS is that a XML schema
-definition (XSD) can be created and with the help of a XML validating parser
-xTEDS can be verified automatically to conform to the xTEDS file format and the
-CDD \cite{lanza2010}.
+\nomenclature{\textbf{CDD}}{\textbf{Common Data Dictionary}}
 
 The first work to create the CDD is described as an informal approach by Pasko
 \cite{pasko2011}, instead a more formal approach using RDF is suggested. Pasko
 suggests that RDF and RDF Schemas can be used to not only desribe the CDD
 formally but also be used to visually represent the CDD with suitable software.
 
+Hansen et. al.  \cite{hansen2012} describes the dictionary as an ontology which
+consists of several taxonomies in a hierarchial structure. This means that if
+different vendors respectively create a SPA component with a temperature sensor
+and a pressure sensor interface the vendors use the CDD to describe the
+interfaces with the correct vocabulary. To manage the risk of adding too
+many terms in the CDD Lanza et. al. \cite{lanza2010} suggests the forming of a
+CDD panel to "[...] serve as a regulatory structure for the CDD". To make it
+easier for developers to write xTEDS files with the correct vocabulary and
+improve the CDD, Lanza et. al.  \cite{lanza2010} have created a web based tool
+to manage the CDD.
+
+One benefit of using XML file structure for the xTEDS is that a XML schema
+definition (XSD) can be created and with the help of a XML validating parser
+xTEDS can be verified automatically to conform to the xTEDS file format and the
+CDD \cite{lanza2010}.
+
 \nomenclature{\textbf{XSD}}{\textbf{XML Schema Definition}}
-\nomenclature{\textbf{CDD}}{\textbf{Common Data Dictionary}}
 
 \section{Model Checking and UPPAAL}
 TODO: Start with model checking in general, introduce the concept of timed
