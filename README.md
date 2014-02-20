@@ -6,12 +6,8 @@ This git repository includes my report(s) from my master thesis work
 done during the spring of 2014 about the "Virtual Network Protocol".
 
 ### Keywords
-Space plug-and-play Avionics
-Space plug-and-play Architecture
-Ada
-Safety-critical systems
-Internet of Things
-Unmanned Vehicles
+Space plug-and-play Avionics, Space plug-and-play Architecture, Ada,
+Safety-critical systems, Internet of Things, Unmanned Vehicles
 
 ### How to generate PDF using virtualbox and Vagrant
 For this project Virtualbox and Vagrant is used for easier management of LaTeX
@@ -45,5 +41,5 @@ $ cd host/report
 $ make
 ```
 
-The report is generated and avialable as "main.pdf" both on your host machine
+The report is generated and available as "main.pdf" both on your host machine
 and in your VM.
