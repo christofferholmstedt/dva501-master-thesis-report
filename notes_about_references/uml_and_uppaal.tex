@@ -46,6 +46,13 @@ valuable references but it's already 10 years old.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Applying uml and patterns}
 
+A really good reference for the Unified process, UML and Object-oriented
+analysis and design.
+
+A lesson learned is that just as a unit test and the implementation that makes
+the unit test pass is a network of two parts in the code, an interaction
+diagram and its design class diagram is a equally coupled in a two nodes
+network.
 
 \begin{description}
     \item[Label:] larman2005 \cite{larman2005}
@@ -64,6 +71,102 @@ valuable references but it's already 10 years old.
     \item Page 30, section 2.7, don't model or apply the UML to all or most of
         the software design. Defer simple or straightforward design problems
         until programming - solve them while programming and testing.
+    \item Page 38, section 2.13, good checklist to read when lost in too much
+        work. This will sort of guide you to what is important.
+    \item Page 40, section 2.15, a lot of recommended reading on the topic of
+        agile development.
+    \item Page 51, section 4.3, the point of artifacts and modules is often not
+        the document/diagram itself, but the thinking and analysing.
+    \item Page 63, section 6.2, Actors are people/roles or computers in a use
+        case. A use-case consists of different scenarios, outcomes.
+    \item Page 64, section 6.3, use-cases are text documents. UML can be used
+        to realte use cases to each other.
+    \item Page 65, section 6.4, Capturing goals must be simple so the barrier
+        to join in is low, especially for customers. Therefore use-case are
+        written down in plain english.
+    \item Page 65, section 6.5, focus on use cases instead of long lists of
+        requirements.
+    \item Page 66, section 6.6, three kinds of actors, primary, supporting and
+        offstage.
+    \item Page 75, section 6.9, write conditions with the perspective from the
+        "system under discussion" (SUD) and what kind of failures it can
+        detect.
+    \item Page 80, section 6.11, discover the real goal, not just that the user
+        logins but that the user is authenticated somehow. Skip UI, focus on
+        user intent.
+    \item Page 80, section 6.11, Use casese should include the user intentions
+        and the systems responsiblity.
+    \item Page 87, section 6.17, figure 6.3, is an example of use-case context
+        diagram.
+    \item Page 112, section 7.7, system feature is "an externally observable
+        service provided by the system which directly fulfills a stakeholder's
+        need".
+    \item Page 133, section 9.1, domain model is important in OOA/D for
+        gathering important conceptional parts.
+    \item Page 138, section 9.3, figure 9.6, is a good description on why you
+        do a domain model and how it inspires the design model.
+    \item Page 145, section 9.8, a long-life domain model is often of no value.
+        Who will read it later on when more detailed class diagrams exist?
+    \item Page 146, section 9.12, good guideline concerning what is an
+        attribute and what is a conceptual class.
+    \item Page 150-151, section 9.14, definition of association and a guideline
+        concerning to limit yourself to "need-to-remember" associations.
+    \item Page 169, section 9.19, limit domain modeling to the current
+        iteration and leave all other details for future iterations.
+    \item Page 202, section 13.6, layer coupling is from higher-to-lower and
+        rarely the other way around.
+    \item Page 210, section 13.7, list of why you should do Model-View and MVC
+        seperation.
+    \item Page 250, section 16.1, image with the basic concepts of static
+        object modeling, more specific "class diagrams".
+    \item Page 254, section 16.4, guideline. When to use association lines and
+        when to just write attributes in the class box.
+    \item Page 266, section 16.5, interesting notation on how to go from a
+        multiplicity of many to one, using qualifier.
+    \item Page 276, section 17.3, Responsibility driven design (RDD). All
+        classes "do" or "know" different things.
+    \item Page 281, section 17.8, first short concrete examples of GRASP and
+        OOD.
+    \item Page 358, section 18.5, the Command-Query separation priniciple. One
+        method do the action and another get the information without any side
+        effects.
+    \item Page 374, section 20.5, Guideline. Key principle in OOP "If an
+        objects implements an interface, declare the variable in terms of the
+        interface, no the conrete class.
+    \item Page 374, section 20.6, remember to think about exception handling
+        during the design phase.
+    \item Page 375, section 20.8, order of implementation should be from the
+        least-coupled to the most coupled classes.
+    \item Page 398, section 22.5, link suggestion for UML tools/UML CASE tools.
+    \item Page 452, section 26.8, a signature of the composite pattern is that
+        outer objects contains a list of the inner objects and they all
+        implement the same interface/pattern.
+    \item Page 460, section 26.8, Pass aggregate object as parameter and do not
+        extract child objects.
+    \item Page 472, section 26.12, "Pattern languages of programs" PLOP
+        conference and volums from there is a good read.
+    \item Page 483-484, section 28.6, the purpose of business modeling is to
+        understand the structure and dynamics of the organization where the
+        system is to be deployed.
+    \item Page 484, section 28.7, mentions Petri nets and a metaphor that
+        "tokens" are passed around in a Petri net.
+    \item Page 488, section 29.3, state machines are applied to model behaviour
+        of a complex realtime object in response to an event.
+    \item Page 492, section 29.8, "Real-Time UML" by Douglass has more on State
+        Machines.
+    \item Page 507, section 31.3, the concept of "is-a".
+    \item Page 522, section 31.12, how to model/design for objects with time
+        intervals. See [CLD99] for more.
+    \item Page 542, section 33.2, two kinds of changes in software systems can
+        be defined as varaiation points and evolution points.
+    \item Page 581, section 35.1, Put a set of common interfaces in a separate
+        package.
+    \item Page 595, section 36.3, Pattern for exceptions. Name the exceptions
+        with the name of the problem not the thrower.
+    \item Page 607, section 36.7, The abstract factory is a really usefull
+        pattern.
+    \item Page 627, section 37.9, The Facade pattern may be useful when loading
+        and storing different xTEDS by their IDs, CUUID.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
