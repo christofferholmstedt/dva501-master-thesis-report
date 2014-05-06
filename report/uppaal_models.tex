@@ -1,0 +1,24 @@
+\chapter{UPPAAL Models}\label{ch:uppaal_models}
+This chapter includes all the UPPAAL models created during the thesis work to
+verify the correctness of the implementation of the SPA core framework in Ada.
+
+\section{The models}
+Each SPA application will do the same thing receive, handle and send SPA
+messages. The difference between the applications is which messages each
+application understands and which messages the application will ignore.
+Therefore the UPPAAL models have been created so an application model can be
+instantiated with the specific message types it handles in separate automata.
+Each SPA application is modelled on its own to reduce complexity. A driver
+model is used to vary the amount of incoming messages.
+
+\subsection{A template application}
+TODO: What is common between all applications.
+
+\subsection{Central Addressing Service (CAS)}
+TODO: Add models for the specific messages this one handles.
+
+\subsection{Local Subnet Manager (SM-L)}
+TODO: Add models for the specific messages this one handles.
+
+\section{Verification}
+TODO: Add comments about time verification and correctness.
