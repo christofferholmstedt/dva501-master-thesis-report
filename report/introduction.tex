@@ -67,13 +67,6 @@ maintainability and resilience in no specific order.  Confidentially is deemed
 out of scope and left for future work.
 
 \section{Problem Statement}
-% TODO: Definition of the problem statement(s).
-
-% TODO: Define the different properties/attributes to be measured when
-% comparing event-triggered and time-triggered systems.
-
-% TODO: Define what is in scope and what is out of scope.
-
 This thesis work will focus on the core parts of a SPA network which runs on
 one or several processing nodes. This includes the Central Addressing Service
 (CAS), the Lookup Service (LS) and the Subnet Manager for "Local Subnets"
@@ -82,21 +75,48 @@ Tasks and communication between the Ada Tasks will be through Ada Protected
 Objects which is a shared memory construct defined as a part of the Ada
 programming language.
 
-For SPA interoperability the SM-L will have two interfaces to other SPA
-components one to other local Ada Tasks through dedicated protected objects and
-one through UDP/IP. The interface to external systems, the UDP/IP interface,
-will be the system boundary of the analyzed system in this thesis.
-
-\nomenclature{\textbf{CAS}}{\textbf{Central Addressing Service} is responsible
-for providing logical address blocks to be assigned to each hardware or
-software component. The CAS stores the logical address block and logical
-address for each SPA Manager in the SPA Network.}
-\nomenclature{\textbf{LS}}{SPA \textbf{Lookup Service}}
-\nomenclature{\textbf{SM-Local}}{\textbf{SPA Local Subnet Manager}}
+The different SPA software components (applications) are modelled and
+implemented in a modular maintainable design so each application can easily
+be switch for another or moved to another processing node.
 
 The following list includes the questions to be answered
 \begin{enumerate}
-    \item Does the system have any possibility to reach a state of deadlock?
+    \item Can any of the core SPA applications reach a state of deadlock?
+    \item Can any of the core SPA applications reach a state of livelock?
+\end{enumerate}
+
+%%%%%%
+% Below is the old definition of the problem statement.
+% TODO: Definition of the problem statement(s).
+
+% TODO: Define the different properties/attributes to be measured when
+% comparing event-triggered and time-triggered systems.
+
+% TODO: Define what is in scope and what is out of scope.
+
+%This thesis work will focus on the core parts of a SPA network which runs on
+%one or several processing nodes. This includes the Central Addressing Service
+%(CAS), the Lookup Service (LS) and the Subnet Manager for "Local Subnets"
+%(SM-L) components. Each component will be implemented as one or several Ada
+%Tasks and communication between the Ada Tasks will be through Ada Protected
+%Objects which is a shared memory construct defined as a part of the Ada
+%programming language.
+%
+%For SPA interoperability the SM-L will have two interfaces to other SPA
+%components one to other local Ada Tasks through dedicated protected objects and
+%one through UDP/IP. The interface to external systems, the UDP/IP interface,
+%will be the system boundary of the analyzed system in this thesis.
+%
+%\nomenclature{\textbf{CAS}}{\textbf{Central Addressing Service} is responsible
+%for providing logical address blocks to be assigned to each hardware or
+%software component. The CAS stores the logical address block and logical
+%address for each SPA Manager in the SPA Network.}
+%\nomenclature{\textbf{LS}}{SPA \textbf{Lookup Service}}
+%\nomenclature{\textbf{SM-Local}}{\textbf{SPA Local Subnet Manager}}
+%
+%The following list includes the questions to be answered
+%\begin{enumerate}
+%    \item Does the system have any possibility to reach a state of deadlock?
 %     \item Does the system have any possibility to starve any queue in the
 %         system?
 %     \item Is a time-triggered or event-triggered system the best option when it comes to
@@ -107,19 +127,20 @@ The following list includes the questions to be answered
 %                 a response to 100\% of the requests).
 %             % TODO: More criteria?
 %         \end{enumerate}
-\end{enumerate}
+%\end{enumerate}
 
 \section{Structure of this report}
 The report is structured as follows. Chapter \ref{ch:state_of_the_art} goes
-through the state of the art in Space plug-and-play Architecture, Dependability
-and Ada programming, UPPAAL modeling and verification as well as Internet of
-Things.  Chapter \ref{ch:method} continues with the research and development
+through the state of the art in Space plug-and-play Architecture, UPPAAL
+modeling and verification as well as Internet of Things.  Chapter
+\ref{ch:method} continues with the research and development
 method used throughout the thesis work, from literature study to modeling and
 implementation. A thorough presentation on how Space plug-and-play Architecture 
-works is then given in chapter \ref{ch:spa}. Chapter \ref{ch:result} shows all
-the results aquired and chapter \ref{ch:conclusion} finish the report with the
-discussion about the results, the conclusion and suggestions for future
-research and development.
+works is then given in chapter \ref{ch:spa}. Chapter \ref{ch:uppaal_models}
+presents all the UPPAAL models used to verify the system, chapter
+\ref{ch:result} shows all the results aquired and chapter \ref{ch:conclusion}
+finish the report with the discussion about the results, the conclusion and
+suggestions for future research and development.
 
 % TODO: Add one paragraph with information on how the following chapters and
 % sections are structured. This section title might not be needed for this
