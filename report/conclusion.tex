@@ -11,20 +11,23 @@ TODO: Trade off between detail in models and complexity in models. Higher
 detail means higher complexity. Is the current abstraction a good trade-off?
 
 \section{Future research and development}
-TODO: Is this approach worth going forward with. More input is needed regarding
-future operations. The presented solution which uses Ada Protected Object
-requires future updates to the software in a processing node to replace the
-entire binary running. There is no possibility for dynamic linking of modules.
-If there processing node has an external "manager" that can supervise upgrades
-and verify that they have been installed correctly it may be worth it, though
-for other embedded systems which run alone may not have the luxury of a
-supervisor and an upgrade of the entire binary may be problematic.
+TODO, discussion \#1: Is this approach worth going forward with. More input is
+needed regarding future operations. The presented solution which uses Ada
+Protected Object requires future updates to the software in a processing node
+to replace the entire binary running. There is no possibility for dynamic
+linking of modules.  If there processing node has an external "manager" that
+can supervise upgrades and verify that they have been installed correctly it
+may be worth it, though for other embedded systems which run alone may not have
+the luxury of a supervisor and an upgrade of the entire binary may be
+problematic.
 
-TODO: Security. Proof of concept has been shown and now security must be added
-as early as possible so it doesn't have to be glued on top of a system later on
-e.g. in a home automation, what restricts neighbouring systems (different
-apartments) to talk to each other as the link layer often is the same within a
-building.
+TODO, discussion \#2: Security. VERY important if you aim for the IoT market,
+isolated robots and satellites might be a different thing but devies connected
+to the internet must be secured. Security. Proof of concept has been shown and
+now security must be added as early as possible so it doesn't have to be glued
+on top of a system later on e.g. in a home automation, what restricts
+neighbouring systems (different apartments) to talk to each other as the link
+layer often is the same within a building.
 
 TODO: Routing through several subnets with different speeds. Maximum
 Transmission Unit and routing through the networks with the best throughput
@@ -48,7 +51,8 @@ which have the component to be verified and can thereby test remotely.
 TODO: "The Implementation of a Plug-and-play Satellite Bus" writes about a
 "Mission Spacecraft Design Tool" for rapid prototyping. This sounds like a
 really cool idea. Blender or Inkscape GUI, with satellite/unmanned vehicles/IoT
-purpose.
+purpose. The tool could create the models used for verification and the source
+code that runs on the different processing nodes.
 
 % \section{All references}
 % TODO: Remove this section from your own report when it's done so only the
