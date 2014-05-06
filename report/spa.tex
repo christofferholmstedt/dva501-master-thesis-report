@@ -1,11 +1,7 @@
 \chapter{How the Space plug-and-play Architecture works}\label{ch:spa}
-TODO: This is a key part of the work, if the reader doesn't understand SPA, the
-reader won't understand the result. Therefore this chapter is included as a
-chapter in the report and not an appendix.
-
 This section will go through how the Space plug-and-play Architecture (SPA)
 works in detail with system sequence diagrams and component overviews.
-Throughout this section UML 2 will be used extensively. It's worth remembering
+Throughout this section UML 2 will be used. It's worth remembering
 that the purpose of these diagrams is to show the reader how SPA works, the
 purpose is not to give a complete picture to developers with all the
 implementation details.
@@ -27,8 +23,8 @@ also has a "Extensible Transducer Electronic Data Sheet" (xTEDS) file that
 describes respective components capabilities. To be able to support different
 underlying link layer technologies such as Ethernet, Spacewire and one-wire
 (I2C), most functionality has been put in the application layer. This means
-that a SPA network can be built with a combination of link layer "subnets". As
-an example a SPA network can consist of two Spacewire subnets and one Ethernet
+that a SPA network can be built with any combination of link layer "subnets",
+for example a SPA network can consist of two Spacewire subnets and one Ethernet
 subnet.
 
 The important concepts to remember is that each SPA component is
@@ -38,8 +34,8 @@ are linked together they form a SPA network.
 
 Another SPA subnet is the SPA Local Subnet. Each processing node that can
 have multiple SPA components running on it has a "SPA Local Subnet Manager"
-(SM-L).  Components within a processing node do inter-process communication
-over UDP/IP.
+(SM-L).  Components within a processing node should do inter-process
+communication over UDP/IP \cite{spa:local-subnet}.
 
 Components communicate with each other with the help of "logical addresses"
 that each component recieves during boot up. It's the responsiblity of the
@@ -50,8 +46,9 @@ the "Lookup Service" to keep track of all components' capabilities in the SPA
 network.
 
 To describe what a SPA network can look like figure TODO shows a minimal SPA
-network which consists of a CAS, LS, a sensor and a monitor, all running on the
-same processing node and in the same local subnet managed by the SM-L.
+network which consists of a CAS, LS, a sensor and a monitor application, all
+running on the same processing node and in the same local subnet managed by the
+SM-L.
 
 A more complex SPA network is shown in figure TODO. The original SPA network is
 extended with multiple SPA subnets connected to the original SPA Local Subnet.
@@ -61,39 +58,27 @@ information though chapter \ref{ch:spa} will go through some scenarios in
 detail that can be helpful to the reader to understand SPA. The SPA standards
 and drafts that specify software requirements are the Logical Interface
 standard \cite{spa:logical-interface}, Networking standard
-\cite{spa:networking}, Local Subnet Draft (TODO: Ref), Ontology Standard
-\cite{spa:ontology} and System Capabilities Standard
+\cite{spa:networking}, Local Subnet Draft \cite{spa:local-subnet} Ontology
+Standard \cite{spa:ontology} and System Capabilities Standard
 \cite{spa:system-capabilities}.
 
-\section{A single SPA local subnet}
-\subsection{Overview}
-TODO:
+\subsection{A single SPA local subnet - Overview}
+TODO: Add this as image above in the "Basic Concept section"
 
-\subsection{Boot up sequence diagrams}
-TODO:
+\subsection{A single SPA local subnet - Boot up sequence diagrams}
+TODO: Add this as image above in the "Basic Concept section"
 
-\subsection{Normal operation sequence diagrams}
-TODO:
+\subsection{A single SPA local subnet - Normal operation sequence diagrams}
+TODO: Add this as image above in the "Basic Concept section"
 
-\section{Two local subnets and two ethernet subnets}
-\subsection{Overview}
-TODO: The subnets are connected in a straight series. One processsing node, one
+\subsection{Two local subnets and two ethernet subnets - Overview}
+TODO: Add this as image above in the "Basic Concept section"
+
+The subnets are connected in a straight series. One processsing node, one
 ethernet subnet, one processing node and then another ethernet subnet.
 
-\subsection{Boot up sequence diagrams}
-TODO:
-
-\subsection{Normal operation sequence diagrams}
-TODO:
-
-\section{More advanced subnets}
-\subsection{Two ethernet subnets in parallel}
-TODO: Two processing nodes connected with two separate ethernet networks
-between them ...only overview, no sequence diagrams.
-
-\subsection{TODO}
-TODO: Any more advanced networks that can be thought of? ...only overview, no
-sequence diagrams.
+\subsection{Two local subnets and two ethernet subnets - Boot up sequence diagrams}
+TODO: Add this as image above in the "Basic Concept section"
 
 \section{Virtual Network and the Virtual Network Protocol}
 TODO: Finish of with the definition of Virtual Network, Virtual Network
