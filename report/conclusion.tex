@@ -1,5 +1,4 @@
 \chapter{Conclusion}\label{ch:conclusion}
-\section{Summary}
 TODO: What does this work bring? What is new and what is good about it?
 
 TODO: What are my conclusion(s)?
@@ -9,6 +8,15 @@ models and are the models good abstractions from the real-world implementation?
 Is event- or time-triggered systems best in this field?
 
 \section{Future research and development}
+TODO: Is this approach worth going forward with. More input is needed regarding
+future operations. The presented solution which uses Ada Protected Object
+requires future updates to the software in a processing node to replace the
+entire binary running. There is no possibility for dynamic linking of modules.
+If there processing node has an external "manager" that can supervise upgrades
+and verify that they have been installed correctly it may be worth it, though
+for other embedded systems which run alone may not have the luxury of a
+supervisor and an upgrade of the entire binary may be problematic.
+
 TODO: Security. Proof of concept has been shown and now security must be added
 as early as possible so it doesn't have to be glued on top of a system later on
 e.g. in a home automation, what restricts neighbouring systems (different
