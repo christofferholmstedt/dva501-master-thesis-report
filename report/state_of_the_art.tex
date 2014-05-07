@@ -72,7 +72,41 @@ CDD \cite{lanza2010}.
 
 \nomenclature{\textbf{XSD}}{\textbf{XML Schema Definition}}
 
-\section{Model Checking and UPPAAL}
+\section{UPPAAL}
+To verify a system meets safety-critical standards different approaches can
+be taken and depending on the severity of failures that can be caused by the
+system different approaches must be taken. To verify that the core SPA system
+implementation presented in this paper meets some basic requirements it will be
+modeled and verified with the model-checking tool UPPAAL.
+
+On the official website UPPAAL is described as follows, "UPPAAL is an
+integrated tool environment for modeling, validation and verification of
+real-time systems modeled as networks of timed automata, extended with data
+types (bounded integers, arrays, etc.)." \cite{web:uppaal}. It is maintained
+and developed by participants mainly from Uppsala University in Sweden and
+Aalborg University in Denmark.
+
+The formal methods behind UPPAAL builds on the research originally presented
+by Alur et al. \cite{alur1994} where real-time systems are shown to be modeled
+with timed finite automata. The key part is that the system has a finite amount
+of states so it's possible to model it in a network of automata. Since the
+presentation of the formal method, tools have been developed to make the method
+useful. UPPAAL has over the last decade been forked to more specific versions
+such as "TIMES" which can be used for scheduability analysis and "TRON" for
+online real-time testing, other forks exist and for a more detailed history of
+the development process "Developing UPPAAL over 15 years" by Behrmann et al.
+\cite{behrmann2011} is suggested. In this thesis "classic" UPPAAL is used to
+verify real-time properties of the system.
+
+UPPAAL is used mainly to verify real-time systems in a wide variety of research
+fields. From the field of radiation therapy \cite{man2011} and safety-critical
+systems in the nuclear engineering domain \cite{lahtinen2012} to embedded
+system in a university satelite \cite{alencar2013} and flight-program in an
+unmanned helicopter \cite{lee2011}. Worth noting is that UPPAAL can also be used
+to verify protocols such as in a distributed lift system with a CAN Bus
+presented by Pang et el. \cite{pang2003} and the spacewire architecture
+presented by Ermont et al. \cite{ermont2013}.
+
 TODO: Start with model checking in general, introduce the concept of timed
 finite automata and give examples on how it has been used by others.
 
