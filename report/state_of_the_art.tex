@@ -1,4 +1,7 @@
 \chapter{State of the Art} \label{ch:state_of_the_art}
+This chapter on the state of the art in related research fields aims at giving
+the reader a basic stepping stone for later chapters where more details are
+described concerning Space plug-and-play Architecture and UPPAAL modeling.
 
 \section{Space plug-and-play Architecture}
 The Air Force Resarch Laboratory (AFRL) Space Vehicle Directorate started a
@@ -88,15 +91,16 @@ Aalborg University in Denmark.
 
 The formal methods behind UPPAAL builds on the research originally presented
 by Alur et al. \cite{alur1994} where real-time systems are shown to be modeled
-with timed finite automata. The key part is that the system has a finite amount
-of states so it's possible to model it in a network of automata. Since the
-presentation of the formal method, tools have been developed to make the method
-useful. UPPAAL has over the last decade been forked to more specific versions
-such as "TIMES" which can be used for scheduability analysis and "TRON" for
-online real-time testing, other forks exist and for a more detailed history of
-the development process "Developing UPPAAL over 15 years" by Behrmann et al.
-\cite{behrmann2011} is suggested. In this thesis "classic" UPPAAL is used to
-verify real-time properties of the system.
+with timed finite automata, or just timed automata in short. The key part is
+that the system has a finite amount of states so it's possible to model it in a
+network of automata. Since the presentation of the formal method, tools have
+been developed to make the method useful. UPPAAL has over the last decade been
+forked to more specific versions such as "TIMES" which can be used for
+scheduability analysis and "TRON" for online real-time testing, other forks
+exist and for a more detailed history of the development process "Developing
+UPPAAL over 15 years" by Behrmann et al.  \cite{behrmann2011} is suggested. In
+this thesis "classic" UPPAAL is used to verify real-time properties of the
+system.
 
 UPPAAL is used mainly to verify real-time systems in a wide variety of research
 fields. From the field of radiation therapy \cite{man2011} and safety-critical
@@ -107,10 +111,13 @@ to verify protocols such as in a distributed lift system with a CAN Bus
 presented by Pang et el. \cite{pang2003} and the spacewire architecture
 presented by Ermont et al. \cite{ermont2013}.
 
-TODO: Start with model checking in general, introduce the concept of timed
-finite automata and give examples on how it has been used by others.
-
-TODO: Some notes about UPPAAL and the different forks available.
+The implementation presented in this thesis is done in Ada 2005 with the
+Ravenscar restriction to make it easier to verify real-time requirements in a
+model-checking tool. Related to this is earlier work done in UPPAAL regarding
+Ada software and tasking. Bj\"{o}rnfot presented "Ada and timed automata" in
+1996 \cite{bjornfot1996} and Lundqvist et al. presented verification of an Ada
+RTS kernel with the Ravenscar restriction applied in four papers
+\cite{lundqvist1999f,lundqvist1999g,lundqvist1999h,lundqvist2003}.
 
 \section{Internet of Things} \label{sec:sota:internet_of_things}
 TODO: Do a protocol comparison between CoAP, AllJoyn, Skynet, SPA/VN, Intel IoT
