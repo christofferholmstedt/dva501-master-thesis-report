@@ -143,9 +143,6 @@ makes it easy to interchange which message types each "running task"
 only connected to one subnet does not need the Routing component. The Routing
 component is specifically created for the SM-L to be able to route traffic
 within its own subnet and to other subnet managers over other types of subnets.
-The design even makes it possible for a subnet manager to be responsible for
-multiple subnets on different types of link-layers even if it's not supported
-by the SPA standards.
 
 \begin{figure}[h]
     \centering
@@ -154,7 +151,7 @@ by the SPA standards.
     \label{fig:iteration2_uml_component_overview}
 \end{figure}
 
-The actual design of the Communication package make use of the "Composite
+The design of the Communication package make use of the "Composite
 pattern" where Routing objects and Com objects all inherit from the same
 interface and where the Routing objects are of composite types. Figure
 \ref{fig:iteration2_difference} shows the difference between a simple
@@ -180,7 +177,9 @@ connects to one or multiple networks.
 \end{figure}
 
 \subsubsection{A basic application}
-TODO
+TODO: The second iteration design has been presented, now improved UPPAAL
+models must be shown.
+
 \subsubsection{Central Addressing Service (CAS)}
 TODO
 \subsubsection{Lookup Service (LS)}
