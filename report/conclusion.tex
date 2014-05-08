@@ -10,6 +10,7 @@ Is event- or time-triggered systems best in this field?
 TODO: Trade off between detail in models and complexity in models. Higher
 detail means higher complexity. Is the current abstraction a good trade-off?
 
+
 \section{Future research and development}
 TODO, discussion \#1: Is this approach worth going forward with. More input is
 needed regarding future operations. The presented solution which uses Ada
@@ -28,6 +29,19 @@ now security must be added as early as possible so it doesn't have to be glued
 on top of a system later on e.g. in a home automation, what restricts
 neighbouring systems (different apartments) to talk to each other as the link
 layer often is the same within a building.
+
+TODO, lessons learned \#3: Development practices in the field of
+safety-critical systems. During the development there were a lot of discussions
+back and forth which Ada programming language features we could and which we
+should use. ISO guidelines and publications from AdaCore are good discussions
+on the different trade-offs but no firm ruling on what is good practice and
+what is bad practice, as it should. The problem is without previous experience
+and non-existent open-source code available online to look at the development
+process has fumbled back and forth during different discussions. These
+discussions have ranged from OOP to the use of access types. The lesson learned
+from this thesis work is that to bring the level of confidence in the system
+up someone with experience from developing safety-critical systems in Ada
+should be brought in to help out with design decisions.
 
 TODO: Routing through several subnets with different speeds. Maximum
 Transmission Unit and routing through the networks with the best throughput
