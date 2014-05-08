@@ -6,23 +6,53 @@ requirements set on the system. The connection from the UPPAAL models to the
 UML diagrams presented here are to show that the implementation corresponds as
 close as possible to the models verified.
 
-\section{UPPAAL models}
-Each SPA application will do the same thing receive, handle and send SPA
-messages. The difference between the applications is which messages each
-application understands and which messages the application will ignore.
-Therefore the UPPAAL models have been created so an application model can be
-instantiated with the specific message types it handles in separate automata.
+For presentation purposes only the messages concerning basic functionality
+during component and service discovery is presented in this chapter. After the
+initial discovery and configuration process has been done the system continue
+in normal operation mode with an extra set of SPA message types.
+
+\section{First iteration}
+The first UPPAAL models were created after designing the basic structure of the
+system. Each SPA application will do the same thing receive, handle and send
+SPA messages. The difference between the applications is which messages each
+application understands and which messages the application will ignore. A SPA
+processing node will at most have one CAS, one SM-L and one LS but can have any
+number of applications running next to them. This inspired the first UPPAAL
+model that the SPA application model should be possible to instantiate multiple
+times in UPPAAL but the other more specific models can be used only ones. The
+basic overview is shown in figure \ref{fig:processing_node_overview}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/processing_node_overview}
+    \caption{A Processing Node overview with core SPA parts.}
+    \label{fig:processing_node_overview}
+\end{figure}
+
+
+% Therefore the UPPAAL models have been created so an application model can be
+% instantiated with the specific message types it handles in separate automata.
 % Each SPA application is modelled on its own to reduce complexity. A driver
 % model is used to vary the amount of incoming messages.
 
-\subsection{A template application}
+\subsubsection{A SPA application}
 TODO: What is common between all applications.
 
-\subsection{Central Addressing Service (CAS)}
+\subsubsection{Central Addressing Service (CAS)}
 TODO: Add models for the specific messages this one handles.
 
-\subsection{Local Subnet Manager (SM-L)}
+\subsubsection{Local Subnet Manager (SM-L)}
 TODO: Add models for the specific messages this one handles.
+
+\subsubsection{Lookup Service (LS)}
+
+\subsubsection{First iteration conclusions}
+Event-based
+
+Not flexibel for another set of messages
+
+multiple messages of the same time can be sent, e.g. if SPAack is not redv
+extra Local Hello can be sent.
 
 \section{Validation and Verification}
 TODO: Add comments about time verification and correctness. What are the
