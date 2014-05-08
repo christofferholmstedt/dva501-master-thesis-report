@@ -15,7 +15,10 @@
    id="svg2985"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="processing_node_overview.svg">
+   sodipodi:docname="processing_node_overview.svg"
+   inkscape:export-filename="/home/christoffer/applications/dva501-master-thesis-report/report/figures/processing_node_overview.png"
+   inkscape:export-xdpi="155.94"
+   inkscape:export-ydpi="155.94">
   <metadata
      id="metadata3111">
     <rdf:RDF>
@@ -24,6 +27,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>

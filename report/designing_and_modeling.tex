@@ -112,7 +112,7 @@ Before heading to the second iteration it's time to take a closer look at the
 UPPAAL automata and see what other parts need improvements, as it should
 resemble the actual system as much as possible.
 
-First of is that the current automatons use transitions to model sent and
+First of is the current automata use transitions to model sent and
 received messages. When a transition is taken to send a message the different
 automata takes the transition to responed immediatly afterwards. This is more
 or less an event-based system which is not how the system should behave.
@@ -135,6 +135,49 @@ basic application and the SM-L has substantial differences. For easier
 maintanence of the models during the second iteration it would be valuable if
 the UPPAAL models could created in a modular way. Two main models would be the
 "basic application" and the "SM-L".
+
+Figure \ref{fig:iteration2_uml_component_overview} shows the component overview
+after the second iteration. The design of the interfaces between the components
+makes it easy to interchange which message types each "running task"
+(application) can handle and how it communicates. A simple application that is
+only connected to one subnet does not need the Routing component. The Routing
+component is specifically created for the SM-L to be able to route traffic
+within its own subnet and to other subnet managers over other types of subnets.
+The design even makes it possible for a subnet manager to be responsible for
+multiple subnets on different types of link-layers even if it's not supported
+by the SPA standards.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/iteration2_uml_component_overview}
+    \caption{Component overview of a basic SPA implementation}
+    \label{fig:iteration2_uml_component_overview}
+\end{figure}
+
+The actual design of the Communication package make use of the "Composite
+pattern" where Routing objects and Com objects all inherit from the same
+interface and where the Routing objects are of composite types. Figure
+\ref{fig:iteration2_difference} shows the difference between a simple
+application and the SM-L. The use of the composite pattern makes it possible
+for a "Running task" in the application layer to easily swap out how it
+connects to one or multiple networks.
+
+\begin{figure}[h]
+    \begin{subfigure}[b]{0.5\linewidth}
+        \centering
+            \includegraphics[width=0.9\textwidth]{figures/iteration2_uml_basic_application}
+            \caption{An application}
+            \label{fig:iteration2_uml_basic_application}
+            \end{subfigure}%
+        \begin{subfigure}[b]{.5\linewidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{figures/iteration2_uml_sm_l}
+            \caption{A Subnet Manager}
+            \label{fig:iteration2_uml_sm_l}
+        \end{subfigure}
+    \caption{The difference between a simple application and the SM-L.}
+\label{fig:iteration2_difference}
+\end{figure}
 
 \subsubsection{A basic application}
 TODO
