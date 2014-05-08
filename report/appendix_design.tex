@@ -2,13 +2,26 @@
 This appendix show the overall design of the system in UML layer, class and
 sequence diagrams.
 
-\section{SPA implementation high-level design}\label{sec:layered_design}
+\section{VN implementation high-level design}\label{sec:layered_design}
 TODO:
 
 \section{Component and Service discovery process}\label{sec:discovery_process}
 The following sequence diagrams show the basic component and service discovery
 process for a local subnet using UDP/IP for inter-process communication
 described in SPA Local Subnet Adaptation Draft \cite{spa:local-subnet}.
+
+Figure
+\ref{fig:appendix_vn_discovery_overview} starts with the high-level view of a
+complete SPA network. Figure
+\ref{fig:appendix_vn_local_subnet_network_discovery} continues with the
+specifics of a SPA Local Subnet. Figure
+\ref{fig:appendix_vn_address_block_assignment} shows the specifics on how a SPA
+Subnet Manager aquires an address block from the CAS and after that the SPA
+Subnet Manager assigns a logical address to each component it is aware of in
+figure \ref{fig:appendix_vn_local_subnet_address_assignment}. The last step is the
+component capabilities discovery process where the LS collects
+information about all known components on the network, this is shown in figure
+\ref{fig:appendix_vn_component_capabilities_discovery}.
 
 \begin{figure}[h]
     \centering
@@ -47,7 +60,3 @@ described in SPA Local Subnet Adaptation Draft \cite{spa:local-subnet}.
     components have which services, capabilities that is.}
     \label{fig:appendix_vn_component_capabilities_discovery}
 \end{figure}
-
-\section{Subsystems}
-TODO: Add detailed sequence and class diagrams that shows how the different
-subsystems work.
