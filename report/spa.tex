@@ -1,12 +1,12 @@
 \chapter{How the Space plug-and-play Architecture works}\label{ch:spa}
-This section will go through how the Space plug-and-play Architecture (SPA)
+This chapter will go through how the Space plug-and-play Architecture (SPA)
 works in detail with system sequence diagrams and component overviews.
-Throughout this section UML 2 will be used. It's worth remembering
+Throughout this section UML will be used. It's worth remembering
 that the purpose of these diagrams is to show the reader how SPA works, the
 purpose is not to give a complete picture to developers with all the
 implementation details.
 
-\section{Basic concepts and terminology in SPA}
+\section{Concepts and terminology in SPA}
 Space plug-and-play Architecture (SPA) is a set of standards that define how
 different players can create plug-and-play components that can easily be
 assembled to form a complete satellite for a specific mission. The standards
@@ -45,45 +45,43 @@ it can share its xTEDS file with other components. It's the responsibility of
 the "Lookup Service" to keep track of all components' capabilities in the SPA
 network.
 
-To describe what a SPA network can look like figure TODO shows a minimal SPA
-network which consists of a CAS, LS, a sensor and a monitor application, all
-running on the same processing node and in the same local subnet managed by the
-SM-L.
+To describe what a SPA network can look like figure
+\ref{fig:minimal_spa_network} shows a minimal SPA network which consists of a
+CAS, LS, a sensor and a monitor application, all running on the same processing
+node and in the same local subnet managed by the SM-L.
 
-A more complex SPA network is shown in figure TODO. The original SPA network is
-extended with multiple SPA subnets connected to the original SPA Local Subnet.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/minimal_spa_network}
+    \caption{A processing node running a minimal SPA network.}
+    \label{fig:minimal_spa_network}
+\end{figure}
+
+A more complex SPA network is shown in figure \ref{fig:complex_spa_network}.
+Three different processing nodes are connceted to each other over a
+SPA-Ethernet subnet. The CAS, LS and Monitor Application are now running on
+different nodes and the sensor application is located on its own embedded
+device.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/complex_spa_network}
+    \caption{A SPA network with multiple subnets.}
+    \label{fig:complex_spa_network}
+\end{figure}
 
 For a detailed view on how SPA works the SPA standards is the best source for
-information though chapter \ref{ch:spa} will go through some scenarios in
-detail that can be helpful to the reader to understand SPA. The SPA standards
-and drafts that specify software requirements are the Logical Interface
-standard \cite{spa:logical-interface}, Networking standard
-\cite{spa:networking}, Local Subnet Draft \cite{spa:local-subnet}, Ontology
-Standard \cite{spa:ontology} and System Capabilities Standard
+information. The SPA standards and drafts that specify software requirements
+are the Logical Interface standard \cite{spa:logical-interface}, Networking
+standard \cite{spa:networking}, Local Subnet Draft \cite{spa:local-subnet},
+Ontology Standard \cite{spa:ontology} and System Capabilities Standard
 \cite{spa:system-capabilities}.
 
-\subsection{A single SPA local subnet - Overview}
-TODO: Add this as image above in the "Basic Concept section"
 
-\subsection{A single SPA local subnet - Boot up sequence diagrams}
-TODO: Add this as image above in the "Basic Concept section"
-
-\subsection{A single SPA local subnet - Normal operation sequence diagrams}
-TODO: Add this as image above in the "Basic Concept section"
-
-\subsection{Two local subnets and two ethernet subnets - Overview}
-TODO: Add this as image above in the "Basic Concept section"
-
-The subnets are connected in a straight series. One processsing node, one
-ethernet subnet, one processing node and then another ethernet subnet.
-
-\subsection{Two local subnets and two ethernet subnets - Boot up sequence diagrams}
-TODO: Add this as image above in the "Basic Concept section"
-
-\section{Virtual Network and the Virtual Network Protocol}
-TODO: Finish of with the definition of Virtual Network, Virtual Network
-Protocol and how it relates to SPA.
-
-TODO: Is this needed or should VNP perhaps only be mentioned in context with
-development efforts and code? This would mean that all comments about VN/VNP is
-pushed to the results and conclusion parts...perhaps some in the method.
+% \section{Virtual Network and the Virtual Network Protocol}
+% TODO: Finish of with the definition of Virtual Network, Virtual Network
+% Protocol and how it relates to SPA.
+%
+% TODO: Is this needed or should VNP perhaps only be mentioned in context with
+% development efforts and code? This would mean that all comments about VN/VNP is
+% pushed to the results and conclusion parts...perhaps some in the method.
