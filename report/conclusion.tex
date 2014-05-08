@@ -1,14 +1,20 @@
 \chapter{Conclusion}\label{ch:conclusion}
-TODO: What does this work bring? What is new and what is good about it?
+Presented in this thesis report is a model-checked implementation of a new
+subnet local adaptation for the Space plug-and-play Architecture. Instead of
+UDP/IP for IPC, Ada Protected Objects are used to share data between different
+Ada tasks.
 
-TODO: What are my conclusion(s)?
+...
+
+
+TODO: Trade off between detail in models and complexity in models. Higher
+detail means higher complexity. Is the current abstraction a good trade-off?
+
 
 TODO: Is both the event- and time-triggered systems verified correcly with the
 models and are the models good abstractions from the real-world implementation?
 Is event- or time-triggered systems best in this field?
 
-TODO: Trade off between detail in models and complexity in models. Higher
-detail means higher complexity. Is the current abstraction a good trade-off?
 
 
 \section{Future research and development}
@@ -43,30 +49,30 @@ from this thesis work is that to bring the level of confidence in the system
 up someone with experience from developing safety-critical systems in Ada
 should be brought in to help out with design decisions.
 
-TODO: Routing through several subnets with different speeds. Maximum
-Transmission Unit and routing through the networks with the best throughput
-should be looked into.
-
-TODO: What should be extended with regard to VN and what could be improved with
-regard to the implementation?
-
-TODO: To improve testing of components a IPSEC/gateway for remote location
-communication could be added. Imagine that you have a development team in USA,
-Sweden, South Africa, Japan and China. All development teams work independently
-on their own SPA components. It's the responsiblity of the team in Sweden to do
-the integration testing so instead of waiting for all others to finish their
-product and send it to Sweden (could be both hardware and software), they
-connect with a SPA IPSEC gateway to all remote locations and the remote teams
-hook up their respective component. The teams have now created a plug-and-play
-system over the internet for early integration testing. This could also be used
-for remote validation and verification, the verifier connect to a remote site
-which have the component to be verified and can thereby test remotely.
-
-TODO: "The Implementation of a Plug-and-play Satellite Bus" writes about a
-"Mission Spacecraft Design Tool" for rapid prototyping. This sounds like a
-really cool idea. Blender or Inkscape GUI, with satellite/unmanned vehicles/IoT
-purpose. The tool could create the models used for verification and the source
-code that runs on the different processing nodes.
+% TODO: Routing through several subnets with different speeds. Maximum
+% Transmission Unit and routing through the networks with the best throughput
+% should be looked into.
+% 
+% TODO: What should be extended with regard to VN and what could be improved with
+% regard to the implementation?
+% 
+% TODO: To improve testing of components a IPSEC/gateway for remote location
+% communication could be added. Imagine that you have a development team in USA,
+% Sweden, South Africa, Japan and China. All development teams work independently
+% on their own SPA components. It's the responsiblity of the team in Sweden to do
+% the integration testing so instead of waiting for all others to finish their
+% product and send it to Sweden (could be both hardware and software), they
+% connect with a SPA IPSEC gateway to all remote locations and the remote teams
+% hook up their respective component. The teams have now created a plug-and-play
+% system over the internet for early integration testing. This could also be used
+% for remote validation and verification, the verifier connect to a remote site
+% which have the component to be verified and can thereby test remotely.
+% 
+% TODO: "The Implementation of a Plug-and-play Satellite Bus" writes about a
+% "Mission Spacecraft Design Tool" for rapid prototyping. This sounds like a
+% really cool idea. Blender or Inkscape GUI, with satellite/unmanned vehicles/IoT
+% purpose. The tool could create the models used for verification and the source
+% code that runs on the different processing nodes.
 
 % \section{All references}
 % TODO: Remove this section from your own report when it's done so only the
