@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by diasvg.py -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="19.250cm"
+   height="10.250cm"
+   viewBox="3.500 1.212 22.750 11.463"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="processing_node_overview.svg">
+  <metadata
+     id="metadata3111">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3109" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1280"
+     inkscape:window-height="975"
+     id="namedview3107"
+     showgrid="false"
+     inkscape:zoom="1.6449524"
+     inkscape:cx="341.0433"
+     inkscape:cy="181.59448"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2985" />
+  <rect
+     x="3.550"
+     y="2.262"
+     width="19.150"
+     height="9.150"
+     fill="#FFFFFF"
+     stroke="none"
+     stroke-width="0"
+     id="rect2987" />
+  <rect
+     x="3.550"
+     y="2.262"
+     width="19.150"
+     height="9.150"
+     fill="none"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="rect2989" />
+  <rect
+     x="3.550"
+     y="1.262"
+     width="6.745"
+     height="1.000"
+     fill="#FFFFFF"
+     stroke="none"
+     stroke-width="0"
+     id="rect2991" />
+  <rect
+     x="3.55"
+     y="1.262"
+     width="8.4373798"
+     height="1"
+     id="rect2993"
+     style="fill:none;stroke:#000000;stroke-width:0.11184403" />
+  <text
+     x="3.650"
+     y="1.962"
+     fill="#000000"
+     text-anchor="start"
+     font-size="0.80"
+     font-family="monospace"
+     font-style="normal"
+     font-weight="400"
+     id="text2995">
+A Processing Node</text>
+  <polygon
+     fill="#FFFFFF"
+     stroke="none"
+     stroke-width="0.100"
+     points="10.890,3.354 11.390,2.854 15.040,2.854 15.040,5.804 14.540,6.304 10.890,6.304 10.890,3.354 "
+     id="polygon2997" />
+  <polygon
+     fill="none"
+     stroke="#000000"
+     stroke-width="0.100"
+     points="10.890,3.354 11.390,2.854 15.040,2.854 15.040,5.804 14.540,6.304 10.890,6.304 10.890,3.354 "
+     id="polygon2999" />
+  <line
+     x1="10.890"
+     y1="3.354"
+     x2="14.540"
+     y2="3.354"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3001" />
+  <line
+     x1="14.540"
+     y1="3.354"
+     x2="15.040"
+     y2="2.854"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3003" />
+  <line
+     x1="14.540"
+     y1="3.354"
+     x2="14.540"
+     y2="6.304"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3005" />
+  <text
+     x="11.390"
+     y="4.449"
+     fill="#000000"
+     text-anchor="start"
+     font-size="0.80"
+     font-family="sans"
+     font-style="normal"
+     font-weight="400"
+     id="text3007">
+SM-L</text>
+  <line
+     x1="11.390"
+     y1="4.601"
+     x2="12.938"
+     y2="4.601"
+     stroke="#000000"
+     stroke-width="0.050"
+     id="line3009" />
+  <polygon
+     fill="#FFFFFF"
+     stroke="none"
+     stroke-width="0.100"
+     points="17.640,3.354 18.140,2.854 21.790,2.854 21.790,5.804 21.290,6.304 17.640,6.304 17.640,3.354 "
+     id="polygon3011" />
+  <polygon
+     fill="none"
+     stroke="#000000"
+     stroke-width="0.100"
+     points="17.640,3.354 18.140,2.854 21.790,2.854 21.790,5.804 21.290,6.304 17.640,6.304 17.640,3.354 "
+     id="polygon3013" />
+  <line
+     x1="17.640"
+     y1="3.354"
+     x2="21.290"
+     y2="3.354"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3015" />
+  <line
+     x1="21.290"
+     y1="3.354"
+     x2="21.790"
+     y2="2.854"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3017" />
+  <line
+     x1="21.290"
+     y1="3.354"
+     x2="21.290"
+     y2="6.304"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3019" />
+  <text
+     x="18.140"
+     y="4.449"
+     fill="#000000"
+     text-anchor="start"
+     font-size="0.80"
+     font-family="sans"
+     font-style="normal"
+     font-weight="400"
+     id="text3021">
+LS</text>
+  <line
+     x1="18.140"
+     y1="4.601"
+     x2="18.905"
+     y2="4.601"
+     stroke="#000000"
+     stroke-width="0.050"
+     id="line3023" />
+  <polygon
+     fill="#FFFFFF"
+     stroke="none"
+     stroke-width="0.100"
+     points="4.540,3.354 5.040,2.854 8.690,2.854 8.690,5.804 8.190,6.304 4.540,6.304 4.540,3.354 "
+     id="polygon3025" />
+  <polygon
+     fill="none"
+     stroke="#000000"
+     stroke-width="0.100"
+     points="4.540,3.354 5.040,2.854 8.690,2.854 8.690,5.804 8.190,6.304 4.540,6.304 4.540,3.354 "
+     id="polygon3027" />
+  <line
+     x1="4.540"
+     y1="3.354"
+     x2="8.190"
+     y2="3.354"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3029" />
+  <line
+     x1="8.190"
+     y1="3.354"
+     x2="8.690"
+     y2="2.854"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3031" />
+  <line
+     x1="8.190"
+     y1="3.354"
+     x2="8.190"
+     y2="6.304"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3033" />
+  <text
+     x="5.040"
+     y="4.449"
+     fill="#000000"
+     text-anchor="start"
+     font-size="0.80"
+     font-family="sans"
+     font-style="normal"
+     font-weight="400"
+     id="text3035">
+CAS</text>
+  <line
+     x1="5.040"
+     y1="4.601"
+     x2="6.333"
+     y2="4.601"
+     stroke="#000000"
+     stroke-width="0.050"
+     id="line3037" />
+  <polygon
+     fill="#FFFFFF"
+     stroke="none"
+     stroke-width="0.100"
+     points="4.090,7.745 4.590,7.245 8.240,7.245 8.240,10.195 7.740,10.695 4.090,10.695 4.090,7.745 "
+     id="polygon3039" />
+  <polygon
+     fill="none"
+     stroke="#000000"
+     stroke-width="0.100"
+     points="4.090,7.745 4.590,7.245 8.240,7.245 8.240,10.195 7.740,10.695 4.090,10.695 4.090,7.745 "
+     id="polygon3041" />
+  <line
+     x1="4.090"
+     y1="7.745"
+     x2="7.740"
+     y2="7.745"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3043" />
+  <line
+     x1="7.740"
+     y1="7.745"
+     x2="8.240"
+     y2="7.245"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3045" />
+  <line
+     x1="7.740"
+     y1="7.745"
+     x2="7.740"
+     y2="10.695"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3047" />
+  <text
+     x="4.590"
+     y="8.840"
+     fill="#000000"
+     text-anchor="start"
+     font-size="0.80"
+     font-family="sans"
+     font-style="normal"
+     font-weight="400"
+     id="text3049">
+App 1</text>
+  <line
+     x1="4.590"
+     y1="8.992"
+     x2="6.452"
+     y2="8.992"
+     stroke="#000000"
+     stroke-width="0.050"
+     id="line3051" />
+  <polygon
+     fill="#FFFFFF"
+     stroke="none"
+     stroke-width="0.100"
+     points="8.623,7.745 9.123,7.245 12.773,7.245 12.773,10.195 12.273,10.695 8.623,10.695 8.623,7.745 "
+     id="polygon3053" />
+  <polygon
+     fill="none"
+     stroke="#000000"
+     stroke-width="0.100"
+     points="8.623,7.745 9.123,7.245 12.773,7.245 12.773,10.195 12.273,10.695 8.623,10.695 8.623,7.745 "
+     id="polygon3055" />
+  <line
+     x1="8.623"
+     y1="7.745"
+     x2="12.273"
+     y2="7.745"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3057" />
+  <line
+     x1="12.273"
+     y1="7.745"
+     x2="12.773"
+     y2="7.245"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3059" />
+  <line
+     x1="12.273"
+     y1="7.745"
+     x2="12.273"
+     y2="10.695"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3061" />
+  <text
+     x="9.123"
+     y="8.840"
+     fill="#000000"
+     text-anchor="start"
+     font-size="0.80"
+     font-family="sans"
+     font-style="normal"
+     font-weight="400"
+     id="text3063">
+App 2</text>
+  <line
+     x1="9.123"
+     y1="8.992"
+     x2="10.986"
+     y2="8.992"
+     stroke="#000000"
+     stroke-width="0.050"
+     id="line3065" />
+  <polygon
+     fill="#FFFFFF"
+     stroke="none"
+     stroke-width="0.100"
+     points="17.690,7.745 18.190,7.245 21.840,7.245 21.840,10.195 21.340,10.695 17.690,10.695 17.690,7.745 "
+     id="polygon3067" />
+  <polygon
+     fill="none"
+     stroke="#000000"
+     stroke-width="0.100"
+     points="17.690,7.745 18.190,7.245 21.840,7.245 21.840,10.195 21.340,10.695 17.690,10.695 17.690,7.745 "
+     id="polygon3069" />
+  <line
+     x1="17.690"
+     y1="7.745"
+     x2="21.340"
+     y2="7.745"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3071" />
+  <line
+     x1="21.340"
+     y1="7.745"
+     x2="21.840"
+     y2="7.245"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3073" />
+  <line
+     x1="21.340"
+     y1="7.745"
+     x2="21.340"
+     y2="10.695"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3075" />
+  <text
+     x="18.190"
+     y="8.840"
+     fill="#000000"
+     text-anchor="start"
+     font-size="0.80"
+     font-family="sans"
+     font-style="normal"
+     font-weight="400"
+     id="text3077">
+App n</text>
+  <line
+     x1="18.190"
+     y1="8.992"
+     x2="20.050"
+     y2="8.992"
+     stroke="#000000"
+     stroke-width="0.050"
+     id="line3079" />
+  <line
+     x1="8.290"
+     y1="7.686"
+     x2="10.841"
+     y2="6.039"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3081" />
+  <line
+     x1="11.493"
+     y1="7.195"
+     x2="11.928"
+     y2="6.354"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3083" />
+  <line
+     x1="13.937"
+     y1="7.195"
+     x2="13.502"
+     y2="6.354"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3085" />
+  <line
+     x1="17.641"
+     y1="8.010"
+     x2="15.077"
+     y2="6.354"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3087" />
+  <line
+     x1="10.841"
+     y1="4.829"
+     x2="8.737"
+     y2="4.829"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3089" />
+  <line
+     x1="15.090"
+     y1="4.829"
+     x2="17.591"
+     y2="4.829"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3091" />
+  <polygon
+     fill="#FFFFFF"
+     stroke="none"
+     stroke-width="0.100"
+     points="13.157,7.745 13.657,7.245 17.307,7.245 17.307,10.195 16.807,10.695 13.157,10.695 13.157,7.745 "
+     id="polygon3093" />
+  <polygon
+     fill="none"
+     stroke="#000000"
+     stroke-width="0.100"
+     points="13.157,7.745 13.657,7.245 17.307,7.245 17.307,10.195 16.807,10.695 13.157,10.695 13.157,7.745 "
+     id="polygon3095" />
+  <line
+     x1="13.157"
+     y1="7.745"
+     x2="16.807"
+     y2="7.745"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3097" />
+  <line
+     x1="16.807"
+     y1="7.745"
+     x2="17.307"
+     y2="7.245"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3099" />
+  <line
+     x1="16.807"
+     y1="7.745"
+     x2="16.807"
+     y2="10.695"
+     stroke="#000000"
+     stroke-width="0.100"
+     id="line3101" />
+  <text
+     x="13.657"
+     y="8.840"
+     fill="#000000"
+     text-anchor="start"
+     font-size="0.80"
+     font-family="sans"
+     font-style="normal"
+     font-weight="400"
+     id="text3103">
+. . .</text>
+  <line
+     x1="13.657"
+     y1="8.992"
+     x2="14.669"
+     y2="8.992"
+     stroke="#000000"
+     stroke-width="0.050"
+     id="line3105" />
+</svg>
