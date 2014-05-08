@@ -11,18 +11,20 @@ during component and service discovery is presented in this chapter. After the
 initial discovery and configuration process have been done the system continue
 in normal operation mode with an extra set of SPA message types. Detailed
 sequence diagrams over the component and service discovery process is shown in
-appendix \ref{ch:appendix_design}.
+section \ref{sec:discovery_process}.
 
 \section{First iteration}
 The first UPPAAL models were created after designing the basic structure of the
-system. Each SPA application will do the same thing receive, handle and send
-SPA messages. The difference between the applications is which messages each
-application understands and which messages the application will ignore. A SPA
-processing node will at most have one CAS, one SM-L and one LS but can have any
-number of applications running next to them. This inspired the first UPPAAL
-model that the SPA application model should be possible to instantiate multiple
-times in UPPAAL but the other more specific models can be used only ones. The
-basic overview is shown in figure \ref{fig:processing_node_overview}.
+system. Each application will do the same thing which is receive, handle
+and send messages. The difference between the applications is which
+messages each application understands and which messages the application will
+ignore. A processing node will at most have one CAS, one SM-L and one LS
+but can have any number of applications running next to them. This inspired the
+first iteration of UPPAAL models that the application automaton should be
+possible to instantiate multiple times in UPPAAL but the other more specific
+models can be used only ones. The basic component overview is shown in figure
+\ref{fig:processing_node_overview} which is what the UPPAAL model is to
+resemble as close as possible.
 
 \begin{figure}[h]
     \centering
@@ -31,34 +33,123 @@ basic overview is shown in figure \ref{fig:processing_node_overview}.
     \label{fig:processing_node_overview}
 \end{figure}
 
+\subsubsection{A basic application}
+The basic functionality of an application is that it should be able to identify
+itself on the network, share its capabilities and request information from
+other applications. An application is only connected to one subnet at a time.
+The limitied functionality of an application makes for a basic two-layered
+design where the upper-layer alter its behaviour depending on incoming
+message types and the lower layer is only responsible for sending and receiving
+messages on its subnet. The application sends out Local\_Hello message during
+boot-up and receives a Local\_Ack response, all messages are modeled as
+transition between different states. It then receives a logical address with
+the Assign\_Address message. As final step it receives a Probe\_Request from
+the Lookup Service to share its capabilities. Figure
+\ref{fig:iteration1_application} shows the UPPAAL model.
 
-% Therefore the UPPAAL models have been created so an application model can be
-% instantiated with the specific message types it handles in separate automata.
-% Each SPA application is modelled on its own to reduce complexity. A driver
-% model is used to vary the amount of incoming messages.
-
-\subsubsection{A SPA application}
-TODO: What is common between all applications.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/iteration1_application}
+    \caption{UPPAAL model of a first iteration application.}
+    \label{fig:iteration1_application}
+\end{figure}
 
 \subsubsection{Central Addressing Service (CAS)}
-TODO: Add models for the specific messages this one handles.
+Specifics for the CAS is that it assigns an address to itself so no need for
+processing of Assign\_Address messages. As addition to basic application
+functionality the CAS sends out address block to the requesting subnet
+managers. Figure \ref{fig:iteration1_cas} shows the UPPAAL model.
 
-\subsubsection{Local Subnet Manager (SM-L)}
-TODO: Add models for the specific messages this one handles.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/iteration1_cas}
+    \caption{UPPAAL model of a first iteration CAS.}
+    \label{fig:iteration1_cas}
+\end{figure}
 
 \subsubsection{Lookup Service (LS)}
+The additions the LS brings in is the processing of Request\_LS\_Probe,
+Probe\_Reply and Probe\_Request messages, for service discovery purposes.
+Figure \ref{fig:iteration1_ls} shows the UPPAAL model.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/iteration1_ls}
+    \caption{UPPAAL model of a first iteration LS.}
+    \label{fig:iteration1_ls}
+\end{figure}
+
+\subsubsection{Local Subnet Manager (SM-L)}
+In contrast to the other components the Subnet Manager manages most of the
+interaction done in the subnet. It's responsible for answering all Local\_Hello
+messages during component discovery and replying with an acknowledgement as
+well as with an logical address assignment. As a last step it tells the LS to
+send out Probe\_Requests to all active components on the subnet.Figure
+\ref{fig:iteration1_sm_l} shows the UPPAAL model.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/iteration1_sm_l}
+    \caption{UPPAAL model of a first iteration SM-L.}
+    \label{fig:iteration1_sm_l}
+\end{figure}
+
 
 \subsubsection{First iteration conclusions}
-Event-based
+The CAS, LS and SM-L have specific functionality so they can only be used ones
+when setting up a complete network of automata. The application model can be
+instantiated multiple times as was the goal. At this level of abstraction
+everything looks fine though the main goal with the UPPAAL model is to be able
+to verify that the system behaves as aspected and can't reach unknown states or
+deadlock. As the first iteration of models only shows the boot-up process it
+will eventually reach deadlock when everything is set up. This is a drawback
+as it doesn't relate very well with the actual design of the system, that can
+have different applications come online and go offline at any time, not just
+during initial boot-up. This calls for another iteration and improvement of the
+different UPPAAL automata.
 
-Not flexibel for another set of messages
+Before heading to the second iteration it's time to take a closer look at the
+UPPAAL automata and see what other parts need improvements, as it should
+resemble the actual system as much as possible.
 
-multiple messages of the same time can be sent, e.g. if SPAack is not redv
-extra Local Hello can be sent.
+First of is that the current automatons use transitions to model sent and
+received messages. When a transition is taken to send a message the different
+automata takes the transition to responed immediatly afterwards. This is more
+or less an event-based system which is not how the system should behave.
+Instead the second iteration of UPPAAL models should be modeled as a
+time-triggered system so responses can be sent later on.
+
+The models only works with a set of eight different message types and in the
+current design of the UPPAAL models it's hard to add another type of message.
+If possible the second iteration should make it possible to add and remove
+specific message types with ease.
+
+As a third improvement time invariants should be added to the different
+automata so verification of real-time requirements can be done.
+
+\section{Second iteration}
+To improve the UPPAAL models a more detailed design is required of the system.
+From the first iteration it's clear that the basic application can be designed
+in a generic fashion. The CAS and LS is more specific instantiations of the
+basic application and the SM-L has substantial differences. For easier
+maintanence of the models during the second iteration it would be valuable if
+the UPPAAL models could created in a modular way. Two main models would be the
+"basic application" and the "SM-L".
+
+\subsubsection{A basic application}
+TODO
+\subsubsection{Central Addressing Service (CAS)}
+TODO
+\subsubsection{Lookup Service (LS)}
+TODO
+\subsubsection{Local Subnet Manager (SM-L)}
+TODO
+\subsubsection{Second iteration conclusions}
+TODO
 
 \section{Validation and Verification}
 TODO: Add comments about time verification and correctness. What are the
 verification lines used in UPPAAL to verify the system?
 
-\section{An event-triggered alternative}
-TODO: All models and comments about an event-triggered alternative.
+% \section{An event-triggered alternative}
+% TODO: All models and comments about an event-triggered alternative.
