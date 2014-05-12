@@ -1,9 +1,46 @@
 \chapter{System Design}\label{ch:appendix_design}
-This appendix show the overall design of the system in UML layer, class and
+This appendix shows the overall design of the system in UML layer, class and
 sequence diagrams.
 
-\section{VN implementation high-level design}\label{sec:layered_design}
-TODO:
+\section{Virtual Network Library implementation, high-level
+design}\label{sec:layered_design}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/appendix_component_overview}
+    \caption{Component overview of the Virtual Network Library implementation.}
+    \label{fig:appendix_component_overview}
+\end{figure}
+
+To get one simple application up and running in a "Virtual Network" the
+application's settings need to be defined in the \emph{Application\_Information}
+component. This range from everything from CUUID to other custom settings that
+may be needed. The Application\_Information component also keeps track of the
+application's logical address during run-time and supplies different helper
+functions, one of which is to fill in \emph{VN.Message} header information.
+
+The next step is to add connectivity. If the application only runs on a
+processing node or another single subnet all that is needed is a
+\emph{VN.Communication.Com} implementation of that specific subnet type. The
+more advanced use case is a subnet manager that manages its own subnet and is
+connected to a Local Subnet Manager on the processing node it runs on. As this
+requires connectivty on more than one subnet a \emph{Protocol\_Routing} object
+will be needed to route traffic between subnets. The Protocol\_Routing object
+is a composite type of the VN.Communication.Com interface and can
+therefore add multiple subnets during startup procedures.
+
+All communication on a processing node through Ada Protected Objects goes
+through the Subnet Manager as a router. This leads to that all applications on
+a processing node only has to instantiate one connection. This is done by first
+instantiating one Protocted Object (PO) through the \emph{VN.Communication.PO}
+component. An access to this PO can then be used as input paramter when
+creating the two \emph{VN.Communication.PO\_Wrapper's}, one for the application
+and one for the local subnet manager.
+
+The application itself is written as an Ada task and due to Ravenscar
+limitiation must be built from the ground up for each new task. Best way to
+start is to copy an example task from the "examples" directory in the
+repository \cite{web:github-vn-lib}.
 
 \section{Component and Service discovery process}\label{sec:discovery_process}
 The following sequence diagrams show the basic component and service discovery
