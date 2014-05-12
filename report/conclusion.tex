@@ -1,15 +1,17 @@
 \chapter{Conclusion}\label{ch:conclusion}
 Presented in this thesis report is a model-checked implementation of a new
-subnet local adaptation for the Space plug-and-play Architecture. Instead of
-UDP/IP for IPC, Ada Protected Objects are used to share data between different
-Ada tasks.
+subnet local adaptation for the Space plug-and-play Architecture, implemented
+as the Virtual Network Library \cite{web:github-vn-lib} for the fork of SPA
+called "Virtual Network Protocol". Instead of UDP/IP for IPC, Ada Protected
+Objects are used to share data between different Ada tasks.
 
 When model-checking a system to verify that it behaves as expected it's
 important to get the model to resemble the implementation as close as possible
 and the implementation to resemble the model as close possible. It's a network
 of two development artifacts that prove that the system behaves according to
 specifications. In this thesis the specifications are the SPA standards
-and our implementation is the Virtual Network implementation that is verified.
+and our implementation is the "Virtual Network Library" implementation with
+example applications that is verified.
 
 In chapter \ref{ch:designing_and_modeling} the process that took place to reach
 the end result when it comes to UPPAAL models and implementation is shown.
@@ -27,37 +29,59 @@ models and are the models good abstractions from the real-world implementation?
 Is event- or time-triggered systems best in this field?
 
 \section{Future research and development}
-TODO, discussion \#1: Is this approach worth going forward with. It depends on
-the field, IoT needs more flexibility but robots and satellites might be fine.
-More input is needed regarding future operations. The presented solution which
-uses Ada Protected Object requires future updates to the software in a
-processing node to replace the entire binary running. There is no possibility
-for dynamic linking of modules.  If there processing node has an external
-"manager" that can supervise upgrades and verify that they have been installed
-correctly it may be worth it, though for other embedded systems which run alone
-may not have the luxury of a supervisor and an upgrade of the entire binary may
-be problematic.
+The major consequence of moving away from UDP/IP as IPC is that the
+applications running on the different processing node no longer are modular in
+the sense that it's easy to add and remove applications on a processing node in
+a running system. When using Ada Protected Objects all applications must be
+compiled together into one binary and started at the same time. This leads to
+future updates must replace the entire binary and reboot the system. The
+trade-off between Ada Protected Objects and a run-time modularity is something
+that need to be prioritzed per project basis. For Robots or satelites that are
+not connected to Internet the increased reliability of protected objects may be
+valid but for devices connected to Internet that always must be up to date
+security wise to protect against intrusions, the modularity may be prioritized.
+An example to this could be a refridgerator that is connected to Internet and a
+vulnerability is found in it's SSL code. Instead of updating the entire running
+binary it would be enough just to update the SSL run-time. Future work could
+look into the possibility of keeping some run-time modularity and introducing
+Ada Protected Objects.
 
-TODO, discussion \#2: Security. VERY important if you aim for the IoT market,
-isolated robots and satellites might be a different thing but devies connected
-to the internet must be secured. Security. Proof of concept has been shown and
-now security must be added as early as possible so it doesn't have to be glued
-on top of a system later on e.g. in a home automation, what restricts
-neighbouring systems (different apartments) to talk to each other as the link
-layer often is the same within a building.
+For closed-circuit networks like remote operated vehicles and some robots,
+security may not be that important but for the vast majority of devices
+security need to be introduced. As soon as a device is connected to Internet
+and start to communicate with others it will need some kind of authentication
+mechanism to allow access to its own data, it will need authorization mechanism
+to be able to differentiate between different other devices regarding which
+device should get access to what data. Added to this is transport encryption
+(confidentiality) to prevent pervasive monitoring and the possiblitiy of
+disclosing private information to active listeners (man-in-the-middle attacks).
+How to add security to a SPA network with open access to internet is an
+important step forward to make SPA a viable option in the world of Internet of
+Things.
 
-TODO, lessons learned \#3: Development practices in the field of
-safety-critical systems. During the development there were a lot of discussions
-back and forth which Ada programming language features we could and which we
-should use. ISO guidelines and publications from AdaCore are good discussions
-on the different trade-offs but no firm ruling on what is good practice and
-what is bad practice, as it should. The problem is without previous experience
-and non-existent open-source code available online to look at the development
-process has fumbled back and forth during different discussions. These
-discussions have ranged from OOP to the use of access types. The lesson learned
-from this thesis work is that to bring the level of confidence in the system
-up someone with experience from developing safety-critical systems in Ada
-should be brought in to help out with design decisions.
+When starting this thesis Ada was chosen as programming language because of its
+track record with software that must be dependable to high-levels. Different
+ISO standards and white papers from AdaCore introduce good programming
+practices, how to develop good quality software and how to use object-oriented
+programming in the field of safety-critical applications. The approach all
+these papers use is that the developer and/or architect need to decide upon a
+few things first before starting development.
+
+First of the project must know what kind of safety level is expected from the
+system. This relates to how much testing, validation and verification must
+be done in the end and throughout the development. In turn the choice of
+testing, validation and verification techniques influence the choice of
+programming features that can and should be used. During the development and
+design in this project quite a lot of discussions went into which level of
+safety that was expected, as there were no specific application use in mind
+there was no way to decide which techniques we were going to use to test the
+system in the end. Instead time went into discussing which Ada features we
+though would be very usefull and which ones we could skip. The reasoning behind
+this is that the fewer Ada constructs we use the easier it will be to validate
+and verify as well in the future (as well as porting the system to new
+architectures). Future work should take a deeper look at the different safety
+standards that may be of interest and come up with more firm programming
+guidelines that can be used in Ada during future development.
 
 % TODO: Routing through several subnets with different speeds. Maximum
 % Transmission Unit and routing through the networks with the best throughput
