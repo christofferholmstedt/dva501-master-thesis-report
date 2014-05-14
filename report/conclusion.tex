@@ -36,19 +36,20 @@ a running system. When using Ada Protected Objects all applications must be
 compiled together into one binary and started at the same time. This leads to
 future updates must replace the entire binary and reboot the system. The
 trade-off between Ada Protected Objects and a run-time modularity is something
-that need to be prioritzed per project basis. For Robots or satelites that are
-not connected to Internet the increased reliability of protected objects may be
-valid but for devices connected to Internet that always must be up to date
-security wise to protect against intrusions, the modularity may be prioritized.
-An example to this could be a refridgerator that is connected to Internet and a
-vulnerability is found in it's SSL code. Instead of updating the entire running
-binary it would be enough just to update the SSL run-time. Future work could
-look into the possibility of keeping some run-time modularity and introducing
-Ada Protected Objects.
+that need to be prioritzed per project basis. For robots or satelites that are
+not connected to internet the increased reliability of protected objects may be
+a good trade-off. On the other side devices connected to internet that always
+must be up to date security wise to protect against intrusions, the modularity
+may be prioritized.  An example to this could be a refridgerator that is
+connected to internet and a vulnerability is found in it's transport layer
+security code. Instead of updating the entire running binary it would be enough
+just to update the specific module that expose the vulnerability. Future work
+should look into the possibility of keeping some run-time modularity and
+introducing Ada Protected Objects.
 
 For closed-circuit networks like remote operated vehicles and some robots,
 security may not be that important but for the vast majority of devices
-security need to be introduced. As soon as a device is connected to Internet
+security need to be introduced. As soon as a device is connected to internet
 and start to communicate with others it will need some kind of authentication
 mechanism to allow access to its own data, it will need authorization mechanism
 to be able to differentiate between different other devices regarding which
@@ -73,15 +74,15 @@ be done in the end and throughout the development. In turn the choice of
 testing, validation and verification techniques influence the choice of
 programming features that can and should be used. During the development and
 design in this project quite a lot of discussions went into which level of
-safety that was expected, as there were no specific application use in mind
+safety that was expected, as there were no specific application in mind
 there was no way to decide which techniques we were going to use to test the
 system in the end. Instead time went into discussing which Ada features we
-though would be very usefull and which ones we could skip. The reasoning behind
-this is that the fewer Ada constructs we use the easier it will be to validate
-and verify as well in the future (as well as porting the system to new
+thought would be usefull and which ones we should avoid. The reasoning
+behind this is that the fewer Ada constructs we use the easier it will be to
+validate and verify in the future (as well as porting the system to new
 architectures). Future work should take a deeper look at the different safety
-standards that may be of interest and come up with more firm programming
-guidelines that can be used in Ada during future development.
+standards that may be of interest and come up with firm programming guidelines
+that can be used during future development.
 
 % TODO: Routing through several subnets with different speeds. Maximum
 % Transmission Unit and routing through the networks with the best throughput
