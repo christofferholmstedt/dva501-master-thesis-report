@@ -84,7 +84,7 @@ In contrast to the other components the Subnet Manager manages most of the
 interaction done in the subnet. It's responsible for answering all Local\_Hello
 messages during component discovery and replying with an acknowledgement as
 well as with an logical address assignment. As a last step it tells the LS to
-send out Probe\_Requests to all active components on the subnet.Figure
+send out Probe\_Requests to all active components on the subnet. Figure
 \ref{fig:iteration1_sm_l} shows the UPPAAL model.
 
 \begin{figure}[h]
@@ -103,29 +103,25 @@ everything looks fine though the main goal with the UPPAAL model is to be able
 to verify that the system behaves as aspected and can't reach unknown states or
 deadlock. As the first iteration of models only shows the boot-up process it
 will eventually reach deadlock when everything is set up. This is a drawback
-as it doesn't relate very well with the actual design of the system, that can
-have different applications come online and go offline at any time, not just
-during initial boot-up. This calls for another iteration and improvement of the
-different UPPAAL automata.
+as it doesn't relate very well with the actual design of the system, after
+boot-up. This calls for another iteration and improvement of the different
+UPPAAL automata.
 
 Before heading to the second iteration it's time to take a closer look at the
 UPPAAL automata and see what other parts need improvements, as it should
 resemble the actual system as much as possible.
 
 First of is the current automata use transitions to model sent and
-received messages. When a transition is taken to send a message the different
-automata takes the transition to responed immediatly afterwards. This is more
-or less an event-based system which is not how the system should behave.
-Instead the second iteration of UPPAAL models should be modeled as a
-time-triggered system so responses can be sent later on.
+received messages directly between the different automata. When a transition is
+taken to send a message the receiving automaton takes a corresponding
+transition to receive the message at the same time. This is in contrast with the
+implementation where all messages go through a queue. The second iteration of
+UPPAAL models should be modeled with proper queues that can be scaled in size.
 
-The models only works with a set of eight different message types and in the
-current design of the UPPAAL models it's hard to add another type of message.
-If possible the second iteration should make it possible to add and remove
+The models only work with a set of eight different message types and in the
+current design of the UPPAAL automata it is hard to add more types of messages.
+The second iteration should make it possible to add and remove
 specific message types with ease.
-
-As a third improvement time invariants should be added to the different
-automata so verification of real-time requirements can be done.
 
 \section{Second iteration}
 To improve the UPPAAL models a more detailed design is required of the system.
@@ -176,28 +172,173 @@ connects to one or multiple networks.
 \label{fig:iteration2_difference}
 \end{figure}
 
+\subsubsection{The queues}
+In the implementation of a Local SPA Subnet communication is done through
+protected objects in Ada. Each protected objects includes two queues, one from
+the application to the SM-L and one to the application from the SM-L. To model
+this in UPPAAL the C-like language could be used to create the actual queues in
+the background of the queue automaton. The finished queue is shown in figure
+\ref{fig:iteration3_queue}. Each queue instantiated for each application
+including the CAS and the LS.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/iteration3_queue}
+    \caption{Iteration 2 - The queue automaton}
+    \label{fig:iteration3_queue}
+\end{figure}
+
 \subsubsection{A basic application}
-TODO: The second iteration design has been presented, now improved UPPAAL
-models must be shown.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/iteration2_app}
+    \caption{Iteration 2 - The application automaton}
+    \label{fig:iteration2_app}
+\end{figure}
 
-TODO: Second iteration, lesson learned. Must receive all messages and store
-information locally and then act upon that local information. The design to
-send a response immidieatly from receiving one message cause the system to
-deadlock, due to full queues. Show this with a deadlock scenario in SM-L and
-CAS (no clocks).
+After modeling the queues the application was up next. The application
+automaton is shown in figure \ref{fig:iteration2_app}. In addition to the
+queues implemented in UPPAAL C-like language a "Message" struct was also
+defined to model a SPA message, including its header. Each message is modelled
+with a from and a to address as well as an opcode identifying what type of
+message it is.
 
-\subsubsection{Central Addressing Service (CAS)}
-TODO
-\subsubsection{Lookup Service (LS)}
-TODO
-\subsubsection{Local Subnet Manager (SM-L)}
-TODO
+A key assumption during iteration two was that upon receiving a message each
+application should send a response immidietly. This was modelled in all
+automata including the one for the applications. Upon receiving a message with
+the opcode "Assign\_Address" or "Probe\_Request" another message was sent in
+response before taking any other action. This introduced deadlock scenarios if
+the queue back to the SM-L was full the automaton for the application could not
+take any transition and if the queue to the application was full as well both
+the SM-L and the application would be waiting for each other to empty their
+respective incoming queue.
+
+A solution to this that was tested. The solution allowed each application to
+throw away all incoming messages if no response could be sent back out. In turn
+each application had to keep track of which messages it had sent out
+and which responses it expected. After a few improvements this solution turned
+out to be too complex, resulting in a model that was hard to understand and
+time consuming to verify.
+
 \subsubsection{Second iteration conclusions}
-TODO
+As too many problems arose with iteration two only the application and queue
+automata are shown. Even though the end result of iteration two was not good
+enough improvements was made throughout the model.
 
-\section{Validation and Verification}
-TODO: Add comments about time verification and correctness. What are the
-verification lines used in UPPAAL to verify the system?
+\begin{itemize}
+    \item Iteration two added the queue automaton which made it possible to
+        model if and how the size of the queues would effect the system.
+    \item The addition of the Message struct made it possible to model
+        different type of messages being sent in the system without much
+        trouble.
+    \item The logic throughout the system was vastly improved.
+    \item The possiblity to vary the number of applications was kept.
+\end{itemize}
+
+\section{Third iteration}
+The main focus of the third iteration was to remove the possibility of
+deadlocks. The underlying cause of deadlock was the tight coupling between
+receiving a message and sending a response. To losen up the coupling different
+approaches could be taken. One solution was to add time contraints such that if
+the outgoing queue was full the automata would wait for a set amount of time
+and then retry. It was early on apparent that this wouldn't improve the
+deadlock situation.
+
+A second solution and the one chosen was to make the assumption that when
+receiving a message the information is stored locally and then the application
+return to its idle state. From the idle state the application can then make a
+choice whether to receive another message or send a new message. The tight
+coupling was by this change completly removed.
+
+The third and final iteration automata are shown in the following images and
+together with the Queue automaton (Fig. \ref{fig:iteration3_app}) from
+iteration two they form the final model of a SPA Local Subnet that use Ada
+Protected Objects as communication channel.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/iteration3_app}
+    \caption{Iteration 3 - The application automaton}
+    \label{fig:iteration3_app}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/iteration3_sm_l_receive_loop}
+    \caption{Iteration 3 - The receive loop parts of the SM-L automaton}
+    \label{fig:iteration3_iteration3_sm_l_receive_loop}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/iteration3_sm_l_send_loop}
+    \caption{Iteration 3 - The send loop parts of the SM-L automaton}
+    \label{fig:iteration3_iteration3_sm_l_send_loop}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/iteration3_sm_l_route_loop}
+    \caption{Iteration 3 - The routing loop parts of the SM-L automaton. All
+    messages with a destination that is not the SM-L are routed through this
+    loop after first being received in the "Receive loop".}
+    \label{fig:iteration3_iteration3_sm_l_route_loop}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/iteration3_cas}
+    \caption{Iteration 3 - The Central Addressing Service automaton}
+    \label{fig:iteration3_cas}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/iteration3_ls}
+    \caption{Iteration 3 - The Lookup Service automaton}
+    \label{fig:iteration3_ls}
+\end{figure}
 
 % \section{An event-triggered alternative}
 % TODO: All models and comments about an event-triggered alternative.
+
+\pagebreak
+\section{Verification}
+To verify that the system is free of deadlocks and livelocks the following
+UPPAAL verification queries were used. As the automata only test the component
+and service discovery process the goal is to reach a deadlock state in the end.
+To verify that it is only the final deadlock that can be reached the queries
+verify that all automata are in Idle states and the appropiate variables have
+been set (all applications have been properly registered in the network).
+
+The livelock query make sure that all paths eventually reach the final deadlock
+state.
+
+\subsubsection{Verification query for deadlocks}
+\lstset{language=C}
+\begin{lstlisting}[frame=single]
+A[] deadlock imply
+    CAS.Idle && SM_L.Idle && LS.Idle &&
+    LS.Received_Probe_Reply[CAS_Address] == true &&
+    forall(Application_ID: Application_ID_Type)
+        Application(Application_ID).
+            Local_Ack_Received == true &&
+        Application(Application_ID).
+            Assign_Address_Received == true &&
+        Application(Application_ID).Idle &&
+        LS.Received_Probe_Reply[Application_ID] == true
+\end{lstlisting}
+
+\subsubsection{Verification query for livelocks}
+\lstset{language=C}
+\begin{lstlisting}[frame=single]
+A<> CAS.Idle && SM_L.Idle && LS.Idle &&
+    LS.Received_Probe_Reply[CAS_Address] == true &&
+    forall(Application_ID: Application_ID_Type)
+        Application(Application_ID).
+            Local_Ack_Received == true &&
+        Application(Application_ID).
+            Assign_Address_Received == true &&
+        Application(Application_ID).Idle &&
+        LS.Received_Probe_Reply[Application_ID] == true
+\end{lstlisting}
