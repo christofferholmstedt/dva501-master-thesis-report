@@ -1,12 +1,13 @@
 \chapter{Introduction}
-Space plug-and-play Architecture (SPA) is intended to decrease the time needed in
-the integration phase when constructing satellites for specific missions. This
-is done by introducing plug-and-play interfaces between different components,
-both software and hardware components, just like when you plug in a USB mouse
-or keyboard in your laptop or desktop computer. SPA is a set of standards
-published by American Institute of Aeronatuics and Astronautics (AIAA). The
-different standard documents define everything from power supply interfaces to
-how components automatically describe themselves to other components.
+Space plug-and-play Architecture (SPA) is intended to decrease the time needed
+in the integration phase when constructing satellites for specific missions.
+This is done by introducing plug-and-play interfaces between different
+components, both software and hardware components, just like when you plug in a
+USB mouse or keyboard in your laptop or desktop computer.  SPA is a set of
+standards published by "American Institute of Aeronatuics and Astronautics"
+(AIAA). The different standard documents define everything from power supply
+interfaces to how components automatically describe themselves to other
+components.
 
 \nomenclature{\textbf{SPA}}{\textbf{Space Plug-and-Play Architecture}}
 %is a set
@@ -29,13 +30,12 @@ Sweden.
 \nomenclature{\textbf{MDH}}{\textbf{M\"{a}lardalen University}}
 \nomenclature{\textbf{BAP}}{\textbf{Bruhnspace Advanced Projects AB}}
 
-The Virtual Network Protocal is a subset of the SPA standards that
-strictly limit the focus to the software parts of SPA. The goal is to try to
-stay interoperable with SPA as much as possible though some differences might
-be necessary to introduce.
+VNP is a subset of the SPA standards that strictly limit the focus to the
+software parts of SPA. The goal is to try to stay interoperable with SPA as
+much as possible though some differences might be necessary to introduce.
 
-As a part of SPA is the inter-process communication (IPC)
-through UDP/IP within respective processing node/unit. The dependability of
+As a part of SPA is the "inter-process communication" (IPC)
+through UDP/IP within respective processing node. The dependability of
 UDP/IP can be discussed but the starting point for this thesis work is that
 UDP/IP is not good enough, better options exist.
 
@@ -129,8 +129,9 @@ The following list includes the questions to be answered
 \end{enumerate}
 
 To answer these questions focus was first put on reading literature on how
-to develop safety-critical systems in Ada. Over a few iterations design,
-implementation in Ada and modeling in UPPAAL was done to reach the end result.
+to develop safety-critical systems in Ada. Designing the system, implementing
+in Ada and modeling in UPPAAL was done over a few iterations to reach the end
+result.
 
 \section{Structure of this report}
 The report is structured as follows. Chapter \ref{ch:state_of_the_art} goes
@@ -140,12 +141,11 @@ modeling and verification as well as Internet of Things.  Chapter
 method used throughout the thesis work, from literature study to modeling and
 implementation. A thorough presentation on how Space plug-and-play Architecture
 works is then given in chapter \ref{ch:spa}. Chapter
-\ref{ch:designing_and_modeling} presents all the UPPAAL models used to verify
-the system together with the design of the system and how the work progressed
-to reach the end result. Chapter \ref{ch:result}
+\ref{ch:designing_and_modeling} presents how the system design and UPPAAL
+model have evolved over the development iterations. Chapter \ref{ch:result}
 shows all the results aquired and chapter \ref{ch:conclusion} finish the report
-with the discussion about the results, the conclusion and suggestions for
-future research and development.
+with the discussion about the results and suggestions for future research and
+development.
 
 % TODO: Add one paragraph with information on how the following chapters and
 % sections are structured. This section title might not be needed for this
