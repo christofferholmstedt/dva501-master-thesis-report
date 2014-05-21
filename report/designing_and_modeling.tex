@@ -1,35 +1,53 @@
 \chapter{Designing and modeling the system}\label{ch:designing_and_modeling}
-This chapter includes the UPPAAL models in conjunction with corresponding UML
-diagrams describing the implementation done in Ada. The UPPAAL models are used
+This chapter includes the UPPAAL model in conjunction with corresponding UML
+diagrams describing the implementation done in Ada. The UPPAAL model is used
 for the validation and verification of the system that it meets the real-time
-requirements set on the system. The connection from the UPPAAL models to the
+requirements set on the system. The connection from the UPPAAL model to the
 UML diagrams presented here are to show that the implementation corresponds as
 close as possible to the models verified.
 
-For presentation purposes only the messages concerning basic functionality
-during component and service discovery is presented in this chapter. After the
-initial discovery and configuration process have been done the system continue
-in normal operation mode with an extra set of SPA message types. Detailed
-sequence diagrams over the component and service discovery process is shown in
-section \ref{sec:discovery_process}.
+The creation of the UPPAAL model presented in this chapter focus on the
+component and service discovery process. After the initial discovery and
+configuration process has been completed, the system continue in normal
+operation mode with an extra set of SPA message types that has not been modeled
+nor implemented. Detailed sequence diagrams over the component
+and service discovery process is shown in section \ref{sec:discovery_process}.
+The process from start to the final result is presented over a few iterations.
+
+\subsubsection{UPPAAL and SPA terminology}
+To better understand the following chapter a few words on the terminology used
+is necessary. A \textbf{SPA component} is either a \textbf{SPA hardware
+device} or a \textbf{SPA software application}. In the design of the system a
+\textbf{SPA application} is implemented as an \textbf{Ada task}. In UPPAAL
+the same application is modeled as an \textbf{automaton}. The different SPA
+applications such as CAS, LS and SM-L are modeled as different
+\textbf{automata}, together they form a \textbf{network of automata} which
+forms the \textbf{UPPAAL model}. A GUI is used to create the different
+automata but for more advanced features such as a queue or an object the
+underlying C-like language can be used instead. The reason for this is that an
+automaton of a queue can easily become too complex to work with or verify.
+
+The verification of the UPPAAL model is done by creating \textbf{verification}
+queries and sending them to the verification server that runs in the
+background, all is done through the UPPAAL GUI.
 
 \section{First iteration}
-The first UPPAAL models were created after designing the basic structure of the
+The first UPPAAL model was created after designing the basic structure of the
 system. Each application will do the same thing which is receive, handle
 and send messages. The difference between the applications is which
 messages each application understands and which messages the application will
 ignore. A processing node will at most have one CAS, one SM-L and one LS
 but can have any number of applications running next to them. This inspired the
-first iteration of UPPAAL models that the application automaton should be
+first iteration of the UPPAAL model. The application automaton should be
 possible to instantiate multiple times in UPPAAL but the other more specific
-models can be used only ones. The basic component overview is shown in figure
-\ref{fig:processing_node_overview} which is what the UPPAAL model is to
+automata can be used only ones. The basic SPA component overview is shown in
+figure \ref{fig:processing_node_overview} which is what the UPPAAL model is to
 resemble as close as possible.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{figures/processing_node_overview}
-    \caption{A Processing Node overview with core SPA parts.}
+    \caption{A Processing Node overview with core SPA components.}
     \label{fig:processing_node_overview}
 \end{figure}
 
@@ -68,7 +86,7 @@ managers. Figure \ref{fig:iteration1_cas} shows the UPPAAL model.
 \end{figure}
 
 \subsubsection{Lookup Service (LS)}
-The additions the LS brings in is the processing of Request\_LS\_Probe,
+The additions the LS brings, is the processing of Request\_LS\_Probe,
 Probe\_Reply and Probe\_Request messages, for service discovery purposes.
 Figure \ref{fig:iteration1_ls} shows the UPPAAL model.
 
@@ -81,7 +99,7 @@ Figure \ref{fig:iteration1_ls} shows the UPPAAL model.
 
 \subsubsection{Local Subnet Manager (SM-L)}
 In contrast to the other components the Subnet Manager manages most of the
-interaction done in the subnet. It's responsible for answering all Local\_Hello
+interaction done in the subnet. It is responsible for answering all Local\_Hello
 messages during component discovery and replying with an acknowledgement as
 well as with an logical address assignment. As a last step it tells the LS to
 send out Probe\_Requests to all active components on the subnet. Figure
@@ -100,14 +118,14 @@ The CAS, LS and SM-L have specific functionality so they can only be used ones
 when setting up a complete network of automata. The application model can be
 instantiated multiple times as was the goal. At this level of abstraction
 everything looks fine though the main goal with the UPPAAL model is to be able
-to verify that the system behaves as aspected and can't reach unknown states or
-deadlock. As the first iteration of models only shows the boot-up process it
-will eventually reach deadlock when everything is set up. This is a drawback
-as it doesn't relate very well with the actual design of the system, after
-boot-up. This calls for another iteration and improvement of the different
-UPPAAL automata.
+to verify that the system behaves as aspected and can not reach erroneous
+states or deadlock. As the first iteration of models only shows the boot-up
+process it will eventually reach deadlock when everything is set up. This is a
+drawback as it does not relate very well with the actual design of the system
+after boot-up. This calls for another iteration and improvement of the
+different UPPAAL automata.
 
-Before heading to the second iteration it's time to take a closer look at the
+Before heading to the second iteration it is time to take a closer look at the
 UPPAAL automata and see what other parts need improvements, as it should
 resemble the actual system as much as possible.
 
@@ -116,29 +134,29 @@ received messages directly between the different automata. When a transition is
 taken to send a message the receiving automaton takes a corresponding
 transition to receive the message at the same time. This is in contrast with the
 implementation where all messages go through a queue. The second iteration of
-UPPAAL models should be modeled with proper queues that can be scaled in size.
+UPPAAL model should be modeled with proper queues that can be scaled in size.
 
-The models only work with a set of eight different message types and in the
+The model only work with a set of eight different message types and in the
 current design of the UPPAAL automata it is hard to add more types of messages.
 The second iteration should make it possible to add and remove
 specific message types with ease.
 
 \section{Second iteration}
-To improve the UPPAAL models a more detailed design is required of the system.
-From the first iteration it's clear that the basic application can be designed
+To improve the UPPAAL model a more detailed design is required of the system.
+From the first iteration it is clear that the basic application can be designed
 in a generic fashion. The CAS and LS is more specific instantiations of the
 basic application and the SM-L has substantial differences. For easier
 maintanence of the models during the second iteration it would be valuable if
-the UPPAAL models could created in a modular way. Two main models would be the
+the UPPAAL model could created in a modular way. Two main automata would be the
 "basic application" and the "SM-L".
 
-Figure \ref{fig:iteration2_uml_component_overview} shows the component overview
-after the second iteration. The design of the interfaces between the components
-makes it easy to interchange which message types each "running task"
+Figure \ref{fig:iteration2_uml_component_overview} shows the UML component
+overview after the second iteration. The design of the interfaces between the
+components makes it easy to interchange which message types each "running task"
 (application) can handle and how it communicates. A simple application that is
-only connected to one subnet does not need the Routing component. The Routing
+only connected to one subnet does not need the routing component. The routing
 component is specifically created for the SM-L to be able to route traffic
-within its own subnet and to other subnet managers over other types of subnets.
+within its own subnet and to other subnets.
 
 \begin{figure}[h]
     \centering
@@ -147,13 +165,14 @@ within its own subnet and to other subnet managers over other types of subnets.
     \label{fig:iteration2_uml_component_overview}
 \end{figure}
 
-The design of the Communication package make use of the "Composite
-pattern" where Routing objects and Com objects all inherit from the same
-interface and where the Routing objects are of composite types. Figure
+The design of the communication package make use of the "composite
+pattern" where routing objects and com objects all inherit from the same
+interface and where the routing objects are of composite types. Figure
 \ref{fig:iteration2_difference} shows the difference between a simple
 application and the SM-L. The use of the composite pattern makes it possible
-for a "Running task" in the application layer to easily swap out how it
-connects to one or multiple networks.
+for an application to easily swap out how it connects to one or multiple
+networks. In the implementation presented in this thesis this is done at
+compile time.
 
 \begin{figure}[h]
     \begin{subfigure}[b]{0.5\linewidth}
@@ -173,13 +192,13 @@ connects to one or multiple networks.
 \end{figure}
 
 \subsubsection{The queues}
-In the implementation of a Local SPA Subnet communication is done through
-protected objects in Ada. Each protected objects includes two queues, one from
-the application to the SM-L and one to the application from the SM-L. To model
-this in UPPAAL the C-like language could be used to create the actual queues in
-the background of the queue automaton. The finished queue is shown in figure
-\ref{fig:iteration3_queue}. Each queue instantiated for each application
-including the CAS and the LS.
+In the implementation of a local SPA subnet presented in this thesis,
+communication is done through protected objects in Ada. Each protected object
+includes two queues, one from the application to the SM-L and one back. To
+model this in UPPAAL the C-like language could be used to create the actual
+queues in the background of the queue automaton. The finished queue is shown in
+figure \ref{fig:iteration3_queue}. Each queue is instantiated for each
+SPA application including the CAS and the LS.
 
 \begin{figure}[h]
     \centering
@@ -204,16 +223,16 @@ with a from and a to address as well as an opcode identifying what type of
 message it is.
 
 A key assumption during iteration two was that upon receiving a message each
-application should send a response immidietly. This was modelled in all
-automata including the one for the applications. Upon receiving a message with
-the opcode "Assign\_Address" or "Probe\_Request" another message was sent in
+application should send a response immediately. This was modeled in all
+automata including the one for the application. Upon receiving a message with
+the opcode Assign\_Address or Probe\_Request another message was sent in
 response before taking any other action. This introduced deadlock scenarios if
 the queue back to the SM-L was full the automaton for the application could not
-take any transition and if the queue to the application was full as well both
+take any transition and if the queue to the application was full as well, both
 the SM-L and the application would be waiting for each other to empty their
-respective incoming queue.
+respective queue.
 
-A solution to this that was tested. The solution allowed each application to
+A solution to this that was tested allowed each application to
 throw away all incoming messages if no response could be sent back out. In turn
 each application had to keep track of which messages it had sent out
 and which responses it expected. After a few improvements this solution turned
@@ -221,16 +240,17 @@ out to be too complex, resulting in a model that was hard to understand and
 time consuming to verify.
 
 \subsubsection{Second iteration conclusions}
-As too many problems arose with iteration two only the application and queue
-automata are shown. Even though the end result of iteration two was not good
-enough improvements was made throughout the model.
+As too many problems arose with the second iteration only the application and
+queue automata are shown in the report. Even though the end result of iteration
+two was not good enough improvements was made throughout the iteration. The
+most significant improvements are presented in the list following this
+paragraph.
 
 \begin{itemize}
     \item Iteration two added the queue automaton which made it possible to
         model if and how the size of the queues would effect the system.
     \item The addition of the Message struct made it possible to model
-        different type of messages being sent in the system without much
-        trouble.
+        different types of messages being sent in the system.
     \item The logic throughout the system was vastly improved.
     \item The possiblity to vary the number of applications was kept.
 \end{itemize}
@@ -241,7 +261,7 @@ deadlocks. The underlying cause of deadlock was the tight coupling between
 receiving a message and sending a response. To losen up the coupling different
 approaches could be taken. One solution was to add time contraints such that if
 the outgoing queue was full the automata would wait for a set amount of time
-and then retry. It was early on apparent that this wouldn't improve the
+and then retry. It was early on apparent that this would not improve the
 deadlock situation.
 
 A second solution and the one chosen was to make the assumption that when
@@ -250,10 +270,13 @@ return to its idle state. From the idle state the application can then make a
 choice whether to receive another message or send a new message. The tight
 coupling was by this change completly removed.
 
-The third and final iteration automata are shown in the following images and
-together with the Queue automaton (Fig. \ref{fig:iteration3_app}) from
-iteration two they form the final model of a SPA Local Subnet that use Ada
-Protected Objects as communication channel.
+The third and final iteration automata are shown in figures
+\ref{fig:iteration3_app}, \ref{fig:iteration3_sm_l_receive_loop},
+\ref{fig:iteration3_sm_l_send_loop}, \ref{fig:iteration3_sm_l_route_loop},
+\ref{fig:iteration3_cas} and \ref{fig:iteration3_ls}. Together with the queue
+automaton (fig. \ref{fig:iteration3_queue}) from iteration two they form the
+final model of a SPA Local Subnet that use Ada Protected Objects as
+communication channel.
 
 \begin{figure}[ht]
     \centering
@@ -265,24 +288,24 @@ Protected Objects as communication channel.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{figures/iteration3_sm_l_receive_loop}
-    \caption{Iteration 3 - The receive loop parts of the SM-L automaton}
-    \label{fig:iteration3_iteration3_sm_l_receive_loop}
+    \caption{Iteration 3 - The receive loop part of the SM-L automaton}
+    \label{fig:iteration3_sm_l_receive_loop}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{figures/iteration3_sm_l_send_loop}
-    \caption{Iteration 3 - The send loop parts of the SM-L automaton}
-    \label{fig:iteration3_iteration3_sm_l_send_loop}
+    \caption{Iteration 3 - The send loop part of the SM-L automaton}
+    \label{fig:iteration3_sm_l_send_loop}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{figures/iteration3_sm_l_route_loop}
-    \caption{Iteration 3 - The routing loop parts of the SM-L automaton. All
+    \caption{Iteration 3 - The routing loop part of the SM-L automaton. All
     messages with a destination that is not the SM-L are routed through this
-    loop after first being received in the "Receive loop".}
-    \label{fig:iteration3_iteration3_sm_l_route_loop}
+    loop after first being received in the receive loop.}
+    \label{fig:iteration3_sm_l_route_loop}
 \end{figure}
 
 \begin{figure}[ht]
@@ -308,11 +331,11 @@ To verify that the system is free of deadlocks and livelocks the following
 UPPAAL verification queries were used. As the automata only test the component
 and service discovery process the goal is to reach a deadlock state in the end.
 To verify that it is only the final deadlock that can be reached the queries
-verify that all automata are in Idle states and the appropiate variables have
+verify that all automata are in idle states and the appropiate variables have
 been set (all applications have been properly registered in the network).
 
 The livelock query make sure that all paths eventually reach the final deadlock
-state.
+state. Both verification queries are shown below.
 
 \subsubsection{Verification query for deadlocks}
 \lstset{language=C}
