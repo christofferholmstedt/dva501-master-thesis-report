@@ -6,7 +6,7 @@ described concerning Space plug-and-play Architecture and UPPAAL modeling.
 \section{Space plug-and-play Architecture}
 The Air Force Resarch Laboratory (AFRL) Space Vehicle Directorate started a
 project referred to as "Space plug-and-play Avionics" in 2004 with the intent
-to understand why space systems used in various mission became so complex and
+to understand why space systems used in various missions became so complex and
 how they can be made easier to assembly \cite{fronterhouse2007, martin2012}.
 The solution was to look at plug-and-play systems already available on ground.
 An example to this is how USB devices work with laptop and desktop computers in
@@ -23,49 +23,50 @@ Architecture" \cite{martin2012}, all standards are available from AIAA
 
 Development and testing of implementations conforming to the standards have
 been ongoing since the launch of the program. One project that has been
-presented is the PnPSat by Fronterhouse et. al. \cite{fronterhouse2007} and
-Martin et. al. \cite{martin2008}. They have demonstrated the first created
+presented is the PnPSat by Fronterhouse et al. \cite{fronterhouse2007} and
+Martin et al. \cite{martin2008}. They have demonstrated the first created
 plug-and-play satellite and given their view on the problems encountered during
-development of both hardware and software. The first plug-and-play satellite
-flown on orbit is presented by Martin et. al. \cite{martin2012} where most
-parts of the plug-and-play experiement passed all tests one year after launch.
+development of both hardware and software components. The first plug-and-play
+satellite flown on orbit is presented by Martin et al. \cite{martin2012} where
+most parts of the plug-and-play experiement passed all tests one year after
+launch.
 
 As a critical part of plug-and-play satellite research and development is the
-"System Data Model" (SDM) middleware software presented by Sundberg et. al.
+"System Data Model" (SDM) middleware software presented by Sundberg et al.
 \cite{sundberg2006}, previously under the name "Satellite Data Model"
 \cite{spa:sdm-source}. The SDM can be viewed in two different ways, as a
 middleware or as a "sideware" \cite{fronterhouse2007}, depending on how you
 view it. The SDM is one implementation of the SPA standards that manage the
-parts of handing out logical addresses to all SPA components, doing network and
-data capabilities discovery. The SDM source code has been released under public
-domain license \cite{spa:sdm-source}.
+parts of network and data capabilities discovery. The SDM source code has been
+released under public domain license \cite{spa:sdm-source}.
 
 \nomenclature{\textbf{SDM}}{\textbf{System Data Model}}
 
-To enable components to be self-describing all SPA components must have a xTEDS
-file stored within the component. The xTEDS file include all the information
-other components need to understand its capabilities e.g. which interfaces the
-component have. The problem at this point arise that multiple vendors start to
-create their own interface definitions and all benefits with self-describing
-components are lost. This is where the "Common Data Dictionary" (CDD) comes
-into play.
+To enable components to be self-describing all SPA components must have an
+"Extensible Transducer Electronic Data Sheet" (xTEDS) file stored within the
+component. The xTEDS file include all the information other components need to
+understand its capabilities e.g. which interfaces the component has. The
+problem at this point is that multiple vendors start to create their own
+interface definitions and all benefits with self-describing components are
+lost. This is where the "Common Data Dictionary" (CDD) comes into play.
 
+\nomenclature{\textbf{xTEDS}}{\textbf{Extensible Transducer Electronic Data Sheet}}
 \nomenclature{\textbf{CDD}}{\textbf{Common Data Dictionary}}
 
-The first work to create the CDD is described as an informal approach by Pasko
-\cite{pasko2011}, instead a more formal approach using RDF is suggested. Pasko
-suggests that RDF and RDF Schemas can be used to not only desribe the CDD
-formally but also be used to visually represent the CDD with suitable software.
+The first work to create the CDD is described as an informal approach by Pasko.
+Instead Pasko suggests a more formal approach using RDF. Pasko suggests that
+RDF and RDF Schemas can be used to not only desribe the CDD formally but also
+be used to visually represent the CDD with suitable software \cite{pasko2011}.
 
-Hansen et. al.  \cite{hansen2012} describes the dictionary as an ontology which
+Hansen et al. \cite{hansen2012} describes the dictionary as an ontology which
 consists of several taxonomies in a hierarchial structure. This means that if
 different vendors respectively create a SPA component with a temperature sensor
 and a pressure sensor interface the vendors use the CDD to describe the
 interfaces with the correct vocabulary. To manage the risk of adding too
-many terms in the CDD Lanza et. al. \cite{lanza2010} suggests the forming of a
+many terms in the CDD Lanza et al. \cite{lanza2010} suggests the forming of a
 CDD panel to "[...] serve as a regulatory structure for the CDD". To make it
 easier for developers to write xTEDS files with the correct vocabulary and
-improve the CDD, Lanza et. al.  \cite{lanza2010} have created a web based tool
+improve the CDD, Lanza et al.  \cite{lanza2010} have created a web based tool
 to manage the CDD.
 
 One benefit of using XML file structure for the xTEDS is that a XML schema
@@ -135,8 +136,8 @@ document has reached "Authors' Final Review" as of May 2014 \cite{web:wgcore}.
 CoAP is designed for highly constrained nodes, that is nodes with a 8-bit
 microcontroller and very little ROM and RAM. Added to the hardware constrains
 the microcontrollers are often connected to lossy networks with low bandwidth.
-The protocol is a request-response protocol that relatively easily proxied to
-HTTP as it works with URIs in the same manner \cite{web:draftcoap}.
+The protocol is a request-response protocol that relatively easily can be
+proxied to HTTP as it works with URIs in the same manner \cite{web:draftcoap}.
 
 \subsubsection{MQ Telemetry Transport (MQTT)}
 Originally invented in 1999 MQTT is a publish and subscribe, lightweight
@@ -150,9 +151,9 @@ Working Group \cite{web:oasis-mqtt}.
 \subsubsection{AllSeen Open Source project}
 From the begining developed by Qualcomm as the AllJoyn project, the AllSeen
 Open Source Project is now run as a Linux Foundation Collaborative Project.
-It's a framework which offers service discovery, remote procedure calls,
+It is a framework which offers service discovery, remote procedure calls,
 security and a lot of other features independent of the transport layer used.
-It's a framework with a core written in C++ with bindings to multiple other
+It is a framework with a core written in C++ with bindings to multiple other
 languages and runs on a wide variety of platforms from embedded to desktop
 devices \cite{web:alljoyn,web:allseen}.
 
