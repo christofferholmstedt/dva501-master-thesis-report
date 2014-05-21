@@ -1,12 +1,4 @@
 \chapter{How the Space plug-and-play Architecture works}\label{ch:spa}
-This chapter will go through how the Space plug-and-play Architecture (SPA)
-works in detail with system sequence diagrams and component overviews.
-Throughout this section UML will be used. It's worth remembering
-that the purpose of these diagrams is to show the reader how SPA works, the
-purpose is not to give a complete picture to developers with all the
-implementation details.
-
-\section{Concepts and terminology in SPA}
 Space plug-and-play Architecture (SPA) is a set of standards that define how
 different players can create plug-and-play components that can easily be
 assembled to form a complete satellite for a specific mission. The standards
@@ -19,7 +11,7 @@ To describe how a SPA network works some terminology needs to be defined. All
 nodes in a SPA network are called "components", there is no differentiation
 between software and hardware components. Each component has a "Component
 Universally Unique Identifier" (CUUID) which is 128 bit long. Each component
-also has a "Extensible Transducer Electronic Data Sheet" (xTEDS) file that
+also has an "Extensible Transducer Electronic Data Sheet" (xTEDS) file that
 describes respective components capabilities. To be able to support different
 underlying link layer technologies such as Ethernet, Spacewire and one-wire
 (I2C), most functionality has been put in the application layer. This means
@@ -30,7 +22,8 @@ subnet.
 The important concepts to remember is that each SPA component is
 connected to one or more SPA subnets, on each SPA subnet there is a subnet
 manager (SM-x) that acts as a gateway to other SPA subnets and when SPA subnets
-are linked together they form a SPA network.
+are linked together they form a SPA network. To make things clear, a single SPA
+subnet with a CAS, LS and SM-x is also a SPA network.
 
 Another SPA subnet is the SPA Local Subnet. Each processing node that can
 have multiple SPA components running on it has a "SPA Local Subnet Manager"
@@ -38,12 +31,12 @@ have multiple SPA components running on it has a "SPA Local Subnet Manager"
 communication over UDP/IP \cite{spa:local-subnet}.
 
 Components communicate with each other with the help of "logical addresses"
-that each component recieves during boot up. It's the responsiblity of the
+that each component recieves during boot up. It is the responsiblity of the
 "Central Addressing Service" (CAS) to hand out logical addresses to all
-components in the SPA network. After a component receives its logical address
-it can share its xTEDS file with other components. It's the responsibility of
-the "Lookup Service" to keep track of all components' capabilities in the SPA
-network.
+components in the SPA network through the connected Subnet Managers. After a
+component receives its logical address it can share its xTEDS file with other
+components. It is the responsibility of the "Lookup Service" to keep track of
+all components' capabilities in the SPA network.
 
 To describe what a SPA network can look like figure
 \ref{fig:minimal_spa_network} shows a minimal SPA network which consists of a
