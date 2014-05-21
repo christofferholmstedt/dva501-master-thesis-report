@@ -43,8 +43,8 @@ other type of subnet, the assumption about guaranteed delivery would not hold.
 In the end some kind of time based retry algorithm could be used. Resend the
 Local\_Hello message until a Local\_Ack is received but do not send them too
 often. To be able to model the different SPA applications in more detail they
-could be separated out and connected to an automon of the environment. This would
-allow testing of specific timings in different scenarios.
+could be separated out and connected to an automaton of the environment. This
+would allow testing of specific timings in different scenarios.
 
 % ...
 %
@@ -52,26 +52,29 @@ allow testing of specific timings in different scenarios.
 % models and are the models good abstractions from the real-world implementation?
 % Is event- or time-triggered systems best in this field?
 
-\subsubsection{Future research - Maintainability}
+\subsubsection{Future research - maintainability}
 One major consequence of moving away from UDP/IP as IPC is that the
 applications running on the different processing nodes no longer are modular in
 the sense that it is easy to add and remove applications on a processing node
-in a running system. When using Ada Protected Objects all applications must be
-compiled together into one binary and started at the same time. This leads to
-future updates must replace the entire binary and reboot the system. The
+in a running system. When using Ada Protected Objects all SPA applications must
+be compiled together into one binary and started at the same time. This leads
+to future updates must replace the entire binary and reboot the system. The
 trade-off between Ada Protected Objects and a run-time modularity is something
-that need to be prioritzed per project. For robots or satelites that are
-not connected to internet the increased reliability of protected objects may be
-a good trade-off. On the other side devices connected to internet that always
+that need to be prioritzed per project. For robots or satelites that are not
+connected to internet the increased reliability of protected objects may be a
+good trade-off. On the other side devices connected to internet that always
 must be up to date security wise to protect against intrusions, the modularity
 may be prioritized.  An example to this could be a refridgerator that is
 connected to internet and a vulnerability is found in its transport layer
 security code. Instead of updating the entire running binary it would be enough
 just to update the specific module that expose the vulnerability. Future work
-should look into the possibility of keeping some run-time modularity and
-introducing Ada Protected Objects.
+should take a deeper look at this trade-off, when is it worth the effort to use
+Ada protected objects over the modularity of UDP/IP for IPC?
 
-\subsubsection{Future research - Security in general and confidentiality in
+% Future work should look into the possibility of keeping some run-time
+% modularity and introducing Ada Protected Objects.
+
+\subsubsection{Future research - security in general and confidentiality in
 particular}
 For closed-circuit networks like remote operated vehicles and some robots,
 security may not be that important but for the vast majority of devices
@@ -86,30 +89,30 @@ How to add security to a SPA network with open access to internet is an
 important step forward to make SPA a viable option in the world of Internet of
 Things.
 
-\subsubsection{Future development - Dependability of the development process}
+\subsubsection{Future development - dependability of the development process}
 When starting this thesis Ada was chosen as programming language because of its
 track record with software that must be dependable to high-levels. Different
 ISO standards and white papers from AdaCore introduce good programming
 practices, how to develop good quality software and how to use object-oriented
 programming in the field of safety-critical applications. The approach all
 these papers use is that the developer and/or architect need to decide upon a
-few things first before starting development.
+few things first, before starting development.
 
 First of the project must know what kind of safety level is expected from the
-system. This relates to how much testing, validation and verification must
-be done in the end and throughout the development. In turn the choice of
-testing, validation and verification techniques influence the choice of
-programming features that can and should be used. During the development and
-design in this project quite a lot of discussions went into which level of
-safety that was expected, as there were no specific application in mind
-there was no way to decide which techniques we were going to use to test the
-system in the end. Instead time went into discussing which Ada features we
-thought would be useful and which ones we should avoid. The reasoning
-behind this is that the fewer Ada constructs we use the easier it will be to
-validate and verify in the future (as well as porting the system to new
-architectures). Future work should take a deeper look at the different safety
-standards that may be of interest and come up with firm programming guidelines
-that can be used during future development.
+system. This relates directly to how much testing, validation and verification
+must be done throughout the development cycles and in the end when delivering
+the system. In turn the choice of testing, validation and verification
+techniques influence the choice of programming features that can and more
+interestingly, should be used. During the development and design in this
+project quite a lot of discussions went into which level of safety that was
+expected, as there were no specific application in mind there was no way to
+decide which techniques we were going to use to test the system in the end.
+Instead time went into discussing which Ada features we thought would be useful
+and which ones we should avoid. The reasoning behind this is that the fewer Ada
+constructs we use the easier it will be to validate and verify in the future
+(as well as porting the system to new architectures). Future work should take a
+deeper look at the different safety standards that may be of interest and come
+up with firm programming guidelines that can be used during future development.
 
 % TODO: Routing through several subnets with different speeds. Maximum
 % Transmission Unit and routing through the networks with the best throughput
