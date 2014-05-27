@@ -43,8 +43,9 @@ other type of subnet, the assumption about guaranteed delivery would not hold.
 In the end some kind of time based retry algorithm could be used. Resend the
 Local\_Hello message until a Local\_Ack is received but do not send them too
 often. To be able to model the different SPA applications in more detail they
-could be separated out and connected to an automaton of the environment. This
-would allow testing of specific timings in different scenarios.
+could be separated out and connected to an automaton representing the
+environment.  This would allow testing of specific timings in different
+scenarios.
 
 % ...
 %
