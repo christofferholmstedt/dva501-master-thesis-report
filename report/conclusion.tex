@@ -8,18 +8,18 @@ Protected Objects are used to share data between different Ada tasks.
 When model-checking a system to verify that it behaves as expected it is
 important to get the model to resemble the implementation as close as possible
 and vice versa. It is a network of two development artifacts that prove that the
-system behaves according to specifications. In this thesis the specifications
-are the SPA standards and the implementation is the "Virtual Network Library"
-implementation.
+system behaves according to the specifications. In this thesis the
+specifications are the SPA standards and the implementation is the "Virtual
+Network Library" implementation.
 
 In chapter \ref{ch:designing_and_modeling} the process that took place to reach
-the end result when it comes to the UPPAAL model and the implementation is
+the end result regarding the UPPAAL model and the implementation is
 shown. Going further with an even more detailed model would go into
-unnecessary detail such as how the routing tables or the CAS table were
+unnecessary detail such as how the routing tables or the CAS table are
 implemented. As the different tables are not going to hold any substantial
 amount of data, the time to do a lookup in the different tables are
-neglectable. This among other things lead to the conclusion that the model's
-level of abstraction is at the right level for the purpose of this thesis.
+neglectable. This among other things lead to the conclusion that the level of
+abstraction of the model is at the right level for the purpose of this thesis.
 
 The verification of the model shows that the only way to reach a deadlock is in
 the end state as expected, the problem comes with livelock. The
@@ -29,8 +29,8 @@ when an application sends a Local\_Hello to the SM-L and the SM-L receives that
 message. When the SM-L is back in idle state the system reaches a livelock
 scenario because the application will keep sending Local\_Hello messages
 until it receives a Local\_Ack response. Similiar scenarios arose throughout
-the development of the model, as an example when the SM-L sends a request to
-the CAS for an Address Block. Unless the CAS respond with an Address Block the
+the development of the model, for example when the SM-L sends a request to
+the CAS for an Address Block. Unless the CAS responds with an Address Block the
 SM-L would keep sending Address\_Block\_Requests forever. The solution to this
 scenario was to limit the SM-L to only send one message and make the
 assumption that all messages sent will be received. As communication is through
@@ -40,11 +40,11 @@ implementation.
 The same solution could be used to the livelock problem with Local\_Hello
 messages. The drawback would be that if the application would be moved to any
 other type of subnet, the assumption about guaranteed delivery would not hold.
-In the end some kind of time based retry algorithm could be used. Resend the
-Local\_Hello message until a Local\_Ack is received but do not send them too
-often. To be able to model the different SPA applications in more detail they
-could be separated out and connected to an automaton representing the
-environment.  This would allow testing of specific timings in different
+In the end some kind of time based retry algorithm could be used, such as to
+resend the Local\_Hello message until a Local\_Ack is received without
+resending too often. To be able to model the different SPA applications in more
+detail they could be separated out and connected to an automaton representing
+the environment.  This would allow testing of specific timings in different
 scenarios.
 
 % ...
@@ -61,14 +61,14 @@ in a running system. When using Ada Protected Objects all SPA applications must
 be compiled together into one binary and started at the same time. This leads
 to future updates must replace the entire binary and reboot the system. The
 trade-off between Ada Protected Objects and a run-time modularity is something
-that need to be prioritzed per project. For robots or satelites that are not
+that need to be prioritzed per project. For robots or satellites that are not
 connected to internet the increased reliability of protected objects may be a
 good trade-off. On the other side devices connected to internet that always
 must be up to date security wise to protect against intrusions, the modularity
 may be prioritized.  An example to this could be a refridgerator that is
 connected to internet and a vulnerability is found in its transport layer
 security code. Instead of updating the entire running binary it would be enough
-just to update the specific module that expose the vulnerability. Future work
+just to update the specific module that exposes the vulnerability. Future work
 should take a deeper look at this trade-off, when is it worth the effort to use
 Ada protected objects over the modularity of UDP/IP for IPC?
 
@@ -77,18 +77,18 @@ Ada protected objects over the modularity of UDP/IP for IPC?
 
 \subsubsection{Future research - security in general and confidentiality in
 particular}
-For closed-circuit networks like remote operated vehicles and some robots,
+For closed-circuit networks like remotely operated vehicles and some robots,
 security may not be that important but for the vast majority of devices
-security need to be introduced. As soon as a device is connected to internet
-and start to communicate with others it will need some kind of authentication
-mechanism to allow access to its own data, it will need authorization mechanism
-to be able to differentiate between other devices regarding which
-device should get access to what data. Added to this is transport encryption
-(confidentiality) to prevent pervasive monitoring and the possiblitiy of
-disclosing private information to active listeners (man-in-the-middle attacks).
-How to add security to a SPA network with open access to internet is an
-important step forward to make SPA a viable option in the world of Internet of
-Things.
+security needs to be introduced. As soon as a device is connected to the
+Internet and starts to communicate with others it will need some kind of
+authentication mechanism to allow access to its own data, it will need
+authorization mechanism to be able to differentiate between other devices
+regarding which device should get access to what data. Added to this is
+transport encryption (confidentiality) to prevent pervasive monitoring and the
+possiblitiy of disclosing private information to active listeners
+(man-in-the-middle attacks).  How to add security to a SPA network with open
+access to internet is an important step forward to make SPA a viable option in
+the world of Internet of Things.
 
 \subsubsection{Future development - dependability of the development process}
 When starting this thesis Ada was chosen as programming language because of its
@@ -103,17 +103,18 @@ First of the project must know what kind of safety level is expected from the
 system. This relates directly to how much testing, validation and verification
 must be done throughout the development cycles and in the end when delivering
 the system. In turn the choice of testing, validation and verification
-techniques influence the choice of programming features that can and more
-interestingly, should be used. During the development and design in this
+techniques influences the choice of programming features that can and more
+interestingly, should be used. During the development and design phases in this
 project quite a lot of discussions went into which level of safety that was
 expected, as there were no specific application in mind there was no way to
-decide which techniques we were going to use to test the system in the end.
-Instead time went into discussing which Ada features we thought would be useful
-and which ones we should avoid. The reasoning behind this is that the fewer Ada
-constructs we use the easier it will be to validate and verify in the future
-(as well as porting the system to new architectures). Future work should take a
-deeper look at the different safety standards that may be of interest and come
-up with firm programming guidelines that can be used during future development.
+decide which techniques that were going to be used to test the system in the
+end.  Instead time went into discussing which Ada features that were thought to
+be useful and which ones should be avoided. The reasoning behind this is that
+the fewer Ada constructs that were used the easier it would be to validate and
+verify in the future (as well as porting the system to new architectures).
+Future work should take a deeper look at the different safety standards that
+may be of interest and come up with firm programming guidelines that can be
+used during future development.
 
 % TODO: Routing through several subnets with different speeds. Maximum
 % Transmission Unit and routing through the networks with the best throughput

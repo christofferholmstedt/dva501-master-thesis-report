@@ -14,13 +14,13 @@ design}\label{sec:layered_design}
 
 To get one simple application up and running in a "Virtual Network" the
 application's settings need to be defined in the \emph{Application\_Information}
-component. This range from everything from CUUID to other custom settings that
+component. This ranges from everything from CUUID to other custom settings that
 may be needed. The Application\_Information component also keeps track of the
 application's logical address during run-time and supplies different helper
 functions, one of which is to fill in \emph{VN.Message} header information.
 
 The next step is to add connectivity. If the application only runs on a
-processing node or another single subnet all that is needed is a
+processing node or on a single subnet all that is needed is a
 \emph{VN.Communication.Com} implementation of that specific subnet type. The
 more advanced use case is a subnet manager that manages its own subnet and is
 connected to a Local Subnet Manager on the processing node it runs on. As this
@@ -79,7 +79,7 @@ information about all known components on the network, this is shown in figure
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{figures/vn_address_block_assignment}
-    \caption{How the local subnet manager aquires address block from the CAS
+    \caption{How the local subnet manager aquires address blocks from the CAS
     for its own subnet and for other connected subnet managers.}
     \label{fig:appendix_vn_address_block_assignment}
 \end{figure}
