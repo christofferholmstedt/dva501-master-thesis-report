@@ -7,12 +7,12 @@ described concerning Space plug-and-play Architecture and UPPAAL modeling.
 The Air Force Resarch Laboratory (AFRL) Space Vehicle Directorate started a
 project referred to as "Space plug-and-play Avionics" in 2004 with the intent
 to understand why space systems used in various missions became so complex and
-how they can be made easier to assembly \cite{fronterhouse2007, martin2012}.
-The solution was to look at plug-and-play systems already available on ground.
-An example to this is how USB devices work with laptop and desktop computers in
-everyday life. It doesn't matter which keyboard you buy the basic functionality
-will work in any computer you plug it into, no matter if it runs Windows, OS X
-or a Linux distribution.
+how they can be made easier to assemble \cite{fronterhouse2007, martin2012}.
+The solution was to look at plug-and-play systems already available on the
+ground.  An example to this is how USB devices work with laptop and desktop
+computers in everyday life. It does not matter which keyboard that is used,
+basic functionality will work in any computer it is used with, no matter if
+it runs Windows, OS X or a Linux distribution.
 
 "Space plug-and-play Avionics" was released during the 2000-decade as a set of
 standards and in an updated version in 2011 renamed to "Space plug-and-play
@@ -35,16 +35,16 @@ As a critical part of plug-and-play satellite research and development is the
 "System Data Model" (SDM) middleware software presented by Sundberg et al.
 \cite{sundberg2006}, previously under the name "Satellite Data Model"
 \cite{spa:sdm-source}. The SDM can be viewed in two different ways, as a
-middleware or as a "sideware" \cite{fronterhouse2007}, depending on how you
-view it. The SDM is one implementation of the SPA standards that manage the
-parts of network and data capabilities discovery. The SDM source code has been
-released under public domain license \cite{spa:sdm-source}.
+middleware or as a "sideware" \cite{fronterhouse2007}. The SDM is one
+implementation of the SPA standards that manage the parts of network and data
+capabilities discovery. The SDM source code has been released under public
+domain license \cite{spa:sdm-source}.
 
 \nomenclature{\textbf{SDM}}{\textbf{System Data Model}}
 
 To enable components to be self-describing all SPA components must have an
 "Extensible Transducer Electronic Data Sheet" (xTEDS) file stored within the
-component. The xTEDS file include all the information other components need to
+component. The xTEDS file includes all the information other components need to
 understand its capabilities e.g. which interfaces the component has. The
 problem at this point is that multiple vendors start to create their own
 interface definitions and all benefits with self-describing components are
@@ -53,21 +53,21 @@ lost. This is where the "Common Data Dictionary" (CDD) comes into play.
 \nomenclature{\textbf{xTEDS}}{\textbf{Extensible Transducer Electronic Data Sheet}}
 \nomenclature{\textbf{CDD}}{\textbf{Common Data Dictionary}}
 
-The first work to create the CDD is described as an informal approach by Pasko.
-Instead Pasko suggests a more formal approach using RDF. Pasko suggests that
-RDF and RDF Schemas can be used to not only desribe the CDD formally but also
-be used to visually represent the CDD with suitable software \cite{pasko2011}.
+The first work to create the CCDD is described by Pasko as an informal
+approach.  Instead Pasko suggests a more formal approach using RDF. Pasko
+suggests that RDF and RDF Schemas can be used to not only desribe the CDD
+formally but also be used to visually represent the CDD with suitable software
+\cite{pasko2011}.
 
 Hansen et al. \cite{hansen2012} describes the dictionary as an ontology which
 consists of several taxonomies in a hierarchial structure. This means that if
-different vendors respectively create a SPA component with a temperature sensor
-and a pressure sensor interface the vendors use the CDD to describe the
-interfaces with the correct vocabulary. To manage the risk of adding too
-many terms in the CDD Lanza et al. \cite{lanza2010} suggests the forming of a
-CDD panel to "[...] serve as a regulatory structure for the CDD". To make it
-easier for developers to write xTEDS files with the correct vocabulary and
-improve the CDD, Lanza et al.  \cite{lanza2010} have created a web based tool
-to manage the CDD.
+different vendors create SPA components with temperature sensors, the vendors
+use the CDD to describe the interfaces with the correct vocabulary. To manage
+the risk of adding too many terms in the CDD Lanza et al. \cite{lanza2010}
+suggests the forming of a CDD panel to "[...] serve as a regulatory structure
+for the CDD". To make it easier for developers to write xTEDS files with the
+correct vocabulary and improve the CDD, Lanza et al.  \cite{lanza2010} have
+created a web based tool to manage the CDD.
 
 One benefit of using XML file structure for the xTEDS is that a XML schema
 definition (XSD) can be created and with the help of a XML validating parser
