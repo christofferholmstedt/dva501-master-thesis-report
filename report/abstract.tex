@@ -1,12 +1,23 @@
 \chapter*{Abstract}
 \thispagestyle{empty} % No page numbering on this page
-Ada Protected Objects is a viable option for inter-process communication
-instead of UDP/IP in a SPA network. This thesis present the initial work
-towards a SPA Local Subnet Adaptation that builds on language constructs in Ada
-such as Ada Tasks and Protected Objects. The system design and implementation
-is verified deadlock free with UPPAAL but shows indications of livelock
-possibilities. The severity of these livelock situations is discussed in the
-conclusion.
+Space Plug-and-Play Architecture (SPA) is a set of standards to make it easier
+to build small satellites, focus is put on improving the integration phase and
+the time consuming validation and verifcation process by introducing
+plug-and-play functionality. From mission call-up to operational satellite it
+should only take six days.
+
+A SPA network consists of several different types of subnets with different
+pros and cons. For each processing node there must be one Local Subnet Manager
+(SM-L). The SM-L can communicate over different communication protocols
+depending on how the respective local subnet is set up, one option is UDP/IP.
+
+In this thesis Ada Protected Objects is presented as a viable option for
+inter-process communication instead of UDP/IP in a SPA network. This thesis
+present the initial work towards a SPA Local Subnet Adaptation that builds on
+language constructs in Ada such as Ada Tasks and Protected Objects.  The system
+design and implementation is verified deadlock free with UPPAAL but shows
+indications of livelock possibilities. The severity of these livelock
+situations is discussed in the conclusion.
 
 % Keywords
 \textbf{Keywords:} Space plug-and-play Architecture, SPA, UPPAAL, Timed
