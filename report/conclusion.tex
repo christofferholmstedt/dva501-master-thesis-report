@@ -61,11 +61,11 @@ in a running system. When using Ada Protected Objects all SPA applications must
 be compiled together into one binary and started at the same time. This leads
 to future updates must replace the entire binary and reboot the system. The
 trade-off between Ada Protected Objects and a run-time modularity is something
-that need to be prioritzed per project. For robots or satellites that are not
+that need to be prioritized per project. For robots or satellites that are not
 connected to internet the increased reliability of protected objects may be a
 good trade-off. On the other side devices connected to internet that always
 must be up to date security wise to protect against intrusions, the modularity
-may be prioritized.  An example to this could be a refridgerator that is
+may be prioritized.  An example to this could be a refrigerator that is
 connected to internet and a vulnerability is found in its transport layer
 security code. Instead of updating the entire running binary it would be enough
 just to update the specific module that exposes the vulnerability. Future work

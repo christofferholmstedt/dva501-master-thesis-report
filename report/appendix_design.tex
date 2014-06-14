@@ -21,7 +21,7 @@ functions, one of which is to fill in \emph{VN.Message} header information.
 
 The next step is to add connectivity. If the application only runs on a
 processing node or on a single subnet all that is needed is a
-\emph{VN.Communication.Com} implementation of that specific subnet type. The
+\newline \emph{VN.Communication.Com} implementation of that specific subnet type. The
 more advanced use case is a subnet manager that manages its own subnet and is
 connected to a Local Subnet Manager on the processing node it runs on. As this
 requires connectivty on more than one subnet a \emph{Protocol\_Routing} object
@@ -32,7 +32,7 @@ therefore add multiple subnets during startup procedures.
 All communication on a processing node through Ada Protected Objects goes
 through the Subnet Manager as a router. This leads to all applications on
 a processing node only has to instantiate one connection. This is done by first
-instantiating one Protocted Object (PO) through the \emph{VN.Communication.PO}
+instantiating one Protocted Object (PO) through the \newline \emph{VN.Communication.PO}
 component. An access to this PO can then be used as input paramter when
 creating the two \emph{VN.Communication.PO\_Wrapper's}, one for the application
 and one for the local subnet manager.

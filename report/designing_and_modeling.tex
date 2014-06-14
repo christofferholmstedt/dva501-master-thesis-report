@@ -142,12 +142,12 @@ The second iteration should make it possible to add and remove
 specific message types with ease.
 
 \section{Second iteration}
-To improve the UPPAAL model a more detailed design is required of the system.
+To improve the UPPAAL model a more detailed design is required for the system.
 From the first iteration it is clear that the basic application can be designed
-in a generic fashion. The CAS and LS is more specific instantiations of the
+in a generic fashion. The CAS and LS are more specific instantiations of the
 basic application and the SM-L has substantial differences. For easier
 maintanence of the models during the second iteration it would be valuable if
-the UPPAAL model could created in a modular way. Two main automata would be the
+the UPPAAL model could be created in a modular way. Two main automata would be the
 "basic application" and the "SM-L".
 
 Figure \ref{fig:iteration2_uml_component_overview} shows the UML component
@@ -165,7 +165,7 @@ within its own subnet and to other subnets.
     \label{fig:iteration2_uml_component_overview}
 \end{figure}
 
-The design of the communication package make use of the "composite
+The design of the communication package makes use of the "composite
 pattern" where routing objects and com objects all inherit from the same
 interface and where the routing objects are of composite types. Figure
 \ref{fig:iteration2_difference} shows the difference between a simple
@@ -219,8 +219,8 @@ After modeling the queues the application was up next. The application
 automaton is shown in figure \ref{fig:iteration2_app}. In addition to the
 queues implemented in UPPAAL C-like language a "Message" struct was also
 defined to model a SPA message, including its header. Each message is modelled
-with a source and a to destination as well as an opcode identifying what type
-of message it is.
+with a source and a destination address as well as an opcode identifying what
+type of message it is.
 
 A key assumption during iteration two was that upon receiving a message each
 application should send a response immediately. This was modeled in all
@@ -242,7 +242,7 @@ time consuming to verify.
 \subsubsection{Second iteration conclusions}
 As too many problems arose with the second iteration only the application and
 queue automata are shown in the report. Even though the end result of iteration
-two was not good enough improvements was made throughout the iteration. The
+two was not good enough improvements were made throughout the iteration. The
 most significant improvements are presented in the list following this
 paragraph.
 
