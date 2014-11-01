@@ -26,10 +26,11 @@ manager (SM-x) that acts as a gateway to other SPA subnets and when SPA subnets
 are linked together they form a SPA network. To make things clear, a single SPA
 subnet with a CAS, LS and SM-x is also a SPA network.
 
-Another SPA subnet is the SPA Local Subnet. Each processing node that can
-have multiple SPA components running on it has a "SPA Local Subnet Manager"
-(SM-L).  Components within a processing node should do inter-process
-communication over UDP/IP \cite{spa:local-subnet}.
+Spacewire and Ethernet have been mentioned earlier, another SPA subnet is the
+SPA Local Subnet. Each processing node that can have multiple SPA components
+running on it has a "SPA Local Subnet Manager" (SM-L).  Components within a
+processing node should do inter-process communication over UDP/IP
+\cite{spa:local-subnet}.
 
 Components communicate with each other with the help of "logical addresses"
 that each component recieves during boot up. It is the responsiblity of the
@@ -37,7 +38,8 @@ that each component recieves during boot up. It is the responsiblity of the
 components in the SPA network through the connected Subnet Managers. After a
 component receives its logical address it can share its xTEDS file with other
 components. It is the responsibility of the "Lookup Service" to keep track of
-the capabilities of each component in the SPA network.
+the capabilities of each component in the SPA network. For a detailed overview
+of the discovery process see section \ref{sec:discovery_process}.
 
 To describe what a SPA network can look like figure
 \ref{fig:minimal_spa_network} shows a minimal SPA network which consists of a
