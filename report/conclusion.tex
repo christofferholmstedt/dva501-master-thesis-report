@@ -102,19 +102,20 @@ few things first, before starting development.
 First of the project must know what kind of safety level is expected from the
 system. This relates directly to how much testing, validation and verification
 must be done throughout the development cycles and in the end when delivering
-the system. In turn the choice of testing, validation and verification
-techniques influences the choice of programming features that can and more
-interestingly, should be used. During the development and design phases in this
-project quite a lot of discussions went into which level of safety that was
-expected, as there were no specific application in mind there was no way to
-decide which techniques that were going to be used to test the system in the
-end.  Instead time went into discussing which Ada features that were thought to
-be useful and which ones should be avoided. The reasoning behind this is that
-the fewer Ada constructs that were used the easier it would be to validate and
-verify in the future (as well as porting the system to new architectures).
-Future work should take a deeper look at the different safety standards that
-may be of interest and come up with firm programming guidelines that can be
-used during future development.
+the system. Testing, validation and verification
+techniques then influences the choice of programming features that can and more
+interestingly, should be used.
+
+During the development and design phases in this project quite a lot of
+discussions went into which level of safety that was expected. With a specific
+product in mind and its requirements this would have been less time consuming.
+In the end, without specific safety requirements focus was put on which Ada
+features that were thought to be useful and which ones should be avoided. The
+reasoning behind this is that the fewer Ada constructs that were used the
+easier it would be to validate and verify in the future (and porting the system
+to new architectures).  Future work should take a deeper look at the different
+safety standards that may be of interest and come up with firm programming
+guidelines that can be used during development.
 
 % TODO: Routing through several subnets with different speeds. Maximum
 % Transmission Unit and routing through the networks with the best throughput
