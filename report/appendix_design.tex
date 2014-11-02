@@ -24,7 +24,7 @@ processing node or on a single subnet all that is needed is a
 \newline \emph{VN.Communication.Com} implementation of that specific subnet type. The
 more advanced use case is a subnet manager that manages its own subnet and is
 connected to a Local Subnet Manager on the processing node it runs on. As this
-requires connectivty on more than one subnet a \emph{Protocol\_Routing} object
+requires connectivity on more than one subnet a \emph{Protocol\_Routing} object
 will be needed to route traffic between subnets. The Protocol\_Routing object
 is a composite type of the VN.Communication.Com interface and can
 therefore add multiple subnets during startup procedures.
@@ -32,8 +32,8 @@ therefore add multiple subnets during startup procedures.
 All communication on a processing node through Ada Protected Objects goes
 through the Subnet Manager as a router. This leads to all applications on
 a processing node only has to instantiate one connection. This is done by first
-instantiating one Protocted Object (PO) through the \newline \emph{VN.Communication.PO}
-component. An access to this PO can then be used as input paramter when
+instantiating one Protected Object (PO) through the \newline \emph{VN.Communication.PO}
+component. An access to this PO can then be used as input parameter when
 creating the two \emph{VN.Communication.PO\_Wrapper's}, one for the application
 and one for the local subnet manager.
 
@@ -55,7 +55,7 @@ complete SPA network. Figure
 \ref{fig:appendix_vn_local_subnet_network_discovery} continues with the
 specifics of a SPA Local Subnet. Figure
 \ref{fig:appendix_vn_address_block_assignment} shows the specifics on how a SPA
-Subnet Manager aquires an address block from the CAS and after that the SPA
+Subnet Manager acquires an address block from the CAS and after that the SPA
 Subnet Manager assigns a logical address to each component it is aware of in
 figure \ref{fig:appendix_vn_local_subnet_address_assignment}. The last step is the
 component capabilities discovery process where the LS collects
@@ -79,7 +79,7 @@ information about all known components on the network, this is shown in figure
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{figures/vn_address_block_assignment}
-    \caption{How the local subnet manager aquires address blocks from the CAS
+    \caption{How the local subnet manager acquires address blocks from the CAS
     for its own subnet and for other connected subnet managers.}
     \label{fig:appendix_vn_address_block_assignment}
 \end{figure}
