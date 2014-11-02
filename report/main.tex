@@ -19,7 +19,8 @@
 \setlength{\parindent}{0cm} % Default is 15pt.
 
 % Add whitespace between paragraphs
-\setlength{\parskip}{3mm plus4mm minus3mm}
+\setlength{\parskip}{3mm}
+%\setlength{\parskip}{3mm plus4mm minus3mm}
 
 % Alter headers and footers
 \usepackage[pagestyles]{titlesec}
@@ -71,6 +72,8 @@
 % table of content.
 \usepackage{bookmark}
 
+% Specifiy table of content settings
+\setcounter{tocdepth}{1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Document start and frontmatter
@@ -78,11 +81,34 @@
 \begin{document}
 \frontmatter
 
+\cleardoublepage
+\pdfbookmark{Front page}{Front page}
 % Title
-\title{Thesis title}
+\title{{\large \uppercase{Master Thesis}} \\[0.4cm]
+{ \huge \bfseries Model-checked,\\Space Plug-and-Play Architecture Local Subnet
+Adaptation, implemented in Ada with Ravenscar restrictions} \\[0.4cm]
+}
+
 
 % Author
-\author{Firstname Surname}
+\author{\emph{Author} \\
+Christoffer Holmstedt\\[1cm]
+\begin{tabular}{ p{7cm} r }
+\textit{Supervisor} & \textit{Examiner} \\
+Adj. Prof. Fredrik Bruhn, PhD & Prof.~Kristina Lundqvist
+\end{tabular}\\[4cm]
+\uppercase{\textbf{M\"{a}lardalen University}} \\
+School of Innovation, Design and Engineering
+}
+
+% % Title
+% \cleardoublepage
+% \pdfbookmark{Front page}{Front page}
+% \title{Model-checked, Space plug-and-play Architecture Local Subnet Adaptation,
+% implemented in Ada with Ravenscar restrictions}
+% 
+% % Author
+% \author{Christoffer Holmstedt}
 
 \maketitle
 
@@ -98,9 +124,9 @@
 % Acknowledgement
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cleardoublepage
-\pdfbookmark{Acknowledgement}{Acknowledgement}
-\input{acknowledgement}
+% \cleardoublepage
+% \pdfbookmark{Acknowledgement}{Acknowledgement}
+% \input{acknowledgement}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Table of Content, List of Figures/Tables
@@ -110,16 +136,16 @@
 \pdfbookmark{\contentsname}{Contents}
 \tableofcontents
 
-\listoffigures
-\addcontentsline{toc}{chapter}{\listfigurename}
-\listoftables
-\addcontentsline{toc}{chapter}{\listtablename}
+% \listoffigures
+% \addcontentsline{toc}{chapter}{\listfigurename}
+% \listoftables
+% \addcontentsline{toc}{chapter}{\listtablename}
 
 % List of Abbrevations
 % To align the columns change the value further up in this file next
 % to loading the nomencl package.
 \renewcommand{\nomname}{List of Abbreviations}
-\cleardoublepage%
+\cleardoublepage
 \printnomenclature
 \addcontentsline{toc}{chapter}{\nomname}
 
@@ -130,7 +156,10 @@
 \mainmatter
 \pagestyle{footerPageNumberMiddle}
 \input{introduction}
+\input{state_of_the_art}
 \input{method}
+\input{spa}
+\input{designing_and_modeling}
 \input{result}
 \input{conclusion}
 
@@ -138,11 +167,15 @@
 % Appendix
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bibliographystyle{plain}
+% \bibliographystyle{plain}
+\bibliographystyle{abbrv}
 \bibliography{../references}  % references.bib is the file with all references. 
 \addcontentsline{toc}{chapter}{\bibname}
 
 \appendix
-\input{latex_examples}
+% \input{requirements}
+\input{appendix_design}
+% \input{models}
+% \input{latex_examples}
 
 \end{document}

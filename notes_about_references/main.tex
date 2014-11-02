@@ -19,7 +19,8 @@
 \setlength{\parindent}{0cm} % Default is 15pt.
 
 % Add whitespace between paragraphs
-\setlength{\parskip}{3mm plus4mm minus3mm}
+%\setlength{\parskip}{3mm plus4mm minus3mm}
+\setlength{\parskip}{3mm}
 
 % Alter headers and footers
 \usepackage[pagestyles]{titlesec}
@@ -79,10 +80,10 @@
 \frontmatter
 
 % Title
-\title{Thesis title}
+\title{Master thesis - Notes about references}
 
 % Author
-\author{Firstname Surname}
+\author{Christoffer Holmstedt}
 
 \maketitle
 
@@ -129,10 +130,10 @@
 
 \mainmatter
 \pagestyle{footerPageNumberMiddle}
-\input{introduction}
-\input{method}
-\input{result}
-\input{conclusion}
+\input{ada_references}
+\input{spa}
+\input{high_integrity}
+\input{uml_and_uppaal}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix
@@ -143,6 +144,6 @@
 \addcontentsline{toc}{chapter}{\bibname}
 
 \appendix
-\input{latex_examples}
+% \input{latex_examples}
 
 \end{document}

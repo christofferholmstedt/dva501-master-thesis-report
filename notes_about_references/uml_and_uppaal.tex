@@ -1,0 +1,487 @@
+\chapter{Design with UML and UPPAAL}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A Tutorial on UPPAAL 4.0 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{A Tutorial on UPPAAL 4.0}
+
+A short introduction to UPPAAL with some interesting design patterns in the
+end.
+
+\begin{description}
+    \item[Label:] behrmann2006 \cite{behrmann2006}
+    \item[Year:] 2006
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item Page 15, section 4.1, inbound and outbound message queues (for
+        different transport protocols) could be used as train queues passing a
+        single bridge.
+    \item Page 27, section 7, Design patterns for UPPAAL.
+    \item Page 43, Finishes of with references to two books on UPPAAL.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Analyzing the Redesign of a Distributed Lift System in UPPAAL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analyzing the Redesign of a Distributed Lift System in UPPAAL}
+
+A well explained case study about a lift system with a CAN bus modeled in
+UPPAAL to detect some liveness and safety issues. This report might have some
+valuable references but it's already 10 years old.
+
+\begin{description}
+    \item[Label:] pang2003 \cite{pang2003}
+    \item[Year:] 2003
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item No specifc comments.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Applying uml and patterns
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Applying uml and patterns}
+
+A really good reference for the Unified process, UML and Object-oriented
+analysis and design.
+
+A lesson learned is that just as a unit test and the implementation that makes
+the unit test pass is a network of two parts in the code, an interaction
+diagram and its design class diagram is a equally coupled in a two nodes
+network.
+
+\begin{description}
+    \item[Label:] larman2005 \cite{larman2005}
+    \item[Year:] 2005
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item Page 6, section 1.2, the most important skill to learn is "A critical
+        ability in OO development is to skillfully assign responsibilities to
+        software objects."
+    \item Page 30, section 2.7, Adopting an agile method does not mean avioding
+        any modeling; that's a misunderstanding.
+    \item Page 30, section 2.7, the purpose of modeling and models is primarily
+        to support understanding and communication, not documentation.
+    \item Page 30, section 2.7, don't model or apply the UML to all or most of
+        the software design. Defer simple or straightforward design problems
+        until programming - solve them while programming and testing.
+    \item Page 38, section 2.13, good checklist to read when lost in too much
+        work. This will sort of guide you to what is important.
+    \item Page 40, section 2.15, a lot of recommended reading on the topic of
+        agile development.
+    \item Page 51, section 4.3, the point of artifacts and modules is often not
+        the document/diagram itself, but the thinking and analysing.
+    \item Page 63, section 6.2, Actors are people/roles or computers in a use
+        case. A use-case consists of different scenarios, outcomes.
+    \item Page 64, section 6.3, use-cases are text documents. UML can be used
+        to realte use cases to each other.
+    \item Page 65, section 6.4, Capturing goals must be simple so the barrier
+        to join in is low, especially for customers. Therefore use-case are
+        written down in plain english.
+    \item Page 65, section 6.5, focus on use cases instead of long lists of
+        requirements.
+    \item Page 66, section 6.6, three kinds of actors, primary, supporting and
+        offstage.
+    \item Page 75, section 6.9, write conditions with the perspective from the
+        "system under discussion" (SUD) and what kind of failures it can
+        detect.
+    \item Page 80, section 6.11, discover the real goal, not just that the user
+        logins but that the user is authenticated somehow. Skip UI, focus on
+        user intent.
+    \item Page 80, section 6.11, Use casese should include the user intentions
+        and the systems responsiblity.
+    \item Page 87, section 6.17, figure 6.3, is an example of use-case context
+        diagram.
+    \item Page 112, section 7.7, system feature is "an externally observable
+        service provided by the system which directly fulfills a stakeholder's
+        need".
+    \item Page 133, section 9.1, domain model is important in OOA/D for
+        gathering important conceptional parts.
+    \item Page 138, section 9.3, figure 9.6, is a good description on why you
+        do a domain model and how it inspires the design model.
+    \item Page 145, section 9.8, a long-life domain model is often of no value.
+        Who will read it later on when more detailed class diagrams exist?
+    \item Page 146, section 9.12, good guideline concerning what is an
+        attribute and what is a conceptual class.
+    \item Page 150-151, section 9.14, definition of association and a guideline
+        concerning to limit yourself to "need-to-remember" associations.
+    \item Page 169, section 9.19, limit domain modeling to the current
+        iteration and leave all other details for future iterations.
+    \item Page 202, section 13.6, layer coupling is from higher-to-lower and
+        rarely the other way around.
+    \item Page 210, section 13.7, list of why you should do Model-View and MVC
+        seperation.
+    \item Page 250, section 16.1, image with the basic concepts of static
+        object modeling, more specific "class diagrams".
+    \item Page 254, section 16.4, guideline. When to use association lines and
+        when to just write attributes in the class box.
+    \item Page 266, section 16.5, interesting notation on how to go from a
+        multiplicity of many to one, using qualifier.
+    \item Page 276, section 17.3, Responsibility driven design (RDD). All
+        classes "do" or "know" different things.
+    \item Page 281, section 17.8, first short concrete examples of GRASP and
+        OOD.
+    \item Page 358, section 18.5, the Command-Query separation priniciple. One
+        method do the action and another get the information without any side
+        effects.
+    \item Page 374, section 20.5, Guideline. Key principle in OOP "If an
+        objects implements an interface, declare the variable in terms of the
+        interface, no the conrete class.
+    \item Page 374, section 20.6, remember to think about exception handling
+        during the design phase.
+    \item Page 375, section 20.8, order of implementation should be from the
+        least-coupled to the most coupled classes.
+    \item Page 398, section 22.5, link suggestion for UML tools/UML CASE tools.
+    \item Page 452, section 26.8, a signature of the composite pattern is that
+        outer objects contains a list of the inner objects and they all
+        implement the same interface/pattern.
+    \item Page 460, section 26.8, Pass aggregate object as parameter and do not
+        extract child objects.
+    \item Page 472, section 26.12, "Pattern languages of programs" PLOP
+        conference and volums from there is a good read.
+    \item Page 483-484, section 28.6, the purpose of business modeling is to
+        understand the structure and dynamics of the organization where the
+        system is to be deployed.
+    \item Page 484, section 28.7, mentions Petri nets and a metaphor that
+        "tokens" are passed around in a Petri net.
+    \item Page 488, section 29.3, state machines are applied to model behaviour
+        of a complex realtime object in response to an event.
+    \item Page 492, section 29.8, "Real-Time UML" by Douglass has more on State
+        Machines.
+    \item Page 507, section 31.3, the concept of "is-a".
+    \item Page 522, section 31.12, how to model/design for objects with time
+        intervals. See [CLD99] for more.
+    \item Page 542, section 33.2, two kinds of changes in software systems can
+        be defined as varaiation points and evolution points.
+    \item Page 581, section 35.1, Put a set of common interfaces in a separate
+        package.
+    \item Page 595, section 36.3, Pattern for exceptions. Name the exceptions
+        with the name of the problem not the thrower.
+    \item Page 607, section 36.7, The abstract factory is a really usefull
+        pattern.
+    \item Page 627, section 37.9, The Facade pattern may be useful when loading
+        and storing different xTEDS by their IDs, CUUID.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Object-Oriented Systems Analysis and Design: Using UML
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Object-Oriented Systems Analysis and Design: Using UML}
+A good book which gave me a crash course in UML or rather repitition on which
+diagrams to use when and why. A few good examples in the book, didn't read the
+case-studies.
+
+\begin{description}
+    \item[Label:] book:bennett2010 \cite{book:bennett2010}
+    \item[Date:] 2010
+    \item[Abbrevations and terms:]
+        UML,\nomenclature{\textbf{UML}}{\textbf{Unified Modeling Language}}
+        USDP,\nomenclature{\textbf{USDP}}{\textbf{Unified Software Development
+        Process}}
+\end{description}
+
+
+\begin{itemize}
+    \item Page 118, UML has two types of diagrams, structural and behavioural.
+    \item Page 120, This page shows icons for package, subsystem and model.
+    \item Page 123, section 5.3.2, Activity diagrams.
+    \item Page 127, mentions "activity partitions" and its old name
+        "swimlanes".
+    \item Page 129, fig 5.15, Figure of the USDP (Unified Software Development
+        Process).
+    \item Page 141, section 6.2.2, three types of requirements: functional,
+        non-functional and usability.
+    \item Page 157-158, mentions difference between <<extend>> and <<include>>.
+    \item Page 198-201, section 7.5.2, interesting section about boundary,
+        entity and control stereotypes.
+    \item Page 236-237, section 8.2.3, mentions generalization, encapsulation
+        and information hiding. Short paragraph about compoisition.
+    \item Page 242, section 8.3.2, composition in detail.
+    \item Page 248-251, section 8.4.2, components in detail.
+    \item Page 263, Figure 9.3, great sequence diagram example.
+    \item Page 264, section 9.3.1, describes how frames are used e.g. in a
+        sequence diagram (sd).
+    \item Page 278, section 9.3.7, difference between active and passive
+        objects in sequence digrams.
+    \item Page 279, list of sequence digram's "integration operators" e.g. alt,
+        opt and loop.
+    \item Page 286, section 9.6, timing diagrams, related to state machines
+        (chapter 11).
+    \item Page 292, chapter 10. How to specify operations with pre/post
+        condtions and contracts.
+    \item Page 354, section 12.5.1, list of qualities (quality attributes(?))
+        with descriptions.
+    \item Page 422, chapter 15 about Design patterns goes through singleton and
+        composite.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A Ravenscar-Compliant Run-Time Kernel for Safety Critical Systems
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{A Ravenscar-Compliant Run-Time Kernel for Safety Critical Systems}
+A good walkthrough about how a "naked" Run-Time Kernel is verified with UPPAAL.
+Includes a good collection of references on Model-checking with automatons.
+
+\begin{description}
+    \item[Label:] lundqvist2003 \cite{lundqvist2003}
+    \item[Date:] 2003
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item Page 8, section 4, some interesting references about timed automata
+        and model-checking.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Developing UPPAAL over 15 years
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Developing UPPAAL over 15 years}
+Interesting paper about UPPAAL but not much value for my master thesis.
+
+\begin{description}
+    \item[Label:] behrmann2011 \cite{behrmann2011}
+    \item[Date:] 2011
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item Page 5/137, first rule of survival "one should have a solid design
+        and stick with it".
+    \item Page 6/138, section "Tool building process", doxygen for comments,
+        that's it.
+    \item Page 6/138, intersting idea to use binary search to detect which
+        addition of functionality introduced a newly detected bug.
+    \item Page 7/139, Yahoo group for community communication.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Model Checking Applied to Embedded Software of University Satellite
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Model Checking Applied to Embedded Software of University Satellite}
+
+A good report with the basis in a master thesis about how to properly do
+model-checking and why. This reports checks that the design of the system
+works as intended and no deadlocks can occur. With the help of model-checking
+some problems with the requirements specification were dedicted and fixed.
+
+\begin{description}
+    \item[Label:] alencar2013 \cite{alencar2013}
+    \item[Year:] 2013
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item Page 2/127, section 2, good reasoning and listing of references.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UPPAAL in a nutshell
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{UPPAAL in a nutshell}
+This report goes through the basics of UPPAAL on how to use it. It was written
+while version 2.02 was the latest and now 4.X is available. Details are
+therefore different when it comes to GUI and how to do different things within
+UPPAAL but the main concepts remain the same.
+
+\begin{description}
+    \item[Label:] larsen1997 \cite{larsen1997}
+    \item[Date:] 1997
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item In the abstract some terms are used that define the basics of UPPAAL.
+        With UPPAAL one constructs a model, validate it with simulation and
+        verify it with model-checking.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Verification of real-time systems design
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Verification of real-time systems design}
+Heavy on the theory but some RT-UML (Real-time UML) could perhaps be usefull in
+the future.
+
+\begin{description}
+    \item[Label:] cambronero2010 \cite{cambronero2010}
+    \item[Date:] 2010
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item Page 9, section 4.2; UML 2.0 Profile Schedulability, Performance and
+        Time is mentioned.
+    \item Page 8, section 3.1; Modelling, Validation and Verification. The
+        Validation is done by model-checking in UPPAAL.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Model checking of safety-critical software in the nuclear engineering domain
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Model checking of safety-critical software in the nuclear engineering
+domain}
+Some good thoughts on how to actually create the UPPAAL model.
+
+\begin{description}
+    \item[Label:] lahtinen2012 \cite{lahtinen2012}
+    \item[Date:] 2012
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item Page 2/105, section 2, good descirption on how to do model checking.
+    \item Page 9/111, section 5.3, good reasoning on why model-checking should
+        be done.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formal Modeling and Verification of Operational Flight Program in a
+% Small-Scale Unmanned Helicopter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Formal Modeling and Verification of Operational Flight Program in a
+Small-Scale Unmanned Helicopter}
+This report has some interesting UPPAAL models over shared memory and mutex.
+
+\begin{description}
+    \item[Label:] lee2011 \cite{lee2011}
+    \item[Date:] 2011
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item None.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modeling a Spacewire architecture using timed automata to compute
+% worst-case end-to-end delays.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Modeling a Spacewire architecture using timed automata to compute
+worst-case end-to-end delays}
+Some ideas I got when reading this paper was that some upper bound can perhaps
+be verified when it comes to some time property. Also the model should check
+for starvation of any of the queues as well as worst case time of any queue.
+
+\begin{description}
+    \item[Label:] ermont2013 \cite{ermont2013}
+    \item[Date:] 2011
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item Page 1, section 1, interesting idea to compute worst-case
+        endpoint-to-endpoint in spacewire.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% State-of-the-art Tools and Techniques for Quantitative Modeling and Analysis
+% of Embedded Systems
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{State-of-the-art Tools and Techniques for Quantitative Modeling and
+Analysis of Embedded Systems}
+This report has a simple UPPAAL model about a train crossing. It also has
+some reasoning about model based development.
+
+\begin{description}
+    \item[Label:] bozga2012 \cite{bozga2012}
+    \item[Year:] 2012
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item None.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Case study on distributed and fault tolerant system modeling based on timed
+% automata
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Case study on distributed and fault tolerant system modeling based on
+timed automata}
+This is one of the better reports found so far. Provides a good background for
+the report and throughout the report goes through the reasoning behind the
+design choices made when creating the UPPAAL models.
+
+\begin{description}
+    \item[Label:] waszniowski2009 \cite{waszniowski2009}
+    \item[Year:] 2009
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item Page 2/1679, section 1 \& 2, really interesting discussion of related
+        work. Some good references concerning CAN, embedded systems, time and
+        event triggered systems.
+    \item Page 6/1683, section 4.2, Modelling of multitasking.
+    \item Page 12/1689, section 5, definition of properties to be verified
+        "bounded liveness".
+    \item Page 13/1690, section 5, no deadlock.
+    \item Page 13/1690, section 5, what is non-zenoness?
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modeling and Analysis of Radiation therapy system with respiratory
+% compensation using UPPAAL.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Modeling and Analysis of Radiation therapy system with respiratory
+compensation using UPPAAL}
+This report includes a simple UPPAAL model that could be tested to understand
+UPPAAL a bit more.
+
+\begin{description}
+    \item[Label:] man2011 \cite{man2011}
+    \item[Year:] 2011
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item Page 3/52, section 3, short explanation of UPPAAL computation tree
+    logic (CTL) with references (A[], A\textless\textgreater,
+    \textless\textgreater, E\textless\textgreater, deadlock, P.state).
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A theory of timed automata
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{A theory of timed automata}
+Heavy on the math and logic. This is the original report on timed automata
+theory with over 5500 citings according to google scholar.
+
+\begin{description}
+    \item[Label:] alur1994 \cite{alur1994}
+    \item[Year:] 1994
+    \item[Abbrevations and terms:] None.
+\end{description}
+
+\begin{itemize}
+    \item None.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New reference
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Title}
+%
+% Some thoughts about the reference here.
+%
+%\begin{description}
+%    \item[Label:] web:ada-high-integrity \cite{web:ada-high-integrity}
+%    \item[Date:] MM-YYYY
+%    \item[Abbrevations and terms:]
+%       ASIS,\nomenclature{\textbf{ASIS}}{\textbf{Ada Semantic Interface
+%       Specification} provides a standard mechanism for obtaining information
+%       about an Ada program or its components. ASIS is an ISO standard.}
+%\end{description}
+%
+%
+% \begin{itemize}
+%     \item Page 34, section 5.11 has valuable information about access types and
+%     \item Page 35, good reasoning about the use of exceptions.
+%     \item Page 37, section 5.13 has some good notes on Tasking in
+% \end{itemize}
