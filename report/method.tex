@@ -1,52 +1,49 @@
 \chapter{Method}\label{ch:method}
+This chapter describes the method used throughout the thesis work. First
+the literature study and then the method used for designing, modeling and
+implementation.
+
 \section{Literature study}
-The literature study was conducted by selecting different key terms related to
-the topics and searching for them in two different search engines. The first
-one was Google scholar and the second one was the "Discovery" search engine
-available for Mälardalen University's students and employees. The Discovery
-search engine search through multiple databases such as IEEE Xplore,
-ACM Digital Library and SpringerLink. For searches in the Discovery search
-engine only articles with full text available was requested.
+The literature study for Space plug-and-play Architecture and the Model
+Checking was conducted by selecting different key terms related to the topics
+and searching for them in two different search engines. The first one was
+Google scholar and the second one was the "Discovery" search engine available
+to the students and employees of M\"{a}lardalen University. The Discovery
+search engine search through multiple databases such as IEEE Xplore, ACM
+Digital Library and SpringerLink. For searches in the Discovery search engine
+only articles with full text available was requested.
 
 In Google scholar the first 20 results were looked into and the first 40
 results given by Discovery search engine was looked into. Only results with
 full text PDFs were selected from Google Scholar.
 
 A first read through of abstracts was conducted to filter out unrelated
-papers and then followed by a read through of introductions and conclusions for
-another filtering round. The key terms selected are shown below under
-respective topic's section.
+papers followed by a read through of introductions and conclusions for
+another filtering round. The key terms selected are shown below.
 
 \subsection{Space plug-and-play Architecture}
-The key terms chosen was "Space plug-and-play Avionics", "Space
+The key terms chosen were "Space plug-and-play Avionics", "Space
 plug-and-play Architecture" and "why Space plug-and-play Avionics".
 
-All references from two relatively new reports were looked into as well.
-
-% space plug-and-pay avionics
-%AFRL plug and play spacecraft avionics.
-%developing an ontology.
-
-\subsection{Dependability and Ada}
 \subsection{Model Checking and UPPAAL}
+The key terms chosen were "UPPAAL", "UPPAAL Modeling" and "UPPAAL Modeling
+Ravenscar".
+
 \subsection{Internet of Things}
+"Internet of Things" is a broad field for research and development. As this is
+only a first look at the topic no specific key terms were selected instead
+previously known protocols were selected for a short presentation in section
+\ref{sec:sota:internet_of_things}.
 
 \section{An Agile Unified Process}
-\subsection{Requirements Analysis}
-TODO: Write down how I did the requirements analysis and which references I
-used for guidance.
+For the development process inspiration was taken from the Agile Unified
+Process presented by Larman in "Applying UML and Patterns" \cite{larman2005}.
+As the SPA software is a framework no user stories nor use-cases was created
+instead the different SPA standards were used as a feature requirements list.
 
-\subsection{Design with UML}
-TODO: Write down how I did the design and which references I used for guidance.
-
-\subsection{Modeling, validation and verification with UPPAAL}
-TODO: Write down how I did the modeling, validation and verification and which
-references I used for guidance.
-
-\subsection{Development in Ada}
-TODO: Write about the development in Ada and how regression testing was done.
-Test-Driven Development was used and so on.
-
-\subsection{An iterative process}
-TODO: Mention that the requirements analysis to development in Ada (sections
-above) was iterated twice to improve the end result.
+Throughout the spring regular meetings took place to discuss design issues
+with the author of a related thesis work, Nils Brynedal Ignell. Major parts of
+the design and implementation have been created in collaboration. The
+implementation in Ada with ravenscar restriction in combination with the UPPAAL
+model of the system have been created in small increments to reach their final
+state.
