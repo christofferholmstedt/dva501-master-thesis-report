@@ -55,7 +55,7 @@ resemble as close as possible.
 The basic functionality of an application is that it should be able to identify
 itself on the network, share its capabilities and request information from
 other applications. An application is only connected to one subnet at a time.
-The limitied functionality of an application makes for a basic two-layered
+The limited functionality of an application makes for a basic two-layered
 design where the upper-layer alter its behaviour depending on incoming
 message types and the lower layer is only responsible for sending and receiving
 messages on its subnet. The application sends out Local\_Hello message during
@@ -120,7 +120,7 @@ The CAS, LS and SM-L have specific functionalities so they can only be used
 once when setting up a complete network of automata. The application model can
 be instantiated multiple times as was the goal. At this level of abstraction
 everything looks fine, though the main goal with the UPPAAL model is to be able
-to verify that the system behaves as aspected and can not reach erroneous
+to verify that the system behaves as expected and can not reach erroneous
 states or deadlock. As the first iteration of models only shows the boot-up
 process it will eventually reach deadlock when everything is set up. This is a
 drawback as it does not relate very well with the actual design of the system
@@ -148,7 +148,7 @@ To improve the UPPAAL model a more detailed design is required for the system.
 From the first iteration it is clear that the basic application can be designed
 in a generic fashion. The CAS and LS are more specific instantiations of the
 basic application and the SM-L has substantial differences. For easier
-maintanence of the models during the second iteration it would be valuable if
+maintenence of the models during the second iteration it would be valuable if
 the UPPAAL model could be created in a modular way. Two main automata would be the
 "basic application" and the "SM-L".
 
@@ -254,14 +254,14 @@ paragraph.
     \item The addition of the Message struct made it possible to model
         different types of messages being sent in the system.
     \item The logic throughout the system was vastly improved.
-    \item The possiblity to vary the number of applications was kept.
+    \item The possibility to vary the number of applications was kept.
 \end{itemize}
 
 \section{Third iteration}
 The main focus of the third iteration was to remove the possibility of
 deadlocks. The underlying cause of deadlock was the tight coupling between
-receiving a message and sending a response. To losen up the coupling different
-approaches could be taken. One solution was to add time contraints such that if
+receiving a message and sending a response. To loosen up the coupling different
+approaches could be taken. One solution was to add time constraints such that if
 the outgoing queue was full the automata would wait for a set amount of time
 and then retry. It was early on apparent that this would not improve the
 deadlock situation.
@@ -270,7 +270,7 @@ A second solution and the one chosen was to make the assumption that when
 receiving a message the information is stored locally and then the application
 return to its idle state. From the idle state the application can then make a
 choice whether to receive another message or send a new message. The tight
-coupling was by this change completly removed.
+coupling was by this change completely removed.
 
 The automata from the third and final iteration are shown in figures
 \ref{fig:iteration3_app}, \ref{fig:iteration3_sm_l_receive_loop},
@@ -334,10 +334,10 @@ verification queries presented in the end of this section were used. As the
 automata only test the component and service discovery process the goal is to
 reach a deadlock state in the end.  To verify that it is only the final
 deadlock that can be reached the queries verify that all automata are in idle
-states and the appropiate variables have been set (all applications have been
+states and the appropriate variables have been set (all applications have been
 properly registered in the network).
 
-The livelock query make sure that all paths eventually reach the final deadlock
+The livelock query makes sure that all paths eventually reach the final deadlock
 state. Both verification queries are shown below.
 
 \subsubsection{Verification query for deadlocks}

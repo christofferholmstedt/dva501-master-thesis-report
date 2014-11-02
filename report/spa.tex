@@ -26,18 +26,20 @@ manager (SM-x) that acts as a gateway to other SPA subnets and when SPA subnets
 are linked together they form a SPA network. To make things clear, a single SPA
 subnet with a CAS, LS and SM-x is also a SPA network.
 
-Another SPA subnet is the SPA Local Subnet. Each processing node that can
-have multiple SPA components running on it has a "SPA Local Subnet Manager"
-(SM-L).  Components within a processing node should do inter-process
-communication over UDP/IP \cite{spa:local-subnet}.
+Spacewire and Ethernet have been mentioned earlier, another SPA subnet is the
+SPA Local Subnet. Each processing node that can have multiple SPA components
+running on it has a "SPA Local Subnet Manager" (SM-L).  Components within a
+processing node should do inter-process communication over UDP/IP
+\cite{spa:local-subnet}.
 
 Components communicate with each other with the help of "logical addresses"
-that each component recieves during boot up. It is the responsiblity of the
+that each component receives during boot up. It is the responsiblity of the
 "Central Addressing Service" (CAS) to hand out logical addresses to all
 components in the SPA network through the connected Subnet Managers. After a
 component receives its logical address it can share its xTEDS file with other
 components. It is the responsibility of the "Lookup Service" to keep track of
-the capabilities of each component in the SPA network.
+the capabilities of each component in the SPA network. For a detailed overview
+of the discovery process see section \ref{sec:discovery_process}.
 
 To describe what a SPA network can look like figure
 \ref{fig:minimal_spa_network} shows a minimal SPA network which consists of a
@@ -52,7 +54,7 @@ node and in the same local subnet managed by the SM-L.
 \end{figure}
 
 A more complex SPA network is shown in figure \ref{fig:complex_spa_network}.
-Three different processing nodes are connceted to each other over a
+Three different processing nodes are connected to each other over a
 SPA-Ethernet subnet. The CAS, LS and Monitor Application are now running on
 different nodes and the sensor application is located on its own embedded
 device.

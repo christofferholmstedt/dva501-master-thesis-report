@@ -4,7 +4,7 @@ the reader a basic stepping stone for later chapters where more details are
 described concerning Space plug-and-play Architecture and UPPAAL modeling.
 
 \section{Space plug-and-play Architecture}
-The Air Force Resarch Laboratory (AFRL) Space Vehicle Directorate started a
+The Air Force Research Laboratory (AFRL) Space Vehicle Directorate started a
 project referred to as "Space plug-and-play Avionics" in 2004 with the intent
 to understand why space systems used in various missions became so complex and
 how they can be made easier to assemble \cite{fronterhouse2007, martin2012}.
@@ -19,7 +19,7 @@ standards and in an updated version in 2011 renamed to "Space plug-and-play
 Architecture" \cite{martin2012}, all standards are available from AIAA
 \cite{spa:all}.
 
-\nomenclature{\textbf{AFRL}}{\textbf{Air Force Resarch Laboratory}}
+\nomenclature{\textbf{AFRL}}{\textbf{Air Force Research Laboratory}}
 
 Development and testing of implementations conforming to the standards have
 been ongoing since the launch of the program. One project that has been
@@ -28,7 +28,7 @@ Martin et al. \cite{martin2008}. They have demonstrated the first created
 plug-and-play satellite and given their view on the problems encountered during
 development of both hardware and software components. The first plug-and-play
 satellite flown on orbit is presented by Martin et al. \cite{martin2012} where
-most parts of the plug-and-play experiement passed all tests one year after
+most parts of the plug-and-play experiment passed all tests one year after
 launch.
 
 As a critical part of plug-and-play satellite research and development is the
@@ -41,6 +41,12 @@ capabilities discovery. The SDM source code has been released under public
 domain license \cite{spa:sdm-source}.
 
 \nomenclature{\textbf{SDM}}{\textbf{System Data Model}}
+
+As this thesis work focus on Ada the SDM source code available in C++ could not
+be used but it relates closely. This thesis is the starting ground for an Ada
+implementation that would be interoperable with the SDM. In other words, a SPA
+network could consist of multiple SDM processing nodes and multiple processing
+nodes running the Ada source code.
 
 To enable components to be self-describing all SPA components must have an
 "Extensible Transducer Electronic Data Sheet" (xTEDS) file stored within the
@@ -56,12 +62,12 @@ lost. This is where the "Common Data Dictionary" (CDD) comes into play.
 The first work to create the CDD is described by Pasko as an informal
 approach.  Instead Pasko suggests a more formal approach using Resource
 Description Framework (RDF). Pasko
-suggests that RDF and RDF Schemas can be used to not only desribe the CDD
+suggests that RDF and RDF Schemas can be used to not only describe the CDD
 formally but also be used to visually represent the CDD with suitable software
 \cite{pasko2011}.
 
 Hansen et al. \cite{hansen2012} describes the dictionary as an ontology which
-consists of several taxonomies in a hierarchial structure. This means that if
+consists of several taxonomies in a hierarchical structure. This means that if
 different vendors create SPA components with temperature sensors, the vendors
 use the CDD to describe the interfaces with the correct vocabulary. To manage
 the risk of adding too many terms in the CDD Lanza et al. \cite{lanza2010}
@@ -94,11 +100,11 @@ Aalborg University in Denmark.
 The formal methods behind UPPAAL builds on the research originally presented
 by Alur et al. \cite{alur1994} where real-time systems are shown to be modeled
 with timed finite automata, or just timed automata in short. The key part is
-that the system has a finite amount of states so it's possible to model it in a
+that the system has a finite amount of states so it is possible to model it in a
 network of automata. Since the presentation of the formal method, tools have
 been developed to make the method useful. UPPAAL has over the last decade been
 forked to more specific versions such as "TIMES" which can be used for
-scheduability analysis and "TRON" for online real-time testing, other forks
+schedulability analysis and "TRON" for online real-time testing, other forks
 exist and for a more detailed history of the development process "Developing
 UPPAAL over 15 years" by Behrmann et al.  \cite{behrmann2011} is suggested. In
 this thesis "classic" UPPAAL is used to verify real-time properties of the
@@ -114,7 +120,7 @@ presented by Pang et el. \cite{pang2003} and the spacewire architecture
 presented by Ermont et al. \cite{ermont2013}.
 
 The implementation presented in this thesis is done in Ada 2005 with the
-Ravenscar restriction to make it easier to verify real-time requirements in a
+Ravenscar restriction to make it easier to verify requirements in a
 model-checking tool. Related to this is earlier work done in UPPAAL regarding
 Ada software and tasking. Bj\"{o}rnfot presented "Ada and timed automata" in
 1996 \cite{bjornfot1996} and Lundqvist et al. presented verification of an Ada
@@ -150,7 +156,7 @@ protocol is undergoing standardization process in the OASIS organization, MQTT
 Working Group \cite{web:oasis-mqtt}.
 
 \subsubsection{AllSeen Open Source project}
-From the begining developed by Qualcomm as the AllJoyn project, the AllSeen
+From the beginning developed by Qualcomm as the AllJoyn project, the AllSeen
 Open Source Project is now run as a Linux Foundation Collaborative Project.
 It is a framework which offers service discovery, remote procedure calls,
 security and a lot of other features independent of the transport layer used.
@@ -163,7 +169,7 @@ In contrast to CoAP, MQTT and AllSeen Open Source Project the goal and primary
 concern for BACnet is building automation. BACnet, that is \textbf{b}uilding
 \textbf{a}utomation and \textbf{c}ontrol \textbf{net}works, was originally
 started as standardization project within the American Society of Heating,
-Refrigerating and Air-Conditioning Enerineers (ASHRAE). After publication of
+Refrigerating and Air-Conditioning Engineers (ASHRAE). After publication of
 the american standard it has since been published as both an european standard
 and an ISO standard \cite{web:bacnet}.
 
